@@ -11,14 +11,13 @@
 /* Put your code here */
 
 var str = process.argv[2];
-str = str.replace(/\s|\?/g, "").toLocaleLowerCase();
-var isPalindrome = 'YES';
+var normalStr = str.replace(/\W|\_/g, "").toLocaleLowerCase();
+var reverseStr = normalStr.split("").reverse().join("");
 
-for (var index = 0; index < str.length; index++) {
-    var element = str[index];
-    if (element !== str[str.length - index - 1]) {
-        isPalindrome = 'NO';
-    }
+if (normalStr === reverseStr) {
+    var isPalindrome = 'YES';
+} else {
+    var isPalindrome = 'NO';
 }
 
 process.stdout.write(isPalindrome);
