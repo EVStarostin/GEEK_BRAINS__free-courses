@@ -11,7 +11,7 @@
 /* Put your code here */
 
 var str = process.argv[2];
-var normalStr = str.replace(/\W|\_/g, "").toLocaleLowerCase();
+var normalStr = str.replace(/\W|\_/g, "").toLowerCase();
 var reverseStr = normalStr.split("").reverse().join("");
 
 if (normalStr === reverseStr) {
