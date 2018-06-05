@@ -3,9 +3,9 @@ var d = parseFloat(process.argv[2]),
     y = parseFloat(process.argv[4]);
 
 var inputDate = new Date(y, m, d);
-var newYear = new Date(inputDate.getFullYear()+1, 0, 1);
+var newYear = new Date(y, 11, 31);
 
-var daysUntilNewYear = (newYear - inputDate)/86400000 - 1;
+var daysUntilNewYear = (newYear - inputDate)/86400000;
 var result = daysUntilNewYear.toString();
 
 process.stdout.write((result));
