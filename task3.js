@@ -1,6 +1,9 @@
 var t1 = parseFloat(process.argv[2]),
     t2 = parseFloat(process.argv[3]);
 
+t1 = !isNaN(t1) ? t1 : 0;
+t2 = !isNaN(t2) ? t2 : 0;
+
 var hoursLabels    = ['час', 'часа', 'часов'],
     minutesLabels  = ['минута', 'минуты', 'минут'],
     secondsLabels  = ['секунда', 'секунды', 'секунд'];
