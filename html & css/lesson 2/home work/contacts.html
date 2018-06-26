@@ -15,25 +15,25 @@
     <hr>
     <h1>Напишите нам</h1>
     <form>
-        <p><label>Имя: <input type="text" placeholder="Имя"></label></p>
-        <p><label>Телефон: <input type="text" placeholder="Телефон"></label></p>
-        <p><label>Email: <input type="text" placeholder="Email"></label></p>
+        <p><label>Имя: <input type="text" placeholder="Имя" name="name"></label></p>
+        <p><label>Телефон: <input type="text" placeholder="Телефон" name="phone"></label></p>
+        <p><label>Email: <input type="text" placeholder="Email" name="email"></label></p>
         <p>
             Пол:<br>
-            <label><input type="radio" name="gender"> Муж.</label>
-            <label><input type="radio" name="gender"> Жен.</label>
+            <label><input type="radio" name="gender" value="male"> Муж.</label>
+            <label><input type="radio" name="gender" value="female"> Жен.</label>
         </p>
         <p>
-            <select>
-                <option selected>Отзыв</option>
-                <option>Вопрос</option>
+            <select name="type">
+                <option value="recall" selected>Отзыв</option>
+                <option value="question">Вопрос</option>
             </select>
         </p>
-        <p><label>Тема: <input type="text" placeholder="Тема"></label></p>
-        <p><label>Текст сообщения:<br><textarea cols="50" rows="10"></textarea></label></p>
-        <p><label><input type="checkbox">Заказать обратный звонок</label> </p>
-        <input type="submit" value="Отправить">
-        <input type="reset" value="Отмена">
+        <p><label>Тема: <input type="text" placeholder="Тема" name="topic"></label></p>
+        <p><label>Текст сообщения:<br><textarea cols="50" rows="10" name="message"></textarea></label></p>
+        <p><label><input type="checkbox" name="callback">Заказать обратный звонок</label> </p>
+        <input type="submit" value="Отправить" name="send">
+        <input type="reset" value="Отмена" name="cancel">
     </form>
     <h3>Адрес</h3>
     <ul>
