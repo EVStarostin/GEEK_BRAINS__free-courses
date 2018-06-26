@@ -14,12 +14,24 @@
     </ul>
     <hr>
     <h1>Напишите нам</h1>
-    <form action="#">
-        <p>Имя: <input type="text" placeholder="Имя"></p>
-        <p>Телефон: <input type="text" placeholder="Телефон"></p>
-        <p>Email: <input type="text" placeholder="Email"></p>
-        <p>Тема: <input type="text" placeholder="Тема"></p>
+    <form>
+        <p><label>Имя: <input type="text" placeholder="Имя"></label></p>
+        <p><label>Телефон: <input type="text" placeholder="Телефон"></label></p>
+        <p><label>Email: <input type="text" placeholder="Email"></label></p>
+        <p>
+            Пол:<br>
+            <label><input type="radio" name="gender"> Муж.</label>
+            <label><input type="radio" name="gender"> Жен.</label>
+        </p>
+        <p>
+            <select>
+                <option selected>Отзыв</option>
+                <option>Вопрос</option>
+            </select>
+        </p>
+        <p><label>Тема: <input type="text" placeholder="Тема"></label></p>
         <p><textarea cols="50" rows="10"></textarea></p>
+        <p><label><input type="checkbox">Заказать обратный звонок</label> </p>
         <input type="submit" value="Отправить">
         <input type="reset" value="Отмена">
     </form>
