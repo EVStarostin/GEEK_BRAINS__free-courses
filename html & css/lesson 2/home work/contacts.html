@@ -24,12 +24,14 @@
             <label><input type="radio" name="gender" value="female"> Жен.</label>
         </p>
         <p>
-            <select name="type">
-                <option value="recall" selected>Отзыв</option>
-                <option value="question">Вопрос</option>
-            </select>
+            <label>
+                Тема: 
+                <select name="type">
+                    <option value="recall" selected>Отзыв</option>
+                    <option value="question">Вопрос</option>
+                </select>
+            </label>
         </p>
-        <p><label>Тема: <input type="text" placeholder="Тема" name="topic"></label></p>
         <p><label>Текст сообщения:<br><textarea cols="50" rows="10" name="message"></textarea></label></p>
         <p><label><input type="checkbox" name="callback">Заказать обратный звонок</label> </p>
         <input type="submit" value="Отправить" name="send">
