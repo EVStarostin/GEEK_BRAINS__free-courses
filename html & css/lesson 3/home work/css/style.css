@@ -14,6 +14,7 @@ body {
     font-style: italic;
     font-variant: small-caps;
     text-transform: lowercase;
+    text-decoration: none;
 }
 
 /* Страница "Подробное описание товара" */
@@ -48,7 +49,7 @@ body {
     list-style-image: url(../img/angle-double-right.svg);
 }
 .framed-img {
-    border: 5px solid #33FFCC;
+    outline: 5px solid #33FFCC;
 }
 
 /* Страница "Контакты" */
