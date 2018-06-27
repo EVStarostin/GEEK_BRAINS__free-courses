@@ -55,7 +55,7 @@ body {
 /* Страница "Контакты" */
 .contacts input[type="text"] {
     height: 20px;
-    width: 373px;
+    width: 419px;
 }
 .contacts input[type="text"], .contacts textarea {
     color: #006633;
