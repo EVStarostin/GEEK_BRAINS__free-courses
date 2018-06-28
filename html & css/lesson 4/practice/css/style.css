@@ -106,3 +106,42 @@ body {
     font-size: 30px;
     color: brown;
 }
+
+/*
+table {
+    border: 1px solid #000;
+    width: 400px;
+    height: 200px;
+}
+
+td {
+    border: 1px solid #000;
+}*/
+.specs {
+    border: 1px solid #000;
+    width: 400px;
+    height: 300px;
+/*    border-spacing: 10px;*/
+    border-collapse: collapse;
+}
+.specs td {
+    border: 1px solid black;
+/*    padding-left: 10px;*/
+/*    padding-top: 40px;*/
+    vertical-align: middle;
+    text-align: center;
+}
+.five {
+    background-color: green;
+}
+
+div {
+    height: 200px;
+    border: 1px solid #000;
+}
+span {
+    color: red;
+}
+input:focus {
+    text-transform: capitalize;
+}
