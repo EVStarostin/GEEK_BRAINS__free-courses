@@ -28,21 +28,6 @@ body {
     border: 1px solid #000;
     text-align: center;
 }
-.menu li:first-child {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-}
-.menu li:last-child {
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.menu li:nth-child(2n-1) {
-    background-color: #ccc;
-}
-.menu li:nth-child(3) a {
-    color: orange;
-}
 
 /* Страница "Подробное описание товара" */
 .heading {
@@ -89,4 +74,35 @@ body {
     font-size: 16px;
     line-height: 20px;
     font-family: sans-serif;
+}
+
+/* Практика */
+.menu li:first-child {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.menu li:last-child {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.menu li:nth-child(2n-1) {
+    background-color: #ccc;
+}
+.menu li:nth-child(3) a {
+    color: orange;
+}
+
+.list li:nth-child(3):after {
+    content: " new";
+    color: blueviolet;
+    text-transform: uppercase;
+}
+.menu li:hover:before {
+    content: " >>";
+    color: red;
+}
+.text:first-letter {
+    font-size: 30px;
+    color: brown;
 }
