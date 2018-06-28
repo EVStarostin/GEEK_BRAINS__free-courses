@@ -1,0 +1,92 @@
+/* Цвет фона и семейство шрифта */
+body {
+    background-color: #f8f8f8;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Меню */
+.menu {
+    list-style-type: none;
+}
+.menu li a {
+    color: #336666;
+    font-size: 18px;
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+.menu li a:hover {
+    color: red;
+}
+.menu li a:active {
+    color: green;
+}
+.menu li {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #000;
+    text-align: center;
+}
+.menu li:first-child {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.menu li:last-child {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.menu li:nth-child(2n-1) {
+    background-color: #ccc;
+}
+.menu li:nth-child(3) a {
+    color: orange;
+}
+
+/* Страница "Подробное описание товара" */
+.heading {
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #eaeaea;
+}
+.sub-heading {
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: lowercase;
+}
+.brief-description {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+.full-description {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+.specs {
+    color: #666666;
+    font-size: 15px;
+    line-height: 20px;
+    list-style-image: url(../img/angle-double-right.svg);
+}
+.framed-img {
+    outline: 5px solid #33FFCC;
+}
+
+/* Страница "Контакты" */
+.contacts input[type="text"] {
+    height: 20px;
+    width: 419px;
+}
+.contacts input[type="text"], .contacts textarea {
+    color: #006633;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: sans-serif;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>МУТ / Контакты</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--Меню-->
+    <ul class="menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="#">Контакты</a></li>
+    </ul>
+    <hr>
+    <h1>Напишите нам</h1>
+    <form class="contacts">
+        <p><label>Имя:<br><input type="text" name="name"></label></p>
+        <p><label>Телефон:<br><input type="text" name="phone"></label></p>
+        <p><label>Email:<br><input type="text" name="email"></label></p>
+        <p>
+            Пол:<br>
+            <label><input type="radio" name="gender" value="male"> Муж.</label>
+            <label><input type="radio" name="gender" value="female"> Жен.</label>
+        </p>
+        <p>
+            <label>
+                Тема: 
+                <select name="type">
+                    <option value="recall" selected>Отзыв</option>
+                    <option value="question">Вопрос</option>
+                </select>
+            </label>
+        </p>
+        <p><label>Текст сообщения:<br><textarea cols="50" rows="10" name="message"></textarea></label></p>
+        <p><label><input type="checkbox" name="callback">Заказать обратный звонок</label> </p>
+        <input type="submit" value="Отправить" name="send">
+        <input type="reset" value="Отмена" name="cancel">
+    </form>
+    <h3>Адрес</h3>
+    <ul>
+        <li><b>Контактный номер телефона интернет-магазина:</b> 88002000600</li>
+        <li><b>Адрес:</b> Россия, г.&nbsp;Пенза, Московская, 27</li>
+        <li><b>Email:</b> info@uniqproduct.ru</li>
+    </ul>
+    <iframe src="https://www.google.com/maps/d/embed?mid=1iwB09LUJZjaXeNQah9RxuUfv2-55NmRO" width="640" height="480"></iframe>
+    <hr>
+    <p>&copy;&nbsp;Все права защищены</p>
+</body>
+
+</html>
