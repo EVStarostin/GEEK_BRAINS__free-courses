@@ -1,0 +1,176 @@
+/* Цвет фона и семейство шрифта */
+
+body {
+    background-color: #f8f8f8;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+hr {
+    margin: 0;
+}
+
+/* header */
+
+.header {
+    background: linear-gradient(to left, #fefcea, #CC9966);
+    ;
+    padding: 10px 10px 5px 10px;
+}
+
+/* Меню */
+
+.menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0 20px;
+    text-align: right;
+}
+
+.menu li a {
+    color: #336666;
+    font-size: 18px;
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: blue;
+}
+
+.menu li a:active {
+    color: darkblue;
+}
+
+.menu li {
+    display: inline;
+}
+
+/* content */
+
+.content {
+    padding: 0 10px;
+}
+
+.content .main-heading {
+    text-align: center;
+}
+
+/* footer */
+
+.footer {
+    padding: 10px 10px;
+    text-align: center;
+}
+
+/* Страница "Подробное описание товара" */
+
+.heading {
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #eaeaea;
+}
+
+.sub-heading {
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: lowercase;
+}
+
+.brief-description {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+
+.full-description {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.specs {
+    color: #666666;
+    font-size: 15px;
+    line-height: 20px;
+    list-style-image: url(../img/angle-double-right.svg);
+}
+
+.framed-img {
+    outline: 5px solid #33FFCC;
+}
+
+.specs-table {
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.specs-table td,
+.specs-table th {
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.available-table {
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.available-table td,
+.available-table th {
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.available-table tr:first-child {
+    height: 50px;
+}
+
+.available-table .combined {
+    text-align: center;
+}
+
+.framed-img:hover {
+    outline: none;
+}
+
+.content-description p:first-letter {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 200%;
+    color: red;
+}
+
+/* Страница "Контакты" */
+
+.contacts input[type="text"] {
+    height: 20px;
+    width: 419px;
+}
+
+.contacts input[type="text"],
+.contacts textarea {
+    color: #006633;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: sans-serif;
+}
+
+.contacts input[name="email"]:focus {
+    color: darkmagenta;
+    background-color: #efdfc3;
+}
+
+.contacts input[type="text"],
+textarea {
+    text-transform: capitalize;
+}
