@@ -143,7 +143,6 @@ hr {
 
 .specs-table {
     width: 100%;
-    max-width: 800px;
     border: 1px solid #000;
     border-collapse: collapse;
 }
@@ -156,7 +155,6 @@ hr {
 
 .available-table {
     width: 100%;
-    max-width: 800px;
     border: 1px solid #000;
     border-collapse: collapse;
 }
@@ -229,7 +227,6 @@ hr {
 
 .contacts input[type="text"] {
     height: 20px;
-    width: 419px;
 }
 
 .contacts input[type="text"],
@@ -238,6 +235,8 @@ hr {
     font-size: 16px;
     line-height: 20px;
     font-family: sans-serif;
+    max-width: 420px;
+    width: 100%;
 }
 
 .contacts input[name="email"]:focus {
