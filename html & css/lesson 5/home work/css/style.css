@@ -36,6 +36,7 @@ hr {
     margin-left: 20px;
     margin-top: 10px;
 }
+
 .logo img {
     width: 100%;
 }
@@ -181,7 +182,9 @@ hr {
 .available-table .combined {
     text-align: center;
 }
-.specs-table th, .available-table th {
+
+.specs-table th,
+.available-table th {
     word-break: break-word;
 }
 
@@ -196,6 +199,7 @@ hr {
     width: 50%;
     box-sizing: border-box;
 }
+
 .img-and-desc .img img {
     width: 100%;
 }
@@ -285,6 +289,7 @@ hr {
     vertical-align: top;
     padding: 10px;
 }
+
 .catalog-item img {
     width: 100%;
 }
