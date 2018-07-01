@@ -32,8 +32,12 @@ hr {
 
 .logo {
     float: left;
+    width: 100px;
     margin-left: 20px;
     margin-top: 10px;
+}
+.logo img {
+    width: 100%;
 }
 
 /* Меню */
@@ -189,12 +193,19 @@ hr {
 
 .img-and-desc .img {
     float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+.img-and-desc .img img {
+    width: 100%;
 }
 
 .img-and-desc .desc {
     overflow: hidden;
+    width: 50%;
     padding-left: 10px;
     padding-bottom: 10px;
+    box-sizing: border-box;
 }
 
 .img-and-desc .desc .heading:first-child {
@@ -273,6 +284,9 @@ hr {
     width: 30%;
     vertical-align: top;
     padding: 10px;
+}
+.catalog-item img {
+    width: 100%;
 }
 
 .catalog-item a {
