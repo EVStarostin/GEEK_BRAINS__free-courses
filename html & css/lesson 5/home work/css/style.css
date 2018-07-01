@@ -1,0 +1,303 @@
+/* Цвет фона и семейство шрифта */
+
+body {
+    background-color: #f8f8f8;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+hr {
+    margin: 0;
+}
+
+/* container */
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+/* header */
+
+.header {
+    background: url("../img/cat_walk.png") no-repeat right 15px bottom 5px,
+    linear-gradient(to left, #fefcea, #CC9966);
+    height: 120px;
+}
+
+.logo {
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+/* Меню */
+
+.menu {
+    float: right;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.menu li a {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    color: #336666;
+    font-size: 18px;
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: blue;
+    background-color: #e4c8a5;
+}
+
+.menu li a:active {
+    color: darkblue;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li .active {
+    color: blue;
+    background-color: #e4c8a5;
+}
+
+/* content */
+
+.content {
+    padding: 0 15px 20px 15px;
+}
+
+.content .main-heading {
+    text-align: center;
+}
+
+/* footer */
+
+.footer {
+    text-align: center;
+    background-color: #fefcea;
+    height: 60px;
+}
+
+.copyright {
+    float: right;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+/* Страница "Подробное описание товара" */
+
+.heading {
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #eaeaea;
+}
+
+.sub-heading {
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: lowercase;
+}
+
+.brief-description {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+
+.full-description {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.specs {
+    color: #666666;
+    font-size: 15px;
+    line-height: 20px;
+    list-style-image: url(../img/angle-double-right.svg);
+}
+
+.framed-img {
+    outline: 5px solid #33FFCC;
+}
+
+.framed-img:hover {
+    outline: none;
+}
+
+.specs-table {
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.specs-table td,
+.specs-table th {
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.available-table {
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.available-table td,
+.available-table th {
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.available-table tr:first-child {
+    height: 50px;
+}
+
+.available-table .combined {
+    text-align: center;
+}
+
+.content-description p:first-letter {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 200%;
+    color: red;
+}
+
+.img-and-desc .img {
+    float: left;
+}
+
+.img-and-desc .desc {
+    overflow: hidden;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.img-and-desc .desc .heading:first-child {
+    margin-top: 0;
+}
+
+.img-and-desc .buy {
+    height: 38px;
+    padding-left: 12px;
+    padding-right: 12px;
+    ;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+}
+
+.img-and-desc .buy:hover {
+    cursor: pointer;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.img-and-desc .buy:active {
+    background-color: #0062cc;
+    border-color: #005cbf;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .5);
+}
+
+.clearfix:after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+/* Страница "Контакты" */
+
+.contacts input[type="text"] {
+    height: 20px;
+    width: 419px;
+}
+
+.contacts input[type="text"],
+.contacts textarea {
+    color: #006633;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: sans-serif;
+}
+
+.contacts input[name="email"]:focus {
+    color: darkmagenta;
+    background-color: #efdfc3;
+}
+
+.contacts input[type="text"],
+textarea {
+    text-transform: capitalize;
+}
+
+.map {
+    width: 100%;
+    height: 374px;
+}
+
+/* Страница "Каталог" */
+
+.catalog {
+    text-align: center;
+}
+
+.catalog-item {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 30%;
+    vertical-align: top;
+    padding: 10px;
+}
+
+.catalog-item a {
+    display: block;
+    text-decoration: none;
+}
+
+.catalog-item a:hover {
+    display: block;
+    text-decoration: underline;
+}
+
+/* Прижать footer к низу страницы */
+
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    min-height: 100%;
+}
+
+.content {
+    padding-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
