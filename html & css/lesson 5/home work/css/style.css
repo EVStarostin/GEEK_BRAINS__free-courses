@@ -245,8 +245,7 @@ hr {
     background-color: #efdfc3;
 }
 
-.contacts input[type="text"],
-textarea {
+.contacts input[name="name"] {
     text-transform: capitalize;
 }
 
