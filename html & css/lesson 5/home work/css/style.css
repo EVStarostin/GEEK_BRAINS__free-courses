@@ -302,6 +302,12 @@ hr {
     text-decoration: underline;
 }
 
+.map {
+    width: 100%;
+    height: 374px;
+    border: none;
+}
+
 /* Прижать footer к низу страницы */
 
 html,
