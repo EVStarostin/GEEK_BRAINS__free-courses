@@ -17,12 +17,11 @@ body {
 /* header */
 
 .header {
-    height: 100vh;
+    height: 800px;
     padding-left: 98px;
     padding-top: 64px;
     padding-right: 160px;
-    background: url("img/slider-img.jpg");
-    background-size: cover;
+    background: url(img/slider-img.jpg) 0 0 no-repeat;
     box-sizing: border-box;
     position: relative;
 }
@@ -337,7 +336,7 @@ li a::after {
     width: 7px;
     height: 7px;
     position: absolute;
-    right: 0;
+    right: 5px;
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
     opacity: 0;
@@ -356,6 +355,7 @@ li a::after {
     padding-top: 48px;
     clear: both;
     font-size: 0;
+    text-align: center;
 }
 
 .featured .items .featured-items {
@@ -558,7 +558,7 @@ li a::after {
     width: 7px;
     height: 7px;
     position: absolute;
-    right: 0;
+    right: 5px;
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
     opacity: 0;
