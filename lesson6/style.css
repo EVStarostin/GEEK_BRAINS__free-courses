@@ -588,11 +588,8 @@ body {
     line-height: 0;
 }
 
-.exclusive-product .products li {
-    display: inline-block;
-}
-
 .exclusive-product .products .large {
+    display: inline-block;
     width: 570px;
     height: 570px;
     margin-right: 30px;
@@ -633,6 +630,8 @@ body {
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 30px;
+    list-style-type: none;
+    display: inline-block;
 }
 
 .exclusive-product .products .small li:not(:nth-child(even)) {
