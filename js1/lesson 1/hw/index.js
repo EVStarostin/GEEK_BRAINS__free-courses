@@ -33,4 +33,4 @@ const ob = {
 ob.numbers = li.join("; ");
 
 // 11. Добавьте свойство newNumbers в объект ob со значением: числа из li, соединенные точкой с запятой, и еще два раза пятое число из li
-ob.newNumbers = ob.numbers + li[4] + li[4];
+ob.newNumbers = ob.numbers + "; " + li[4] + "; " + li[4];
