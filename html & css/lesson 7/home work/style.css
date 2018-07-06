@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,700');
-
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,300,700);
 /*-------------------- <общие стили> --------------------*/
 
 * {
@@ -133,7 +132,8 @@ body {
 .content {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     width: 460px;
     box-sizing: border-box;
 }
@@ -179,7 +179,8 @@ body {
     position: absolute;
     right: 50px;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     opacity: 0;
 }
 
@@ -205,7 +206,8 @@ body {
     position: absolute;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
 }
 
 .slider .controls .middle {
@@ -260,13 +262,15 @@ body {
 .slider .controls .left:after {
     border-left: 2px solid #000;
     border-bottom: 2px solid #000;
-    transform: translate(-25%, -50%) rotate(45deg);
+    -webkit-transform: translate(-25%, -50%) rotate(45deg);
+            transform: translate(-25%, -50%) rotate(45deg);
 }
 
 .slider .controls .right:after {
     border-right: 2px solid #000;
     border-top: 2px solid #000;
-    transform: translate(-75%, -50%) rotate(45deg);
+    -webkit-transform: translate(-75%, -50%) rotate(45deg);
+            transform: translate(-75%, -50%) rotate(45deg);
 }
 
 .slider .controls .left:hover:after,
@@ -807,7 +811,8 @@ body {
     position: absolute;
     right: 12px;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     color: #8c8c8c;
     font-size: 22px;
     width: 24px;
@@ -1062,7 +1067,8 @@ body {
 
 .product-page .products-and-spinner button:hover {
     opacity: 0.7;
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
 }
 
 /*------------------------------ </СТРАНИЦА PRODUCT> -----------------------------------*/
@@ -1163,7 +1169,8 @@ body {
     width: 100%;
     padding: 0 30px 0;
     top: 0;
-    transform: none;
+    -webkit-transform: none;
+            transform: none;
     padding-top: 20px;
 }
 
@@ -1230,3 +1237,4 @@ body {
 }
 
 /*------------------------------ </СТРАНИЦА PRODUCT-DETAILS> ---------------------------*/
+
