@@ -25,7 +25,7 @@ li.splice(3, 3);
 li.push(10, 5e9);
 
 // 9. Создайте объект ob с ключом numbers, хранящим пустую строку
-let ob = {
+const ob = {
     "numbers": ""
 };
 
