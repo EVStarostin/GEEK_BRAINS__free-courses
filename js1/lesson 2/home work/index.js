@@ -9,7 +9,7 @@ if ( (fedorPoints > 21) || ((petrPoints <= 21) && (21 - petrPoints < 21 - fedorP
 }
 
 console.log(
-  "У Федора " + fedorPoints + " очков\n" + 
-  "У Петра " + petrPoints + " очков\n" +
-  (winner ? "Победил " + winner : "Ничья")
+  "У Федора очков: " + fedorPoints +"\n" + 
+  "У Петра очков: " + petrPoints + "\n" +
+  (winner ? "Победитель: " + winner : "Ничья")
 );
