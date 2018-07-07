@@ -16,8 +16,4 @@ if (fedorPoints > 21) {
   winner = "Петр";
 }
 
-if (winner) {
-  console.log("Победил " + winner);
-} else {
-  console.log("Ничья");
-}
+console.log(winner ? "Победил " + winner : "Ничья");
