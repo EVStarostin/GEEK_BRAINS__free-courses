@@ -2,9 +2,9 @@ const fedorPoints = Math.round(Math.random() * (30 - 11) + 11),
       petrPoints = Math.round(Math.random() * (30 - 11) + 11);
 let winner;
 
-if ( (fedorPoints > 21) || ((petrPoints <= 21) && (21 - petrPoints < 21 - fedorPoints)) ) {
+if ( (fedorPoints > 21) || ((petrPoints <= 21) && (petrPoints > fedorPoints)) ) {
   winner = "Петр";
-} else if ( (petrPoints > 21) || (21 - fedorPoints < 21 - petrPoints) ) {
+} else if ( (petrPoints > 21) || (fedorPoints > petrPoints) ) {
   winner = "Федор";
 }
 
