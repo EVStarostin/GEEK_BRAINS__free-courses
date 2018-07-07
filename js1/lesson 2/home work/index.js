@@ -6,14 +6,10 @@ console.log("У Петра " + petrPoints + " очков");
 
 let winner;
 
-if (fedorPoints > 21) {
+if ( (fedorPoints > 21) || ((petrPoints <= 21) && (21 - petrPoints < 21 - fedorPoints)) ) {
   winner = "Петр";
-} else if (petrPoints > 21) {
+} else if ( (petrPoints > 21) || (21 - fedorPoints < 21 - petrPoints) ) {
   winner = "Федор";
-} else if ( (21 - fedorPoints < 21 - petrPoints) ) {
-  winner = "Федор";
-} else if ( (21 - petrPoints < 21 - fedorPoints) ) {
-  winner = "Петр";
 }
 
 console.log(winner ? "Победил " + winner : "Ничья");
