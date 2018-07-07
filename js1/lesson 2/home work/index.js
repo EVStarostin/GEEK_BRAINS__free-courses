@@ -1,9 +1,5 @@
-const fedorPoints = Math.round(Math.random() * (30 - 11) + 11);
-console.log("У Федора " + fedorPoints + " очков");
-
-const petrPoints = Math.round(Math.random() * (30 - 11) + 11);
-console.log("У Петра " + petrPoints + " очков");
-
+const fedorPoints = Math.round(Math.random() * (30 - 11) + 11),
+      petrPoints = Math.round(Math.random() * (30 - 11) + 11);
 let winner;
 
 if ( (fedorPoints > 21) || ((petrPoints <= 21) && (21 - petrPoints < 21 - fedorPoints)) ) {
@@ -12,4 +8,8 @@ if ( (fedorPoints > 21) || ((petrPoints <= 21) && (21 - petrPoints < 21 - fedorP
   winner = "Федор";
 }
 
-console.log(winner ? "Победил " + winner : "Ничья");
+console.log(
+  "У Федора " + fedorPoints + " очков\n" + 
+  "У Петра " + petrPoints + " очков\n" +
+  (winner ? "Победил " + winner : "Ничья")
+);
