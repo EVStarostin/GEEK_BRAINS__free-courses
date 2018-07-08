@@ -1,6 +1,6 @@
 function getIATA() {
   info.innerHTML = `<pre>
-    Загрузка ...
+    Loading ...
   <pre>`
 
   var xhr = new XMLHttpRequest();
