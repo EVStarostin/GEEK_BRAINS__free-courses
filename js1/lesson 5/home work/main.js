@@ -36,7 +36,7 @@ function getPrices(originIATA, destinationIATA, callback) {
 }
 
 function findTheCheapestTicket(tickets) {
-  tickets = tickets.filter( (ticket) => ticket.depart_date.match(/(2018)-((09)|(10)|(11))-\d\d/g) );
+  tickets = tickets.filter( (ticket) => ticket.depart_date.match(/(2018)-((09)|(10)|(11))-\d{2}/g) );
   const theCheapestTicket = tickets.sort( (a, b) => a.value - b.value )[0];
   console.log(`
     The cheapest ticket from Moscow to Nice in autumn 2018:
