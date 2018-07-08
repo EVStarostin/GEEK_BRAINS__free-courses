@@ -9,7 +9,7 @@
 const foo = (a) => {
   let result = a;
   const bar = (b) => {
-    if (b) {
+    if (b !== undefined) {
       result *= b;
       return bar;
     } else {
