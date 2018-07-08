@@ -1,3 +1,5 @@
+let info = document.getElementById('info');
+
 function getIATA() {
   info.innerHTML = `<pre>
     Loading ...
