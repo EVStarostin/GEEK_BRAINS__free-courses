@@ -6,13 +6,29 @@ class Bird {
     this.wasEaten = false;
   }
 
+  eat(birds) {
+    let rand;
+
+    do {
+      rand = Math.floor(Math.random() * (birds.length - 0)) + 0;
+    } while (rand === birds.indexOf(this));
+
+    birds[rand].die();
+    birds.splice(rand, 1);
+    this.points++;
+  }
+
+  die() {
+    this.wasEaten = true;
+  }
+
   info() {
     console.log("name: " + this.name + "\npoints: " + this.points);
   }
 
 }
 
-let bird1 = new Bird("Bird 1"),
+const bird1 = new Bird("Bird 1"),
     bird2 = new Bird("Bird 2"),
     bird3 = new Bird("Bird 3"),
     bird4 = new Bird("Bird 4"),
@@ -26,17 +42,8 @@ let bird1 = new Bird("Bird 1"),
 const birdsAlive = [bird1, bird2, bird3, bird4, bird5, bird6, bird7, bird8, bird9, bird10];
 
 while ( birdsAlive.filter( bird => bird.wasEaten === false ).length > 1 ) {
-    let rand1,
-        rand2;
-    
-    do {
-        rand1 = Math.floor(Math.random() * (birdsAlive.length - 0)) + 0;
-        rand2 = Math.floor(Math.random() * (birdsAlive.length - 0)) + 0;
-    } while (rand1 === rand2)
-
-    birdsAlive[rand1].points++;
-    birdsAlive[rand2].wasEaten = true;
-    birdsAlive.splice(rand2, 1);
+  const rand = Math.floor(Math.random() * (birdsAlive.length - 0)) + 0;
+  birdsAlive[rand].eat(birdsAlive);
 }
 
 const winner = birdsAlive[0];
