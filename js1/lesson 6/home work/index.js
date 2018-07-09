@@ -6,15 +6,15 @@ class Bird {
     this.wasEaten = false;
   }
 
-  eat(birds) {
+  eat(birdsToBeEaten) {
     let rand;
 
     do {
-      rand = Math.floor(Math.random() * (birds.length - 0)) + 0;
-    } while (rand === birds.indexOf(this));
+      rand = Math.floor(Math.random() * (birdsToBeEaten.length - 0)) + 0;
+    } while (rand === birdsToBeEaten.indexOf(this));
 
-    birds[rand].die();
-    birds.splice(rand, 1);
+    birdsToBeEaten[rand].die();
+    birdsToBeEaten.splice(rand, 1);
     this.points++;
   }
 
@@ -28,18 +28,13 @@ class Bird {
 
 }
 
-const bird1 = new Bird("Bird 1"),
-    bird2 = new Bird("Bird 2"),
-    bird3 = new Bird("Bird 3"),
-    bird4 = new Bird("Bird 4"),
-    bird5 = new Bird("Bird 5"),
-    bird6 = new Bird("Bird 6"),
-    bird7 = new Bird("Bird 7"),
-    bird8 = new Bird("Bird 8"),
-    bird9 = new Bird("Bird 9"),
-    bird10 = new Bird("Bird 10");
+const birds = [];
 
-const birdsAlive = [bird1, bird2, bird3, bird4, bird5, bird6, bird7, bird8, bird9, bird10];
+for (let i = 1; i <= 10; i++) {
+  birds.push(new Bird(`Bird ${i}`));
+}
+
+const birdsAlive = birds.slice();
 
 while ( birdsAlive.filter( bird => bird.wasEaten === false ).length > 1 ) {
   const rand = Math.floor(Math.random() * (birdsAlive.length - 0)) + 0;
