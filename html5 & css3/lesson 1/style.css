@@ -1,0 +1,125 @@
+body {
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+}
+
+header {
+    padding: 40px 0;
+    background-color: #445162;
+}
+
+header h1 {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-size: 60px;
+    margin-bottom: 26px;
+}
+
+header ul {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 36px;
+    padding-left: 36px;
+    list-style-image: url(img/check-icon.png);
+    margin-bottom: 0;
+}
+
+header ul li {
+    padding-left: 2px;
+}
+
+header .img {
+    float: right;
+    width: 90%;
+    height: 216px;
+    margin: 10px 0;
+    background-color: #fff;
+    margin-left: 20px;
+}
+
+.about {
+    padding: 46px 0;
+}
+
+.about h2 {
+    color: #445161;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #333333;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.about .img {
+    float: right;
+    width: 98%;
+    height: 247px;
+    margin: 10px 0;
+    background-color: #445161;
+}
+
+.pluses {
+    background-color: #f5f5f5;
+    padding: 40px 0;
+}
+
+.pluses h2 {
+    text-align: center;
+    color: #445161;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.pluses ul {
+    list-style-type: none;
+    padding-left: 42px;
+}
+
+.pluses ul li {
+    color: #333333;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 20px;
+}
+
+.pluses ul li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background: url(img/plus-icon.png);
+    margin-left: -42px;
+    margin-top: 4px;
+}
+
+@media screen and (max-width: 991px) {
+    header h1 {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+    header ul {
+        line-height: 28px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header .img {
+        width: 100%;
+    }
+    .about .img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    header h1 {
+        font-size: 40px;
+    }
+}
