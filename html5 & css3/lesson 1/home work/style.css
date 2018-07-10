@@ -29,16 +29,13 @@ header ul li {
     padding-left: 2px;
 }
 
-header .img-area {
-    padding-left: 7%;
-}
-
 header .img {
     float: right;
-    width: 100%;
+    width: 90%;
     height: 216px;
     margin: 10px 0;
     background-color: #fff;
+    margin-left: 20px;
 }
 
 .about {
@@ -58,13 +55,9 @@ header .img {
     line-height: 24px;
 }
 
-.about .img-area {
-    padding-left: 2%;
-}
-
 .about .img {
     float: right;
-    width: 100%;
+    width: 98%;
     height: 247px;
     margin: 10px 0;
     background-color: #445161;
@@ -103,4 +96,30 @@ header .img {
     background: url(img/plus-icon.png);
     margin-left: -42px;
     margin-top: 4px;
+}
+
+@media screen and (max-width: 991px) {
+    header h1 {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+    header ul {
+        line-height: 28px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header .img {
+        width: 100%;
+    }
+    .about .img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    header h1 {
+        font-size: 40px;
+    }
 }
