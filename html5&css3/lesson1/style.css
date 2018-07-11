@@ -250,7 +250,6 @@ footer textarea {
     color: #445162;
     font-size: 16px;
     line-height: 24px;
-    margin-bottom: 20px;
     border-radius: 8px;
     border: none;
     position: relative;
@@ -270,15 +269,21 @@ footer textarea {
 
 footer .form-item {
     position: relative;
+    margin-bottom: 20px;
 }
 
 footer label {
     position: absolute;
     z-index: 1;
-    line-height: 40px;
-    padding: 1px 10px;
     color: #445162;
-    left: 15px;
+    left: 10px;
+    top: 50%;
+    margin-top: -12px;
+}
+
+footer label[for="message"] {
+    top: 0;
+    margin-top: 9px;
 }
 
 footer .submit-area {
