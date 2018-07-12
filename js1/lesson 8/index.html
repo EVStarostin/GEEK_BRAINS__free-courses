@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn</title>
+    <style>
+        .added {
+            background-color: red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="class" id="iden">
+        Hello!
+    </div>
+    <script>
+        const firstEl = document.querySelector("div");
+        // firstEl.innerText = "I'm here!";
+        firstEl.innerHTML = "I'm <strong>here</strong>!"
+        firstEl.classList.add("added");
+        
+        const body = document.querySelector("body");
+        body.innerHTML += "<div class='added'>adddd</div>";
+
+        const newEl = document.createElement("div");
+        newEl.innerText = "I'm here x3";
+        newEl.classList.add("added");
+        const newEl = document.createElement("div");
+        body.appendChild(newEl);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn</title>
+    <!-- Bootstrap ! -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <style>
+        section {
+            width: 300px;
+            margin: 30px auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        let counter = 0;
+    
+        function onBtnClick() {
+            counter += 1;
+            const div = document.querySelector("div");
+            div.innerText = "Вы кликнули " + counter + " раз";
+        }
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            const btn = document.querySelector("button");
+            btn.addEventListener("click", onBtnClick);
+            btn.addEventListener("click", () => { console.log("clicked") });
+        });
+    </script>
+</head>
+<body>
+    <section>
+        <button type="button" class="btn btn-primary">Кликните еще!</button>
+        <div></div>
+    </section>
+</body>
+</html>
