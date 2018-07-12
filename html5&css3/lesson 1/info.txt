@@ -1,0 +1,27 @@
+Полезные ссылки:
+1. Спецификации
+-HTML5.2 (W3C)
+https://www.w3.org/TR/2017/REC-html52-20171214/
+-HTML LS (WHATWG)
+https://html.spec.whatwg.org/multipage/
+(pdf версия) https://yadi.sk/d/o7kQDJHt3YyETr
+2. Валидаторы
+- W3C
+https://validator.w3.org/
+- WHATWG
+https://html5.validator.nu/
+3. Рекомендуемые редакторы
+- WebStorm
+https://www.jetbrains.com/webstorm/
+- Brackets
+http://brackets.io/
+4. Работа с макетом:
+- Adobe Photoshop
+https://www.adobe.com/ru/products/photoshop.html
+- Assets
+https://assets.adobe.com/
+
+Как сдавать домашнее задание?
+1. Выполнить домашнее задание и поместить его в архив с названием ФамилияИмяНомерДЗ.
+2. Домашнее задание необходимо отправить не позднее, чем за 4 часа (!) до начала следующего занятия.
+3. Невыполненное ДЗ можно пересдать. Срок сдачи сдвигается на одно занятие, а за домашнее задание будет получено в 2 раза меньше баллов.

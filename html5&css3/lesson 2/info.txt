@@ -1,0 +1,23 @@
+Полезные ссылки:
+1) Normalize.css
+https://necolas.github.io/normalize.css/
+2) Google HTML/CSS Style Guide
+https://google.github.io/styleguide/htmlcssguide.html
+3) Emmet cheat sheet
+https://docs.emmet.io/cheat-sheet/
+4) MDN - отличный справочник
+https://developer.mozilla.org/ru/
+
+Генераторы:
+1) EnjoyCSS
+http://enjoycss.com/
+2) Web Code Tools
+https://webcode.tools/css-generator
+3) CSS3 Generator
+http://css3generator.com/
+4) CSSmatic
+https://www.cssmatic.com/
+5) UIgradients
+https://uigradients.com/
+
+https://jsfiddle.net/jfLo1trh/2/
