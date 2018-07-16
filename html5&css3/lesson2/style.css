@@ -263,9 +263,9 @@ header .user:hover:after {
     font-family: 'Lato', sans-serif;
     font-style: italic;
     font-size: 14px;
-    line-height: 35px;
+    line-height: 16px;
     border-radius: 50px 50px 50px 50px;
-    padding: 0 20px 0 36px;
+    padding: 10px 20px 10px 36px;
     width: 240px;
     background: #fff url(img/search.png) no-repeat 10px 10px;
 }
@@ -383,7 +383,7 @@ header .user:hover:after {
     font-family: 'Lato', sans-serif;
     font-size: 14px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 16px;
     font-style: italic;
     padding: 15px 25px;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.17);
