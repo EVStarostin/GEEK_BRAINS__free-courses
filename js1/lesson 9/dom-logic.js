@@ -27,6 +27,7 @@ function onAddCommentClick(name) {
     const film = getfilmByName(name);
     film.addComment(commentValue, authorValue);
     onCategoryChoice(film.category);
+    opennedFilms[film.name] = false;
 }
 
 function renderCommentForm(film) {
