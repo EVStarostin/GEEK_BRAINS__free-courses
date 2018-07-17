@@ -9,26 +9,42 @@
             padding: 0;
             margin: 0;
         }
+
         .videoholder {
             height: 100vh;
             overflow: hidden;
+            position: relative;
         }
-        
+
         video {
             width: 100%;
             height: auto;
         }
+
+        .text {
+            position: absolute;
+            margin: auto;
+            width: 500px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            top: 0;
+            bottom: 0; 
+            left: 0;
+            right: 0; 
+            font-size: 70px;
+            font-family: sans-serif;
+            color: white;
+            text-shadow: 3px 3px black;
+        }
+
     </style>
 </head>
 
 <body>
     <div class="videoholder">
-    <video loop autoplay preload="auto">
-        <source src="video/tweetsip.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-        <source src="video/tweetsip.webm" type='video/webm; codecs="vp8, vorbis"'>
-        <source src="video/tweetsip.ogv" type='video/ogg; codecs="theora, vorbis"'>
-        Извините, ваш браузер не поддерживает элемент video
-    </video>
+        <video src="video/video.mp4" preload="auto" autoplay="" loop=""></video>
+        <h1 class="text">SOME TEXT</h1>
     </div>
 </body>
 
