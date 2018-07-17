@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <form action="#" method="post">
+       <fieldset>
+           <legend>Main info</legend>
+           <label for="name">Your name:</label>
+           <input list="namelist" id="name" required type="text" placeholder="John" name="user-name">
+           <br>
+           <label for="email">Your email:</label>
+           <input type="email" id="email" name="email"
+           required placeholder="some@mail.ru" pattern="([a-zA-Z0-9-_]+)(@)([a-zA-Z0-9-_]+)\.([a-z]{2,})">
+           <br>
+           <label for="phone">Your phone</label>
+           <input class="phone" type="tel" placeholder="+7 (222) 242-22-22" required>
+           <br>
+           <input type="number" min="0" max="10" step="2">
+           <br>
+           <input type="range" min="0" max="120" value="50" step="0.2">
+           <br>
+           <input type="color">
+           <br>
+           <input type="image" src="img/HTML5_CSS3.png" alt="Submit">
+           <input type="submit" value="Отправить">
+           <datalist id="namelist">
+               <option value="Nikita"></option>
+               <option value="Sergey"></option>
+               <option value="Dmitriy"></option>
+               <option value="Andrey"></option>
+           </datalist>
+       </fieldset>
+   </form>
+   <script src="js/jquery-3.3.1.min.js"></script>
+   <script src="js/jquery.mask.min.js"></script>
+   <script>
+       $(document).ready(function(){
+          $('.phone').mask('+7 (000) 000-00-00'); 
+       });
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+RegEx101
+https://regex101.com/
+jQuery Mask Plugin
+http://igorescobar.github.io/jQuery-Mask-Plugin/
+jQuery
+https://jquery.com/
