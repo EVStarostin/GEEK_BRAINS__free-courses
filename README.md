@@ -19,4 +19,8 @@
 ## Урок 2
 Сайт доступен по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson2
 
+## Урок 3
+Сайт доступен по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson3
+Фоновое видео доступно по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson3/video.html
+
 ### Разработано на курсе **HTML & CSS** от [GeekBrains](https://geekbrains.ru/) 
