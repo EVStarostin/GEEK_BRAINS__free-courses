@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>video</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .videoholder {
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        video {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="videoholder">
+    <video loop autoplay preload="auto">
+        <source src="video/tweetsip.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="video/tweetsip.webm" type='video/webm; codecs="vp8, vorbis"'>
+        <source src="video/tweetsip.ogv" type='video/ogg; codecs="theora, vorbis"'>
+        Извините, ваш браузер не поддерживает элемент video
+    </video>
+    </div>
+</body>
+
+</html>
