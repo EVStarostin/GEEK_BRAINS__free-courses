@@ -13,11 +13,21 @@
         .videoholder {
             height: 100vh;
             overflow: hidden;
+            position: relative;
         }
 
         video {
             width: 100%;
             height: auto;
+        }
+
+        .text {
+            position: absolute;
+            width: 300px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
 
     </style>
@@ -26,6 +36,7 @@
 <body>
     <div class="videoholder">
         <video src="video/video.mp4" preload="auto" autoplay="" loop=""></video>
+        <h1 class="text">SOME TEXT</h1>
     </div>
 </body>
 
