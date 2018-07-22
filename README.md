@@ -23,4 +23,7 @@
 Сайт доступен по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson3  
 Фоновое видео доступно по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson3/video.html
 
+## Урок 4
+Сайт доступен по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson4  
+
 ### Разработано на курсе **HTML & CSS** от [GeekBrains](https://geekbrains.ru/) 
