@@ -1,0 +1,23 @@
+Сборник источников по SVG
+https://css-tricks.com/mega-list-svg-information/
+Использование SVG
+https://css-tricks.com/using-svg/
+SVG fallbacks guide
+https://css-tricks.com/a-complete-guide-to-svg-fallbacks/
+SVG и IconFonts. За и против
+https://css-tricks.com/icon-fonts-vs-svg/
+Как масштабировать SVG
+https://css-tricks.com/scale-svg/
+AJAX + SVG sprite
+https://css-tricks.com/ajaxing-svg-sprite/
+IcoMoon app
+https://icomoon.io/app/#/select
+SVG for Everybody
+https://github.com/jonathantneal/svg4everybody
+SVGomg (оптимизация SVG)
+https://jakearchibald.github.io/svgomg/
+CSS filters
+https://css-tricks.com/almanac/properties/f/filter/
+CSS filters playground
+https://www.cssfilters.co/
+https://jsfiddle.net/7zp30r1h/
