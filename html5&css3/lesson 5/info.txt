@@ -1,0 +1,28 @@
+Отсечение и маскирование с помощью SVG
+https://css-tricks.com/clipping-masking-css/
+https://www.smashingmagazine.com/2015/05/creating-responsive-shapes-with-clip-path/
+Google Fonts
+https://fonts.google.com/
+TypeKit
+https://typekit.com/
+Font Squirrel
+https://www.fontsquirrel.com/
+FontAwesome
+https://fontawesome.com/
+SVGomg
+https://jakearchibald.github.io/svgomg/
+Fontello
+http://fontello.com/
+Canvas Tutorial
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial
+FabricJS
+http://fabricjs.com/
+PaperJS
+http://paperjs.org/
+p5.js
+https://p5js.org/
+OrigamiJS
+http://origamijs.com/
+
+Исходники первой части занятия
+https://jsfiddle.net/y2sjf6mo/1/
