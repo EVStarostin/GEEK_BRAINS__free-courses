@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas width='640' height='420' id="canvas">
+        <!-- Some text-->
+<!--       <img src="" alt="">-->
+    </canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        
+        if (canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = 'red';
+            ctx.strokeStyle = 'black';
+            
+//            ctx.beginPath();
+//            ctx.fillRect(10, 10, 50, 50);
+//            ctx.strokeRect(70, 70, 50, 50);
+//            //ctx.clearRect(0, 0, canvas.width, canvas.height);
+//            ctx.clearRect(40, 40, 50, 50);
+//            
+//           // canvas.width = 640;
+//            ctx.moveTo(30, 10);
+//            ctx.lineTo(100, 50);
+//            ctx.lineWidth = 4;
+//            ctx.strokeStyle = 'blue';
+//            ctx.stroke();
+            
+            ctx.arc(75, 75, 50, 0, Math.PI, false);
+            ctx.stroke();
+            ctx.fill();
+        } else {
+            // for old browser
+        }
+    </script>
+</body>
+</html>
