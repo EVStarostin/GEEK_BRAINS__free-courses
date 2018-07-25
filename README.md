@@ -26,4 +26,7 @@
 ## Урок 4
 Сайт доступен по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson4  
 
+## Урок 5
+Сайт доступен по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson5  
+
 ### Разработано на курсе **HTML & CSS** от [GeekBrains](https://geekbrains.ru/) 
