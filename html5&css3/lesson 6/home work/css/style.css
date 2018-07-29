@@ -33,6 +33,14 @@ body {
     display: inline;
 }
 
+.logo {
+    transition: transform .2s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
 header {
     position: relative;
     z-index: 1;
@@ -58,26 +66,16 @@ header .searchbar {
     line-height: 46px;
 }
 
-header .searchbar input[type="image"] {
-    vertical-align: middle;
-    padding: 10px;
-    margin-top: 6px;
-}
-
 header nav {
     line-height: 46px;
 }
 
 .searchbar .burger {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 20px;
-    padding: 0;
     visibility: hidden;
-    width: 0;
-    vertical-align: middle;
-    margin-top: 6px;
+}
+
+.searchbar button i {
+    transition: color .2s ease-in-out;
 }
 
 header nav ul {
@@ -98,7 +96,8 @@ header nav ul {
     font-size: 14px;
     font-weight: 300;
     display: inline-block;
-    padding: 5px;
+    padding: 3px;
+    transition: color .2s ease-in-out;
 }
 
 .menu a:hover {
@@ -152,6 +151,8 @@ header nav ul {
     text-transform: uppercase;
     padding: 15px 40px;
     border: none;
+    transition: color .2s ease-in-out,
+    background .2s ease-in-out;
 }
 
 .btn-standart:hover {
@@ -173,17 +174,18 @@ header nav ul {
 }
 
 .slider-wrapper .cart,
-.slider-wrapper .search {
+.slider-wrapper .search,
+.slider-wrapper .burger {
     color: #fff;
     border: none;
     background: transparent;
+    font-size: 24px;
+    padding: 3px;
 }
 
 .slider-wrapper .burger:hover i,
-.slider-wrapper .cart:hover svg,
-.slider-wrapper .search:hover svg,
-.slider-wrapper .arrow-left:hover svg,
-.slider-wrapper .arrow-right:hover svg {
+.slider-wrapper .cart:hover i,
+.slider-wrapper .search:hover i {
     color: #c7b299;
 }
 
@@ -197,6 +199,13 @@ header nav ul {
     margin-top: -50px;
     padding: 15px;
     color: #fff;
+    opacity: .5;
+    font-size: 70px;
+}
+
+.slider-wrapper .arrow-left i,
+.slider-wrapper .arrow-right i {
+    transition: color .2s ease-in-out;
 }
 
 .slider-wrapper .arrow-left {
@@ -205,6 +214,12 @@ header nav ul {
 
 .slider-wrapper .arrow-right {
     right: 10%;
+}
+
+.slider-wrapper .arrow-left:hover i,
+.slider-wrapper .arrow-right:hover i {
+    color: #d3c1ad;
+    opacity: 1;
 }
 
 .slider-wrapper .pagination {
@@ -230,6 +245,7 @@ header nav ul {
     width: 12px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
+    transition: transform .2s ease-in-out;
 }
 
 .slider-wrapper .pagination .active:after {
@@ -239,6 +255,7 @@ header nav ul {
 
 .slider-wrapper .pagination button:hover:after {
     box-shadow: 0 0 0 2px #d3c1ad;
+    transform: scale(1.1);
 }
 
 .menu-opened {
@@ -268,6 +285,7 @@ header nav ul {
     text-decoration: none;
     display: block;
     text-align: center;
+    transition: color .2s ease-in-out;
 }
 
 .segments a:hover {
@@ -293,7 +311,8 @@ header nav ul {
 .segments hr {
     width: 70px;
     height: 2px;
-    background-color: #555;
+    background-color: #f1eee9;
+    transition: background .2s ease-in-out;
 }
 
 .segments a:hover hr {
@@ -397,6 +416,8 @@ h2.section-heading {
     min-width: 70px;
     border: 1px solid #ebebeb;
     margin: 0 3px;
+    transition: background .2s ease-in-out,
+    color .2s ease-in-out;
 }
 
 .sort .active {
@@ -433,7 +454,7 @@ h2.section-heading {
 
 .project .buttons {
     position: absolute;
-    visibility: hidden;
+    opacity: 0;
     width: 100%;
     height: 100%;
     top: 0;
@@ -441,6 +462,7 @@ h2.section-heading {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: opacity .2s ease-in-out;
 }
 
 .project .buttons button {
@@ -451,7 +473,7 @@ h2.section-heading {
 }
 
 .project:hover .buttons {
-    visibility: visible;
+    opacity: 1;
 }
 
 .project:hover button {
@@ -466,7 +488,7 @@ h2.section-heading {
     position: relative;
 }
 
-.project:hover .pic:before {
+.project .pic:before {
     content: '';
     display: block;
     height: 100%;
@@ -475,6 +497,12 @@ h2.section-heading {
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+.project:hover .pic:before {
+    opacity: 1;
 }
 
 .project img {
@@ -493,6 +521,7 @@ h2.section-heading {
     font-family: 'ralewaysemibold', sans-serif;
     font-size: 20px;
     margin-bottom: 5px;
+    transition: color .2s ease-in-out;
 }
 
 .project .label .description {
@@ -500,6 +529,7 @@ h2.section-heading {
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 0;
+    transition: color .2s ease-in-out;
 }
 
 .projects .load-more-btn {
@@ -516,7 +546,6 @@ h2.section-heading {
     .searchbar .burger {
         width: auto;
         visibility: visible;
-        padding: 0 10px;
     }
     .arrow-left,
     .arrow-right {
