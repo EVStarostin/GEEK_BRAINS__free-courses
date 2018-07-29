@@ -26,7 +26,7 @@
 ## Урок 4
 Сайт доступен по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson4  
 
-## Урок 5
+## Урок 5 - Макет ***Waxom***
 Сайт доступен по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson6  
 
 ## Урок 6 - Макет ***Waxom***
