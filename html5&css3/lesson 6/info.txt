@@ -1,0 +1,23 @@
+Генератор временной функции
+http://cubic-bezier.com/
+Animation
+https://css-tricks.com/almanac/properties/a/animation/
+https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+Список анимируемых свойств
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+Transform
+https://css-tricks.com/almanac/properties/t/transform/
+https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+Animate.css
+https://daneden.github.io/animate.css/
+GSAP
+https://greensock.com/
+Bounce.js
+http://bouncejs.com/
+Anime.js
+http://animejs.com/
+Snap.svg
+http://snapsvg.io/
+three.js
+https://threejs.org/
+https://jsfiddle.net/w08hqxse/
