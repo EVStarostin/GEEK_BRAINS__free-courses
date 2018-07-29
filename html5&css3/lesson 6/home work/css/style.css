@@ -470,6 +470,7 @@ h2.section-heading {
     background: none;
     color: white;
     font-size: 26px;
+    transition: color .2s ease-in-out;
 }
 
 .project:hover .buttons {
