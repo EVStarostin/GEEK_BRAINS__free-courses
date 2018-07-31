@@ -32,4 +32,7 @@
 ## Урок 6 - Макет ***Waxom***
 Сайт доступен по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson6  
 
+## Урок 7 - Макет ***Waxom***
+Сайт доступен по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson7 
+
 ### Разработано на курсе **HTML & CSS** от [GeekBrains](https://geekbrains.ru/) 
