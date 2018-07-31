@@ -774,6 +774,160 @@ h2.section-heading {
     background-color: #fff;
 }
 
+.posts {
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.posts p {
+    color: #8c8c8c;
+    margin-bottom: 36px;
+}
+
+.posts img {
+    width: 100%;
+}
+
+.posts .pic {
+    position: relative;
+}
+
+.posts .pic .date {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.posts .pic .date .day {
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 20px;
+    margin: 0;
+    background-color: #363636;
+    padding: 9px 10px 7px;
+    border-radius: 3px 3px 0 0;
+    transition: background .2s ease-in-out;
+}
+
+.posts .pic .date .month {
+    color: #ffffff;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+    background-color: #252525;
+    padding: 3px 10px;
+    border-radius: 0 0 3px 3px;
+    transition: background .2s ease-in-out;
+}
+
+.posts .label {
+    padding: 28px;
+    text-align: left;
+    border: 1px solid #f8f8f8;
+    border-top: none;
+}
+
+.posts .label .name {
+    color: #555555;
+    font-family: 'ralewaysemibold', sans-serif;
+    font-size: 20px;
+    margin-bottom: 14px;
+    transition: color .2s ease-in-out;
+}
+
+.posts .label .description {
+    color: #8c8c8c;
+    line-height: 22px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    transition: color .2s ease-in-out;
+}
+
+.posts .label .readmore {
+    color: #c7b299;
+    line-height: 20px;
+    font-size: 14px;
+    display: inline-block;
+    opacity: .8;
+    transition: opacity .2s ease-in-out;
+}
+
+.posts .label .readmore i {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 8px;
+    line-height: 22px;
+    margin-left: 4px;
+}
+
+.posts .label .readmore:hover {
+    text-decoration: none;
+}
+
+.posts .post:hover .label {
+    background-color: #362f2d;
+    border: none;
+}
+
+.posts .post:hover .label .description {
+    color: #fff;
+}
+
+.posts .post:hover .label .name {
+    color: #c7b299;
+}
+
+.posts .post:hover .pic .day {
+    background-color: #c7b299;
+}
+
+.posts .post:hover .pic .month {
+    background-color: #a48d72;
+}
+
+.posts .post .readmore:hover {
+    opacity: 1;
+}
+
+.posts .pic:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.7);
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+.posts .post:hover .pic:after {
+    opacity: 1;
+}
+
+.posts .controls {
+    margin-top: 40px;
+}
+
+.posts .controls .control {
+    background: none;
+    border: none;
+    color: #c7b299;
+    font-size: 22px;
+    padding: 0;
+    opacity: .6;
+    transition: opacity .2s ease-in-out;
+}
+
+.posts .controls .control:hover {
+    opacity: 1;
+}
 
 @media screen and (max-width: 991px) {
     header nav ul {
