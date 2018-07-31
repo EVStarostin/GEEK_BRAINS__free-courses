@@ -5,7 +5,7 @@ body {
 
 .slider-wrapper {
     height: 100vh;
-    background: url(../images/photo.jpg) no-repeat;
+    background: #555 url(../images/photo.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -603,7 +603,7 @@ h2.section-heading {
 }
 
 .video {
-    background: url(../images/video.jpg) no-repeat center;
+    background: #555 url(../images/video.jpg) no-repeat center;
     background-size: cover;
     padding: 190px 0;
     position: relative;
@@ -680,12 +680,12 @@ h2.section-heading {
 }
 
 .for-mobile {
-    margin-top: 80px;
     position: relative;
 }
 
 .for-mobile img {
     width: 100%;
+    margin-top: 80px;
 }
 
 .for-mobile .text {
@@ -778,6 +778,10 @@ h2.section-heading {
     text-align: center;
     padding-top: 70px;
     padding-bottom: 70px;
+}
+
+.posts .post {
+    margin-bottom: 40px;
 }
 
 .posts p {
@@ -911,10 +915,6 @@ h2.section-heading {
     opacity: 1;
 }
 
-.posts .controls {
-    margin-top: 40px;
-}
-
 .posts .controls .control {
     background: none;
     border: none;
@@ -927,6 +927,21 @@ h2.section-heading {
 
 .posts .controls .control:hover {
     opacity: 1;
+}
+
+.partners {
+    background: #555 url(../images/logo-container.jpg) no-repeat center;
+    background-size: cover;
+    text-align: center;
+}
+
+.partners .row {
+    align-items: center;
+}
+
+.partners img {
+    max-width: 100%;
+    margin: 140px 0;
 }
 
 @media screen and (max-width: 991px) {
@@ -961,12 +976,16 @@ h2.section-heading {
         position: static;
         transform: none;
         margin-left: 0;
+        margin-top: 70px;
     }
 }
 
 @media screen and (max-width: 767px) {
     .for-mobile .text {
         margin-top: 50px;
+    }
+    .partners img {
+        margin: 30px 0;
     }
 }
 
