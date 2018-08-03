@@ -1,4 +1,4 @@
-# free-courses [Geek Brains]
+# `free-courses [Geek Brains]`
 
 # HTML & CSS
 
