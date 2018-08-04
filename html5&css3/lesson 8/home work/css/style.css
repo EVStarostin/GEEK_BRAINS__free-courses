@@ -774,30 +774,30 @@ h2.section-heading {
     background-color: #fff;
 }
 
-.posts {
+.recent-posts {
     text-align: center;
     padding-top: 70px;
     padding-bottom: 70px;
 }
 
-.posts .post {
+.recent-posts .post {
     margin-bottom: 40px;
 }
 
-.posts p {
+.recent-posts p {
     color: #8c8c8c;
     margin-bottom: 36px;
 }
 
-.posts img {
+.recent-posts img {
     width: 100%;
 }
 
-.posts .pic {
+.recent-posts .pic {
     position: relative;
 }
 
-.posts .pic .date {
+.recent-posts .pic .date {
     position: absolute;
     left: 20px;
     top: 20px;
@@ -805,7 +805,7 @@ h2.section-heading {
     z-index: 1;
 }
 
-.posts .pic .date .day {
+.recent-posts .pic .date .day {
     color: #ffffff;
     font-size: 24px;
     line-height: 20px;
@@ -816,7 +816,7 @@ h2.section-heading {
     transition: background .2s ease-in-out;
 }
 
-.posts .pic .date .month {
+.recent-posts .pic .date .month {
     color: #ffffff;
     font-family: Roboto, sans-serif;
     font-size: 12px;
@@ -829,14 +829,14 @@ h2.section-heading {
     transition: background .2s ease-in-out;
 }
 
-.posts .label {
+.recent-posts .label {
     padding: 28px;
     text-align: left;
     border: 1px solid #f8f8f8;
     border-top: none;
 }
 
-.posts .label .name {
+.recent-posts .label .name {
     color: #555555;
     font-family: 'ralewaysemibold', sans-serif;
     font-size: 20px;
@@ -844,7 +844,7 @@ h2.section-heading {
     transition: color .2s ease-in-out;
 }
 
-.posts .label .description {
+.recent-posts .label .description {
     color: #8c8c8c;
     line-height: 22px;
     margin-bottom: 14px;
@@ -852,7 +852,7 @@ h2.section-heading {
     transition: color .2s ease-in-out;
 }
 
-.posts .label .readmore {
+.recent-posts .label .readmore {
     color: #c7b299;
     line-height: 20px;
     font-size: 14px;
@@ -861,7 +861,7 @@ h2.section-heading {
     transition: opacity .2s ease-in-out;
 }
 
-.posts .label .readmore i {
+.recent-posts .label .readmore i {
     display: inline-block;
     vertical-align: top;
     font-size: 8px;
@@ -869,36 +869,36 @@ h2.section-heading {
     margin-left: 4px;
 }
 
-.posts .label .readmore:hover {
+.recent-posts .label .readmore:hover {
     text-decoration: none;
 }
 
-.posts .post:hover .label {
+.recent-posts .post:hover .label {
     background-color: #362f2d;
     border: none;
 }
 
-.posts .post:hover .label .description {
+.recent-posts .post:hover .label .description {
     color: #fff;
 }
 
-.posts .post:hover .label .name {
+.recent-posts .post:hover .label .name {
     color: #c7b299;
 }
 
-.posts .post:hover .pic .day {
+.recent-posts .post:hover .pic .day {
     background-color: #c7b299;
 }
 
-.posts .post:hover .pic .month {
+.recent-posts .post:hover .pic .month {
     background-color: #a48d72;
 }
 
-.posts .post .readmore:hover {
+.recent-posts .post .readmore:hover {
     opacity: 1;
 }
 
-.posts .pic:after {
+.recent-posts .pic:after {
     content: '';
     display: block;
     position: absolute;
@@ -911,11 +911,11 @@ h2.section-heading {
     transition: opacity .2s ease-in-out;
 }
 
-.posts .post:hover .pic:after {
+.recent-posts .post:hover .pic:after {
     opacity: 1;
 }
 
-.posts .controls .control {
+.recent-posts .controls .control {
     background: none;
     border: none;
     color: #c7b299;
@@ -925,7 +925,7 @@ h2.section-heading {
     transition: opacity .2s ease-in-out;
 }
 
-.posts .controls .control:hover {
+.recent-posts .controls .control:hover {
     opacity: 1;
 }
 
