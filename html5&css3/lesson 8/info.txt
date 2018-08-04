@@ -1,0 +1,38 @@
+Flex и все, что с ним связано
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout
+Grid и все что с ним свзяано
+https://css-tricks.com/snippets/css/complete-guide-grid/
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+Sass
+https://sass-lang.com/
+https://sass-scss.ru/
+Сборщики
+Gulp https://gulpjs.com/
+Grunt https://gruntjs.com/
+Webpack https://webpack.js.org/
+Фреймворки
+React https://reactjs.org/
+Angular https://angular.io/
+Vue https://vuejs.org/
+Шаблонизаторы **
+Pug https://pugjs.org/api/getting-started.html
+Haml http://haml.info/
+*Настоятельно рекомендую к прочтению *
+(все книги на англ) https://abookapart.com/products/
+(на русском выходили частично) https://www.mann-ivanov-ferber.ru/tag/category-book-apart/
+Да пребудет с вами интернет!
+**За какими ресурсами следить?
+https://css-tricks.com/
+https://tympanus.net/codrops/
+https://www.smashingmagazine.com/
+https://developer.mozilla.org/en-US/
+Дорабатываемые спецификации (ждем)
+https://drafts.csswg.org/selectors-4/
+https://webaudio.github.io/web-audio-api/
+https://drafts.csswg.org/css-sizing-3/
+https://www.w3.org/TR/2016/WD-css-color-4-20160705/
+https://www.w3.org/TR/2016/WD-css-pseudo-4-20160607/
+////////////////////////////////////////////////
+Наш урок
+https://jsfiddle.net/4pbado7j/
