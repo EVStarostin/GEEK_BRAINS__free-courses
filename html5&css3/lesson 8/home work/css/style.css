@@ -1,6 +1,7 @@
 body {
     min-width: 320px;
     font-family: 'montserratregular', sans-serif;
+    font-size: 14px;
 }
 
 .slider-wrapper {
@@ -27,7 +28,7 @@ body {
 .logo h2 {
     color: #ffffff;
     font-family: 'ralewayregular', sans-serif;
-    font-size: 34px;
+    font-size: 2.42em;
     letter-spacing: -1.36px;
     vertical-align: middle;
     display: inline;
@@ -104,7 +105,7 @@ header nav ul {
 
 .menu a {
     color: #ffffff;
-    font-size: 14px;
+    font-size: 1em;
     font-weight: 300;
     display: inline-block;
     padding: 3px;
@@ -138,18 +139,18 @@ header nav ul {
 .slider-text h2 {
     color: #ffffff;
     font-family: 'ralewayregular', sans-serif;
-    font-size: 36px;
+    font-size: 2.57em;
 }
 
 .slider-text h1 {
     color: #ffffff;
     font-family: 'ralewayextrabold', sans-serif;
-    font-size: 52px;
+    font-size: 3.71em;
 }
 
 .slider-text p {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 1.15em;
     line-height: 24px;
     margin: auto;
     max-width: 560px;
@@ -161,7 +162,7 @@ header nav ul {
     background-color: #998675;
     color: #ffffff;
     font-family: 'ralewayextrabold', sans-serif;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 23px;
     border-radius: 3px;
     text-transform: uppercase;
@@ -200,7 +201,7 @@ header nav ul {
     color: #fff;
     border: none;
     background: transparent;
-    font-size: 24px;
+    font-size: 1.71em;
     padding: 3px;
 }
 
@@ -221,7 +222,7 @@ header nav ul {
     padding: 15px;
     color: #fff;
     opacity: .5;
-    font-size: 70px;
+    font-size: 5em;
 }
 
 .slider-wrapper .arrow-left i,
@@ -328,18 +329,18 @@ header nav ul {
 
 .section-heading {
     font-family: 'ralewaysemibold', sans-serif;
-    font-size: 22px;
+    font-size: 1.57em;
     margin: 10px 0 15px;
 }
 
 .segments p {
     color: #8c8c8c;
-    font-size: 14px;
+    font-size: 1em;
     margin-bottom: 25px;
 }
 
 .segments i {
-    font-size: 48px
+    font-size: 3.43em;
 }
 
 .segments hr {
@@ -356,7 +357,7 @@ header nav ul {
 }
 
 h2.section-heading {
-    font-size: 30px;
+    font-size: 2.14em;
     color: #555;
 }
 
@@ -406,7 +407,7 @@ h2.section-heading {
 
 .purchase .section-heading {
     color: #fff;
-    font-size: 28px;
+    font-size: 2em;
     font-family: 'ralewayregular', sans-serif;
     margin-bottom: 3px;
 }
@@ -417,7 +418,7 @@ h2.section-heading {
 
 .purchase p {
     color: #615855;
-    font-size: 18px;
+    font-size: 1.29em;
     margin-bottom: 10px;
 }
 
@@ -429,13 +430,13 @@ h2.section-heading {
 
 .latest-projects .section-heading {
     color: #555555;
-    font-size: 30px;
+    font-size: 2.14em;
 }
 
 .latest-projects p {
     color: #8c8c8c;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 1.15em;
+    line-height: 2em;
     margin-bottom: 30px;
 }
 
@@ -453,7 +454,7 @@ h2.section-heading {
     display: block;
     border-radius: 3px;
     color: #8c8c8c;
-    font-size: 14px;
+    font-size: 1em;
     text-decoration: none;
     line-height: 30px;
     padding: 0 10px;
@@ -526,7 +527,7 @@ h2.section-heading {
     border: none;
     background: none;
     color: white;
-    font-size: 26px;
+    font-size: 1.86em;
     -webkit-transition: color .2s ease-in-out;
     -o-transition: color .2s ease-in-out;
     transition: color .2s ease-in-out;
@@ -581,7 +582,7 @@ h2.section-heading {
 .project .label .name {
     color: #c7b299;
     font-family: 'ralewaysemibold', sans-serif;
-    font-size: 20px;
+    font-size: 1.43em;
     margin-bottom: 5px;
     -webkit-transition: color .2s ease-in-out;
     -o-transition: color .2s ease-in-out;
@@ -590,7 +591,7 @@ h2.section-heading {
 
 .project .label .description {
     color: #d1d1d1;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 20px;
     margin-bottom: 0;
     -webkit-transition: color .2s ease-in-out;
@@ -633,7 +634,7 @@ h2.section-heading {
 .video .text .play {
     background: rgba(0, 0, 0, 0.2);
     border: none;
-    font-size: 73px;
+    font-size: 5.21em;
     color: white;
     border-radius: 50%;
     width: 100px;
@@ -657,7 +658,7 @@ h2.section-heading {
 .video .section-heading {
     color: #ffffff;
     font-family: 'ralewayregular', sans-serif;
-    font-size: 30px;
+    font-size: 2.14em;
 }
 
 .video .section-heading {
@@ -667,14 +668,14 @@ h2.section-heading {
 
 .video .text p {
     color: #ffffff;
-    font-size: 16px;
-    line-height: 28px;
-    margin-bottom: 28px;
+    font-size: 1.15em;
+    line-height: 2em;
+    margin-bottom: 2em;
 }
 
 .video .text .time {
     color: #c7b299;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 24px;
     font-weight: 700;
 }
@@ -701,15 +702,15 @@ h2.section-heading {
 
 .for-mobile .text p {
     color: #8c8c8c;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 1.15em;
+    line-height: 2em;
     margin-bottom: 30px;
 }
 
 .for-mobile .text ul {
     list-style: none;
     color: #8c8c8c;
-    font-size: 16px;
+    font-size: 1.15em;
     line-height: 32px;
     margin-left: 40px;
 }
@@ -751,19 +752,19 @@ h2.section-heading {
 }
 
 .satisfaction .icon {
-    font-size: 44px;
+    font-size: 3.14em;
 }
 
 .satisfaction .number {
     color: #ffffff;
     font-family: 'montserratextralight', sans-serif;
-    font-size: 48px;
+    font-size: 3.43em;
     line-height: 36px;
 }
 
 .satisfaction .label {
     color: #c7b299;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 20px;
 }
 
@@ -807,7 +808,7 @@ h2.section-heading {
 
 .recent-posts .pic .date .day {
     color: #ffffff;
-    font-size: 24px;
+    font-size: 1.71em;
     line-height: 20px;
     margin: 0;
     background-color: #363636;
@@ -819,7 +820,7 @@ h2.section-heading {
 .recent-posts .pic .date .month {
     color: #ffffff;
     font-family: Roboto, sans-serif;
-    font-size: 12px;
+    font-size: 0.86em;
     font-weight: 400;
     line-height: 20px;
     margin: 0;
@@ -839,23 +840,23 @@ h2.section-heading {
 .recent-posts .label .name {
     color: #555555;
     font-family: 'ralewaysemibold', sans-serif;
-    font-size: 20px;
-    margin-bottom: 14px;
+    font-size: 1.43em;
+    margin-bottom: 1em;
     transition: color .2s ease-in-out;
 }
 
 .recent-posts .label .description {
     color: #8c8c8c;
     line-height: 22px;
-    margin-bottom: 14px;
-    font-size: 14px;
+    margin-bottom: 1em;
+    font-size: 1em;
     transition: color .2s ease-in-out;
 }
 
 .recent-posts .label .readmore {
     color: #c7b299;
     line-height: 20px;
-    font-size: 14px;
+    font-size: 1em;
     display: inline-block;
     opacity: .8;
     transition: opacity .2s ease-in-out;
@@ -864,7 +865,7 @@ h2.section-heading {
 .recent-posts .label .readmore i {
     display: inline-block;
     vertical-align: top;
-    font-size: 8px;
+    font-size: 0.57em;
     line-height: 22px;
     margin-left: 4px;
 }
@@ -919,7 +920,7 @@ h2.section-heading {
     background: none;
     border: none;
     color: #c7b299;
-    font-size: 22px;
+    font-size: 1.57em;
     padding: 0;
     opacity: .6;
     transition: opacity .2s ease-in-out;
@@ -952,7 +953,7 @@ h2.section-heading {
 .news .col-heading {
     color: #fff;
     font-family: 'ralewayextrabold', sans-serif;
-    font-size: 24px;
+    font-size: 1.71em;
     margin-top: 17px;
 }
 
@@ -964,13 +965,13 @@ h2.section-heading {
     margin-top: 25px;
     margin-bottom: 20px;
     color: #555555;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 24px;
 }
 
 .news .first-col .readmore {
     color: #d1d1d1;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 20px;
     transition: opacity .2s ease-in-out;
 }
@@ -981,7 +982,7 @@ h2.section-heading {
 }
 
 .news .first-col .readmore i {
-    font-size: 8px;
+    font-size: 0.57em;
     margin-left: 3px;
     margin-bottom: 10px;
     position: relative;
@@ -1010,7 +1011,7 @@ h2.section-heading {
 .posts .date,
 .tweets .date {
     color: #363636;
-    font-size: 12px;
+    font-size: 0.86em;
     line-height: 20px;
     margin: 0;
     transition: color .2s ease-in-out;
@@ -1019,7 +1020,7 @@ h2.section-heading {
 .posts p,
 .tweets p {
     color: #555555;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 20px;
     margin: 0 0 4px 0;
     transition: color .2s ease-in-out;
@@ -1092,7 +1093,7 @@ footer {
 footer .copy-and-design {
     display: flex;
     color: #555555;
-    font-size: 13px;
+    font-size: 0.93em;
     padding: 40px 0 30px 0;
 }
 
@@ -1155,10 +1156,10 @@ footer .design {
         top: 55%
     }
     .slider-text h2 {
-        font-size: 20px;
+        font-size: 1.43em;
     }
     .slider-text h1 {
-        font-size: 30px;
+        font-size: 2.14em;
     }
     .slider-text a {
         margin-top: 20px;
