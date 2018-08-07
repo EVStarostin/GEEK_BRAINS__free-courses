@@ -6,7 +6,14 @@
 * @param stuffing Начинка
 * @throws {HamburgerException} При неправильном использовании
 */
-function Hamburger(size, stuffing) { 
+function Hamburger(size, stuffing) {
+    if (
+        [Hamburger.SIZE_SMALL, Hamburger.SIZE_LARGE].indexOf( size ) === -1 ||
+        [Hamburger.STUFFING_CHEESE, Hamburger.STUFFING_SALAD, Hamburger.STUFFING_POTATO].indexOf( stuffing ) === -1
+    ) {
+        throw new HamburgerException('Ошибка при вызове конструкторе по причине "Некорректные входные данные"');   
+    }
+
     this.size = size;
     this.stuffing = stuffing;
     this.toppings = [];
@@ -27,16 +34,30 @@ Hamburger.TOPPING_SPICE = {price: 20, energyValue: 5}
 * @throws {HamburgerException} При неправильном использовании
 */
 Hamburger.prototype.addTopping = function (topping) {
+    if (!Array.isArray(topping) && [Hamburger.TOPPING_MAYO, Hamburger.TOPPING_SPICE].indexOf( topping ) === -1) {
+        throw new HamburgerException('Ошибка при выполнении addTopping() по причине "Некорректные входные данные"');
+    }
+    if (Array.isArray(topping)) {
+        if (topping.length === 0) {
+            throw new HamburgerException('Ошибка при выполнении addTopping() по причине "Некорректные входные данные"');
+        }
+        for (var i = 0; i < topping.length; i++) {
+            if ([Hamburger.TOPPING_MAYO, Hamburger.TOPPING_SPICE].indexOf( topping[i] ) === -1) {
+                throw new HamburgerException('Ошибка при выполнении addTopping() по причине "Некорректные входные данные"');
+            }
+        }
+    };
+
     if (!Array.isArray(topping)) topping = [topping];
-    topping.forEach(element => {
+    for (var i = 0; i < topping.length; i++) {
         var isAdded = this.toppings.some(function(item) {
-            return item === element;
+            return item === topping[i];
         });
         if (isAdded) {
-            this.removeTopping(element)
+            this.removeTopping(topping[i])
         }
-        this.toppings.push(element);  
-    });
+        this.toppings.push(topping[i]);
+    }
 }
 /**
 * Убрать добавку, при условии, что она ранее была
@@ -46,6 +67,10 @@ Hamburger.prototype.addTopping = function (topping) {
 * @throws {HamburgerException} При неправильном использовании
 */
 Hamburger.prototype.removeTopping = function (topping) {
+    if ([Hamburger.TOPPING_MAYO, Hamburger.TOPPING_SPICE].indexOf( topping ) === -1) {
+        throw new HamburgerException('Ошибка при выполнении removeTopping() по причине "Некорректные входные данные"');
+    }
+
     this.toppings = this.toppings.filter(function(item) {
         return topping !== item;
     });
@@ -96,12 +121,17 @@ Hamburger.prototype.calculateCalories = function () {
 * Подробности хранятся в свойстве message.
 * @constructor
 */
-// function HamburgerException (...) { ... }
+function HamburgerException (message) { 
+    this.message = message;
+    this.name = "Hamburger Exception";
+ }
 
-var hamburger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
+try {
+    var hamburger = new Hamburger(Hamburger.SIZE_LARGE, Hamburger.STUFFING_CHEESE);
+    hamburger.addTopping([Hamburger.TOPPING_MAYO, Hamburger.TOPPING_SPICE]);
 
-hamburger.addTopping([Hamburger.TOPPING_MAYO, Hamburger.TOPPING_SPICE]);
-hamburger.addTopping(Hamburger.TOPPING_MAYO);
-console.log(JSON.stringify(hamburger.getToppings()));
-console.log(hamburger.calculatePrice());
-console.log(hamburger.calculateCalories());
+    console.log('Price: ', hamburger.calculatePrice() + ' руб.');
+    console.log('EnergyValue: ', hamburger.calculateCalories() + ' калорий');
+ } catch (e) {
+    console.log(e.name + ": " + e.message);
+ }
