@@ -9,7 +9,7 @@
 function Hamburger(size, stuffing) { 
     this.size = size;
     this.stuffing = stuffing;
-    this.topping = [];
+    this.toppings = [];
  }
 /* Размеры, виды начинок и добавок */
 Hamburger.SIZE_SMALL = {price: 50, energyValue: 20};
@@ -29,13 +29,13 @@ Hamburger.TOPPING_SPICE = {price: 20, energyValue: 5}
 Hamburger.prototype.addTopping = function (topping) {
     if (!Array.isArray(topping)) topping = [topping];
     topping.forEach(element => {
-        var isAdded = this.topping.some(function(item) {
+        var isAdded = this.toppings.some(function(item) {
             return item === element;
         });
         if (isAdded) {
             this.removeTopping(element)
         }
-        this.topping.push(element);  
+        this.toppings.push(element);  
     });
 }
 /**
@@ -46,7 +46,7 @@ Hamburger.prototype.addTopping = function (topping) {
 * @throws {HamburgerException} При неправильном использовании
 */
 Hamburger.prototype.removeTopping = function (topping) {
-    this.topping = this.topping.filter(function(item) {
+    this.toppings = this.toppings.filter(function(item) {
         return topping !== item;
     });
 }
@@ -57,7 +57,7 @@ Hamburger.prototype.removeTopping = function (topping) {
 * Hamburger.TOPPING_*
 */
 Hamburger.prototype.getToppings = function () {
-    return this.topping;
+    return this.toppings;
 }
 /**
 * Узнать размер гамбургера
