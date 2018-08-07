@@ -7,6 +7,12 @@ Container.prototype.render = function() {
     return this.htmlCode;
 }
 
+/* Улучшить базовый класс, добавив в него общий для всех метод remove(), который удаляет
+контейнер */
+Container.prototype.remove = function() {
+    if (document.getElementById(this.id) !== null) document.getElementById(this.id).remove();
+}
+
 function Menu(my_id, my_class, my_items) {
     Container.call(this);
     this.id = my_id;
@@ -47,15 +53,15 @@ var menu = new Menu("sub_menu", "My_class", m_items);
 
 /* Создать наследника класса Menu – новый класс должен уметь строить меню со вложенными
 пунктами, т.е с подменю. */
-function BetterMenu(my_id, my_class, my_items) {
+function MenuVer2(my_id, my_class, my_items) {
     Menu.call(this);
     this.id = my_id;
     this.className = my_class;
     this.items = my_items;
 }
-BetterMenu.prototype = Object.create(Menu.prototype);
-BetterMenu.prototype.constructor = BetterMenu;
-BetterMenu.prototype.render = function() {
+MenuVer2.prototype = Object.create(Menu.prototype);
+MenuVer2.prototype.constructor = MenuVer2;
+MenuVer2.prototype.render = function() {
     var result = "<ul class='"+this.className+"' id='"+this.id+"'>";
     for (var item in this.items) {
         if (this.items[item] instanceof MenuItem) {
@@ -69,7 +75,13 @@ BetterMenu.prototype.render = function() {
 }    
 
 var m_items2 = {0: m_item1, 1: m_item2, 2: m_item3, 3: menu};
-var betterMenu = new BetterMenu("subMenu", "My_class2", m_items2);
+var menuVer2 = new MenuVer2("better_menu", "My_class2", m_items2);
 
-// console.log(menu.render());
-var div = document.write(betterMenu.render());
+var div = document.write(menuVer2.render());
+
+var btn = document.createElement('button');
+btn.innerHTML = "Удалить";
+btn.onclick = function() {
+    menuVer2.remove();
+}
+document.body.appendChild(btn);
