@@ -21,7 +21,7 @@
 
 ## Урок 4 - Макет ***simple_psd_template***
 Сайт доступен по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson4  
-Фоновое видео доступно по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson3/video.html
+Фоновое видео доступно по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson4/video.html
 
 ## Урок 8 - Макет ***Waxom***
 Сайт доступен по ссылке: https://evstarostin.github.io/free-courses/html5&css3/lesson8 
