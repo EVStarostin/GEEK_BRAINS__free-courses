@@ -1,0 +1,38 @@
+[
+  {
+    "name": "личный кабинет",
+    "link": "/profile"
+  },
+  {
+    "name": "каталог",
+    "link": "/catalog",
+    "submenu": [
+      {
+        "name": "компьютеры",
+        "link": "/catalog/computers",
+        "submenu": [
+          {
+            "name": "ноутбуки",
+            "link": "/catalog/computers/laptops"
+          },
+          {
+            "name": "системные блоки",
+            "link": "/catalog/computers/pc"
+          }
+        ]
+      },
+      {
+        "name": "мебель",
+        "link": "/catalog/furniture"
+      },
+      {
+        "name": "камеры",
+        "link": "/catalog/photo"
+      }
+    ]
+  },
+  {
+    "name": "промоакции",
+    "link": "/actions"
+  }
+]
