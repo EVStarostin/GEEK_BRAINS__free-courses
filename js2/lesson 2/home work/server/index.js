@@ -1,7 +1,7 @@
 var express = require('express');
 var cors = require('cors');
-var menu = require('./menu.json');
-var pics = require('./pics.json');
+var menu = require('./json/menu.json');
+var pics = require('./json/pics.json');
 
 var app = express();
 app.use(cors());
@@ -18,6 +18,14 @@ app.get('/get_pics', function (req, res) {
   res.send(pics);
 });
 
+app.get('/get_success', function (req, res) {
+  res.send({result: "success"});
+});
+
+app.get('/get_error', function (req, res) {
+  res.send({result: "error"});
+});
+
 app.listen(3000, function () {
-  console.log('Server is listening on port 3000!');
+  console.log('Server is running on port 3000!');
 });

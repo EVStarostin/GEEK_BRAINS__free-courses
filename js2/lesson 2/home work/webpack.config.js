@@ -1,8 +1,8 @@
-const PUBLIC_PATH = require('path').join(__dirname, 'public');
+const PUBLIC_PATH = require('path').join(__dirname, 'client');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './client/index.js',
   output: {
     path: PUBLIC_PATH,
     filename: 'index.js'

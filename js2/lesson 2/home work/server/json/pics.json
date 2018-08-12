@@ -1,0 +1,22 @@
+[
+  {
+    "name": "pic-1",
+    "url": "https://raw.githubusercontent.com/EVStarostin/free-courses/master/js2/lesson%202/home%20work/server/pics/pic-1.jpg"
+  },
+  {
+    "name": "pic-2",
+    "url": "https://raw.githubusercontent.com/EVStarostin/free-courses/master/js2/lesson%202/home%20work/server/pics/pic-2.png"
+  },
+  {
+    "name": "pic-3",
+    "url": "https://raw.githubusercontent.com/EVStarostin/free-courses/master/js2/lesson%202/home%20work/server/pics/pic-3.jpg"
+  },
+  {
+    "name": "pic-4",
+    "url": "https://raw.githubusercontent.com/EVStarostin/free-courses/master/js2/lesson%202/home%20work/server/pics/pic-4.png"
+  },
+  {
+    "name": "pic-5",
+    "url": "https://raw.githubusercontent.com/EVStarostin/free-courses/master/js2/lesson%202/home%20work/server/pics/pic-5.jpg"
+  }
+]
