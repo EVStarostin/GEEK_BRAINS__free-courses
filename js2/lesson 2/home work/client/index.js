@@ -50,6 +50,10 @@ MenuItem.prototype.render = function() {
   2. Создать меню, соответствующее меню интернет-магазина (личный кабинет, каталог,
   промоакции и т.д.). 
 */
+var h2 = document.createElement('h1');
+h2.innerHTML = "Задание из методички";
+document.body.appendChild(h2);
+
 function fetchMenu() {
   fetch('http://localhost:3000/get_menu')
   .then(function(response) {
@@ -141,4 +145,121 @@ btn.innerHTML = "Получить error";
 btn.onclick = function() {
   return fetchSuccessOrError(true);
 };
+document.body.appendChild(btn);
+
+/* Задание из вебинара */
+/* Получить список пользователей */
+var h2 = document.createElement('h1');
+h2.innerHTML = "Задание из вебинара";
+document.body.appendChild(h2);
+
+function get_user_list() {
+  fetch('http://89.108.65.123/user')
+  .then(function(response) {
+    return response.json();
+   })
+  .then(function(data) {
+    return renderUserList(data);
+  })
+  .catch( alert );
+}
+
+function renderUserList(data) {
+  var html = '<ul class="user_list">';
+  data.forEach(user => {
+    html += '<li>' + user.name + ' (email: ' + user.email + ', age: ' + user.age + ')</li>';
+  });
+  html += '</ul>'
+  document.write(html);
+}
+
+var btn = document.createElement('button');
+btn.innerHTML = "Получить список пользователей";
+btn.onclick = get_user_list;
+document.body.appendChild(btn);
+
+/* Получить пользователя по ID */
+function get_user_by_id(id) {
+  fetch('http://89.108.65.123/user/' + id)
+  .then(function(response) {
+    return response.json();
+   })
+  .then(function(data) {
+    return renderUser(data);
+  })
+  .catch( alert );
+}
+
+function renderUser(data) {
+  if (data.error) {
+    document.write(data.error);
+    return;
+  }
+  var html = '<h4>' + data.name + '</h4>' + '<p>email: ' + data.email + '</p><p> age: ' + data.age + '</p>';
+  document.write(html);
+}
+
+var br = document.createElement('br');
+document.body.appendChild(br);
+var br = document.createElement('br');
+document.body.appendChild(br);
+
+var input = document.createElement('input');
+input.id = "user_id";
+input.placeholder = "ID";
+document.body.appendChild(input);
+
+var btn = document.createElement('button');
+btn.innerHTML = "Получить пользователя по ID";
+btn.onclick = function() {
+  var user_id = document.querySelector('#user_id').value;
+  return get_user_by_id(user_id);
+}
+document.body.appendChild(btn);
+
+/* Создать нового пользователя */
+function save_user(user) {
+  fetch('http://89.108.65.123/user/', {method: "POST", body: JSON.stringify(user)})
+  .then(function(response) {
+    return response.text();
+   })
+  .then(function(data) {
+    return renderSaveUser(data);
+  })
+  .catch( alert );
+}
+
+function renderSaveUser(data) {
+  var html = '<h4> Количество пользователей: ' + data + '</h4>';
+  document.write(html);
+}
+
+var br = document.createElement('br');
+document.body.appendChild(br);
+var br = document.createElement('br');
+document.body.appendChild(br);
+
+var input = document.createElement('input');
+input.id = "user_name";
+input.placeholder = "name";
+document.body.appendChild(input);
+
+var input = document.createElement('input');
+input.id = "user_email";
+input.placeholder = "email";
+document.body.appendChild(input);
+
+var input = document.createElement('input');
+input.id = "user_age";
+input.placeholder = "age";
+document.body.appendChild(input);
+
+var btn = document.createElement('button');
+btn.innerHTML = "Создать пользователя";
+btn.onclick = function() {
+  var name = document.querySelector('#user_name').value,
+      email = document.querySelector('#user_email').value,
+      age = document.querySelector('#user_age').value;
+  return save_user({name, email, age});
+}
 document.body.appendChild(btn);
