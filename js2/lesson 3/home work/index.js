@@ -25,19 +25,19 @@ function validateForm(e) {
   if (validationErrors.length > 0) {
     e.preventDefault();
 
-    fields.forEach(element => {
-      if (validationErrors.indexOf(element) === -1) {
-        element.classList.remove('is-invalid');
-        element.classList.add('is-valid');
-        document.querySelector('#'+element.getAttribute('aria-describedby')).classList.remove('text-muted');
-        document.querySelector('#'+element.getAttribute('aria-describedby')).classList.remove('text-danger');
-        document.querySelector('#'+element.getAttribute('aria-describedby')).classList.add('text-success');
+    fields.forEach(field => {
+      if (validationErrors.indexOf(field) === -1) {
+        field.classList.remove('is-invalid');
+        field.classList.add('is-valid');
+        document.querySelector('#' + field.getAttribute('aria-describedby')).classList.remove('text-muted');
+        document.querySelector('#' + field.getAttribute('aria-describedby')).classList.remove('text-danger');
+        document.querySelector('#' + field.getAttribute('aria-describedby')).classList.add('text-success');
       } else {
-        element.classList.remove('is-valid');
-        element.classList.add('is-invalid');
-        document.querySelector('#'+element.getAttribute('aria-describedby')).classList.remove('text-muted');
-        document.querySelector('#'+element.getAttribute('aria-describedby')).classList.remove('text-success');
-        document.querySelector('#'+element.getAttribute('aria-describedby')).classList.add('text-danger');
+        field.classList.remove('is-valid');
+        field.classList.add('is-invalid');
+        document.querySelector('#' + field.getAttribute('aria-describedby')).classList.remove('text-muted');
+        document.querySelector('#' + field.getAttribute('aria-describedby')).classList.remove('text-success');
+        document.querySelector('#' + field.getAttribute('aria-describedby')).classList.add('text-danger');
       }
     });
   } else {
