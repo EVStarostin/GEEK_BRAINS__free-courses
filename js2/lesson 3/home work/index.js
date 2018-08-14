@@ -5,11 +5,11 @@
   кавычку на двойную. 
 */
 
-const quotesRegExp = /'(.+?)'(?!\w)/g;
+const QUOTES_REG_EXP = /'.+?'(?!\w)/g;
 const quotesBtn = document.querySelector('#qoutesBtn').onclick = function() {
-  let qoutesStr = document.querySelector('#qoutesStr').value;
-  qoutesStr = qoutesStr.replace(quotesRegExp, '"$1"')
-  document.querySelector('#qoutesStr').value = qoutesStr;
+  let text = document.querySelector('#qoutesStr').value;
+  text = text.replace(QUOTES_REG_EXP, str => '"' + str.slice(1, -1) + '"');
+  document.querySelector('#qoutesStr').value = text;
 }
 
 /* 
@@ -43,15 +43,14 @@ function validateForm(e) {
   e.preventDefault();
 
   const NAME_REG_EXP = /^[а-яА-ЯёЁa-zA-Z]+$/,
-    PHONE_REG_EXP = /^\+7\(\d{3}\)\d{3}-\d{4}$/,
-    EMAIL_REG_EXP = /^\w+(\.|-)?\w+@\w+\.\w+$/;
+        PHONE_REG_EXP = /^\+7\(\d{3}\)\d{3}-\d{4}$/,
+        EMAIL_REG_EXP = /^\w+(\.|-)?\w+@\w+\.\w+$/;
 
   const name = this.querySelector('#inputName'),
-      phone = this.querySelector('#inputPhone'),
-      email = this.querySelector('#inputEmail');
-
+        phone = this.querySelector('#inputPhone'),
+        email = this.querySelector('#inputEmail');
   const fields = [name, phone, email];
-      
+  
   const validationErrors = [];
   if (!NAME_REG_EXP.test(name.value)) validationErrors.push(name);
   if (!PHONE_REG_EXP.test(phone.value)) validationErrors.push(phone);
