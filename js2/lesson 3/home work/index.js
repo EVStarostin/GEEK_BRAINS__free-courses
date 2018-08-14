@@ -5,9 +5,9 @@
   кавычку на двойную. 
 */
 
-var quotesRegExp = /'(.+?)'(?!\w)/g;
-var quotesBtn = document.querySelector('#qoutesBtn').onclick = function() {
-  var qoutesStr = document.querySelector('#qoutesStr').value;
+const quotesRegExp = /'(.+?)'(?!\w)/g;
+const quotesBtn = document.querySelector('#qoutesBtn').onclick = function() {
+  let qoutesStr = document.querySelector('#qoutesStr').value;
   qoutesStr = qoutesStr.replace(quotesRegExp, '"$1"')
   document.querySelector('#qoutesStr').value = qoutesStr;
 }
@@ -40,34 +40,32 @@ function setFieldInValid(field) {
 }
 
 function validateForm(e) {
-  var NAME_REG_EXP = /^[а-яА-ЯёЁa-zA-Z]+$/,
+  e.preventDefault();
+
+  const NAME_REG_EXP = /^[а-яА-ЯёЁa-zA-Z]+$/,
     PHONE_REG_EXP = /^\+7\(\d{3}\)\d{3}-\d{4}$/,
     EMAIL_REG_EXP = /^\w+(\.|-)?\w+@\w+\.\w+$/;
 
-  var name = this.querySelector('#inputName'),
+  const name = this.querySelector('#inputName'),
       phone = this.querySelector('#inputPhone'),
       email = this.querySelector('#inputEmail');
 
-  var fields = [name, phone, email];
+  const fields = [name, phone, email];
       
-  var validationErrors = [];
+  const validationErrors = [];
   if (!NAME_REG_EXP.test(name.value)) validationErrors.push(name);
   if (!PHONE_REG_EXP.test(phone.value)) validationErrors.push(phone);
   if (!EMAIL_REG_EXP.test(email.value)) validationErrors.push(email);
 
-  if (validationErrors.length > 0) {
-    e.preventDefault();
+  fields.forEach(field => {
+    if (validationErrors.indexOf(field) === -1) {
+      setFieldValid(field);
+    } else {
+      setFieldInValid(field)
+    }
+  });
 
-    fields.forEach(field => {
-      if (validationErrors.indexOf(field) === -1) {
-        setFieldValid(field);
-      } else {
-        setFieldInValid(field)
-      }
-    });
-  } else {
-    alert("Форма отправлена!")
-  }
+  if (validationErrors.length === 0) setTimeout(() => alert('Запрос отправлен!'), 100);
 }
 
 document.querySelector('#feedback').addEventListener('submit', validateForm);
