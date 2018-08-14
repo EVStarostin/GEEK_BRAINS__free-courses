@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        fieldset {
+            width: 300px;
+        }
+        input, textarea {
+            border: 2px solid #ccc;
+            padding: 5px 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+        input:invalid {
+            border-color: red;
+        }
+        input:valid {
+            border-color: green;
+        }
+        input:invalid:focus {
+            outline-color: red;
+        }
+        input:valid:focus {
+            outline-color: green;
+        }
+    </style>
 </head>
 <body>
     <textarea name="qoutesStr" id="qoutesStr" cols="70" rows="12">
@@ -16,8 +42,18 @@
     <p><button id="qoutesBtn">Заменить кавычки</button></p>
     <script src="index.js"></script>
     <form action="#" method="post">
-        <p><input type="tel" pattern="2-[0-9]{3}-[0-9]{3}" placeholder="2-[0-9]{3}-[0-9]{3}"></p>
-        <p><input type="submit" value="Отправить"></p>
+        <fieldset>
+            <legend>Форма обратной связи</legend>
+            <p><label for="name">* Введите имя: </label></p>
+            <p><input type="text" name="name" id="name" required pattern="^[а-яА-ЯёЁa-zA-Z]+$" placeholder="Иван" title="Имя может состоять только из букв"></p>
+            <p><label for="phone">* Введите телефон: </label></p>
+            <p><input type="tel" name="phone" id="phone" required pattern="^\+7\(\d{3}\)\d{3}-\d{4}$" placeholder="+7(927)099-6701" title="формат: +7(000)000-0000"></p>
+            <p><label for="email">* Введите email: </label></p>
+            <p><input type="email" name="email" id="email" required pattern="^\w+(\.|-)?\w+@\w+\.\w+$" placeholder="mymail@mail.ru"></p>
+            <p><label for="text">Введите текст: </label></p>
+            <textarea name="text" id="text" cols="70" rows="10"></textarea>
+            <p><input type="submit" value="Отправить"></p>
+        </fieldset>
     </form>
 </body>
 </html>
