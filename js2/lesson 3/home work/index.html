@@ -1,59 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        fieldset {
-            width: 300px;
-        }
-        input, textarea {
-            border: 2px solid #ccc;
-            padding: 5px 10px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-        }
-        input:invalid {
-            border-color: red;
-        }
-        input:valid {
-            border-color: green;
-        }
-        input:invalid:focus {
-            outline-color: red;
-        }
-        input:valid:focus {
-            outline-color: green;
-        }
-    </style>
-</head>
-<body>
-    <textarea name="qoutesStr" id="qoutesStr" cols="70" rows="12">
-    Прямая речь выделяется кавычками, если идет в строку (в подбор): Владимир Сергеевич… с недоумением посмотрел на своего человека и торопливым шёпотом проговорил:  'Поди узнай, кто это' (Т.). 
-    Независимо от места, занимаемого по отношению к авторским словам, кавычками выделяется внутренняя речь, невысказанные мысли: Смотрю вслед ему и думаю: 'Зачем живут такие люди?' (М.Г.); 'Что-то в ней есть жалкое всё-таки',  — подумал я (Ч.). 
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Lesson 3</title>
+  </head>
+  <body>
+    <div class="container">
+      <br>
+      <h3 class="text-center">Домашнее задание</h3>
+      <hr>
+      <pre>1. У вас есть большой текст, в котором для обозначения диалогов используются одинарные
+кавычки. Придумать шаблон, который меняет одинарные кавычки на двойные. 
+2. Улучшить шаблон таким образом, чтобы конструкции типа aren’t не меняли одинарную
+кавычку на двойную.</pre>
+      <div class="form-group">
+        <textarea class="form-control" id="qoutesStr" rows="7">    Прямая речь выделяется кавычками, если идет в строку (в подбор): Владимир Сергеевич… с недоумением посмотрел на своего человека и торопливым шёпотом проговорил:  'Поди узнай, кто это' (Т.).
+    Независимо от места, занимаемого по отношению к авторским словам, кавычками выделяется внутренняя речь, невысказанные мысли: Смотрю вслед ему и думаю: 'Зачем живут такие люди?' (М.Г.); 'Что-то в ней есть жалкое всё-таки',  — подумал я (Ч.).
     Кавычками выделяются передаваемые на письме звуки (например, эха): 'Ау,  где  вы?' — громко повторило эхо; Голос диктора звучал отчетливо:  'Передаём последние известия'.
-    And he said: 'What're you doing?'
-    </textarea>
-    <p><button id="qoutesBtn">Заменить кавычки</button></p>
+    And he said: 'What're you doing?'.</textarea>
+        <br>
+        <button type="button" class="btn btn-primary" id="qoutesBtn">Заменить кавычки</button>
+      </div>
+      <hr>
+      <pre>3. Создать форму обратной связи с полями: Имя, Телефон, e-mail, текст, кнопка «Отправить».
+При нажатии на кнопку «Отправить» произвести валидацию полей следующим образом:
+a. Имя содержит только буквы;
+b. Телефон подчиняется шаблону +7(000)000-0000;
+c. E-mail выглядит как mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru
+d. Текст произвольный;
+e. В случае не прохождения валидации одним из полей необходимо выделять это поле
+красной рамкой и сообщать пользователю об ошибке</pre>
+      <fieldset>
+        <legend>Форма обратной связи</legend>
+        <form id="feedback" method="POST">
+          <div class="form-group">
+            <label for="inputName">Имя</label>
+            <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp">
+            <small id="nameHelp" class="form-text text-muted">
+              Имя содержит только буквы
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="inputPhone">Телефон</label>
+            <input type="tel" class="form-control" id="inputPhone" aria-describedby="phoneHelp">
+            <small id="phoneHelp" class="form-text text-muted">
+              Телефон подчиняется шаблону +7(000)000-0000
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail">e-mail</label>
+            <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">
+              E-mail выглядит как mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="text">Текст</label>
+            <textarea class="form-control" id="text" rows="3" aria-describedby="textHelp"></textarea>
+            <small id="textHelp" class="form-text text-muted">Текст произвольный</small>
+          </div>
+          <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+      </fieldset>
+    </div>
     <script src="index.js"></script>
-    <form action="#" method="post">
-        <fieldset>
-            <legend>Форма обратной связи</legend>
-            <p><label for="name">* Введите имя: </label></p>
-            <p><input type="text" name="name" id="name" required pattern="^[а-яА-ЯёЁa-zA-Z]+$" placeholder="Иван" title="Имя может состоять только из букв"></p>
-            <p><label for="phone">* Введите телефон: </label></p>
-            <p><input type="tel" name="phone" id="phone" required pattern="^\+7\(\d{3}\)\d{3}-\d{4}$" placeholder="+7(927)099-6701" title="формат: +7(000)000-0000"></p>
-            <p><label for="email">* Введите email: </label></p>
-            <p><input type="email" name="email" id="email" required pattern="^\w+(\.|-)?\w+@\w+\.\w+$" placeholder="mymail@mail.ru"></p>
-            <p><label for="text">Введите текст: </label></p>
-            <textarea name="text" id="text" cols="70" rows="10"></textarea>
-            <p><input type="submit" value="Отправить"></p>
-        </fieldset>
-    </form>
-</body>
+  </body>
 </html>
+
