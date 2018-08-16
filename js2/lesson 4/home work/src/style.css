@@ -59,7 +59,7 @@
     right: 5px;
     background: #eee;
     max-height: 225px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .city-list li {
