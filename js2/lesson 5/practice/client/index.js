@@ -17,13 +17,11 @@ function get_basket() {
   });
 
   $.ajax(settings).done( response => {
-    const my_ol = $('<ol/>', {
-      id: 'basket'
-    });
-  
+    const my_ol = $('<ol/>');
+
     response.basket.forEach(el => {
       const my_li = $(`<li><b>ID#${el.id_product}</b> (${el.quantity} шт. &times; ${el.price} руб.) = <b>${el.quantity * el.price} руб.</b></li>`);
-      const my_a = $(`<a href="#" class="remove" data-id="${el.id_product}">&times;</a>`);
+      const my_a = $(`<a href="#">&times;</a>`);
       
       my_a.on('click', e => {
         e.preventDefault();
@@ -69,3 +67,4 @@ function remove_basket_item(id, amount) {
     if (response.result === 1) get_basket();
   });
 }
+
