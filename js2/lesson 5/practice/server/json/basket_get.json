@@ -1,0 +1,32 @@
+{
+  "result": 5,
+  "basket" : [
+    {
+      "id_product" : 1,
+      "price" : 100,
+      "quantity": 1
+    },
+    {
+      "id_product" : 2,
+      "price" : 200,
+      "quantity": 2
+    },
+    {
+      "id_product" : 3,
+      "price" : 300,
+      "quantity": 3
+    },
+    {
+      "id_product" : 4,
+      "price" : 400,
+      "quantity": 4
+    },
+    {
+      "id_product" : 5,
+      "price" : 500,
+      "quantity": 5
+    }
+  ],
+  "amount": 5500
+}
+  
