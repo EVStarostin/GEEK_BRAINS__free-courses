@@ -1,9 +1,9 @@
-var express = require('express');
-var bp = require("body-parser");
-var cors = require('cors');
-var basket = require('./json/basket_get.json');
+const express = require('express');
+const bp = require("body-parser");
+const cors = require('cors');
+const basket = require('./json/basket_get.json');
 
-var app = express();
+const app = express();
 app.use(cors());
 app.use(bp.json());
 
