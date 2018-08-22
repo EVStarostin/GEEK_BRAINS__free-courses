@@ -38,7 +38,14 @@ class Cart {
         this.container.innerHTML = '';
         const cartData = await this.getCart();
         cartData.forEach(product => {
-            this.container.innerHTML += `<div class="card mb-2"><div class="card-body"><h5 class="card-title">${product.product}</h5><p class="card-text">${product.price}</p></div></div>`;
+            this.container.innerHTML += `
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <button class="btn btn-danger float-right delete-btn" data-product_id=${product.product_id} onclick=handleDelete(this)>&times;</button>
+                        <h5 class="card-title">${product.product}</h5>
+                        <p class="card-text">${product.price}</p>
+                    </div>
+                </div>`;
         });
     }
     async createCart() {
@@ -57,7 +64,12 @@ class Cart {
         return cart.cart;
     }
     async addProduct(productData) {
-        const product = await this.http.request(`/shop?user_id=${this.userId}&product=${productData.product}&price=${productData.price}`, 'post');
+        await this.http.request(`/shop?user_id=${this.userId}&product=${productData.product}&price=${productData.price}`, 'post');
+        this.render();
+    }
+    // Метод удаления товара из корзины
+    async deleteProduct(productId) {
+        await this.http.request(`/shop?user_id=${this.userId}&product_id=${productId}`, 'delete');
         this.render();
     }
 }
@@ -96,6 +108,9 @@ window.onload = () => {
         const product = new Product(productInfo.name, productInfo.price);
         cart.addProduct(product.getProductData());
     })
+
+    handleDelete = (btn) => {
+        const productId = btn.dataset.product_id;
+        cart.deleteProduct(productId);
+    }
 }
-
-
