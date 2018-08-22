@@ -9,14 +9,17 @@
 </head>
 <body>
     <div class="container">
-        <form class="mt-4">
+        <div class="mt-4" id="cart-container">
+            
+        </div>
+        <form id="productForm" class="mt-4">
             <div class="form-group">
                 <label for="productsList">Products</label>
                 <select class="form-control" id="productsList">
-                    <option>iPhone 8</option>
-                    <option>iPad</option>
-                    <option>MacBook Air</option>
-                    <option>MacBook Pro</option>
+                    <option value="0">iPhone 8</option>
+                    <option value="1">iPad</option>
+                    <option value="2">MacBook Air</option>
+                    <option value="3">MacBook Pro</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary mb-2">
