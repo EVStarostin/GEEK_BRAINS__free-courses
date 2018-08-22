@@ -26,30 +26,46 @@ const request = (path, method) => {
 }
 
 const getCommentsList = async () => {
-  comments = await request('comments', 'get');
-  comments.forEach(comment => {
-    renderComment(comment.comment_id, comment.text, comment.likes);
-  });
+  try {
+    comments = await request('comments', 'get');
+    comments.forEach(comment => {
+      renderComment(comment.comment_id, comment.text, comment.likes);
+    });
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 const addComment = async e => {
   e.preventDefault();
   const text = $('#comments-form #text').val();
-  const addedComment = await request(`comments?text=${text}`, 'post');
-  renderComment(addedComment.comment_id, addedComment.text, addedComment.likes);
-  $('#comments-form').trigger('reset');
+  try {
+    const addedComment = await request(`comments?text=${text}`, 'post');
+    renderComment(addedComment.comment_id, addedComment.text, addedComment.likes);
+    $('#comments-form').trigger('reset');
+  } catch (error) {
+    console.error(error.responseJSON.message);
+  }
 }
 
 async function handlePatchBtnClick(btn) {
   const commentId = btn.dataset.comment_id;
-  const patchedComment = await request(`comments?comment_id=${commentId}`, 'patch');
-  $(btn).find('.badge').text(patchedComment.likes);
+  try {
+    const patchedComment = await request(`comments?comment_id=${commentId}`, 'patch');
+    $(btn).find('.badge').text(patchedComment.likes);
+  } catch (error) {
+    console.error(error.responseJSON.message);
+  }
 }
 
 async function handleDeleteBtnClick(btn) {
   const commentId = btn.dataset.comment_id;
-  const deletedComment = await request(`comments?comment_id=${commentId}`, 'delete');
-  $(btn).parent().parent().remove();
+  try {
+    const deletedComment = await request(`comments?comment_id=${commentId}`, 'delete');
+    $(btn).parent().parent().remove();
+  } catch (error) {
+    console.error(error.responseJSON.message);
+  }
 }
 
 $(function() {
