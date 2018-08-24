@@ -12,3 +12,7 @@ function applyjQueryUIEffect(field) {
     $(field).effect( "bounce", "slow" );
     $("#dialog").dialog( {modal:true, draggable:false, resizable: false} );
 }
+
+$('.cart .title').on('click', () => {
+    $('.cart').toggleClass('show-items');
+})

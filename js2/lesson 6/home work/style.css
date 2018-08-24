@@ -30,3 +30,65 @@
     cursor: default;
     background: lightblue;
 }
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: whitesmoke;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    min-height: 42px;
+}
+
+.cart-wrapper {
+    position: relative;
+    width: 50%;
+}
+
+.cart {
+    position: absolute;
+    width: 100%;
+}
+
+.cart .title {
+    line-height: 34px;
+    cursor: pointer;
+}
+
+.items {
+    background-color: whitesmoke;
+    display: none;
+}
+
+.cart .card .card-body {
+    padding: .5rem;
+}
+
+.cart.show-items .items {
+    display: block;
+}
+
+.cart .items .card {
+    background-color: inherit;
+}
+
+.show-btn {
+    display: inline-block;
+    background: none;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent; 
+    border-top-color: black;  
+    border-bottom: 0;
+    margin-left: 10px;
+    padding: 0;
+    border-right-width: 15px;
+    border-left-width: 15px;
+    transition: transform .3s ease-in-out;
+    transform-origin: center;
+}
+
+
+.cart.show-items .show-btn {
+    transform: scale(1, -1);
+}
