@@ -9,7 +9,7 @@ const renderComment = (comment_id, text, likes) => {
           <p class="mb-0">${text}</p>
         </blockquote>
         <button type="button" class="btn btn-primary" data-comment_id=${comment_id} onclick=handlePatchBtnClick(this)>
-          Like <span class="badge badge-light">${likes}</span>
+          Likes <span class="badge badge-light">${likes}</span>
         </button>
       </div>
     </div>
@@ -22,7 +22,19 @@ const request = (path, method) => {
   return $.ajax({
     url: `${BASE_URL}${path}`,
     method
-  }).done(data => data);
+  }).done(data => {
+    return data;
+  });
+}
+
+const showError = error => {
+  let message = '';
+  if (error.responseJSON) {
+    message = error.responseJSON.message;
+  } else {
+    message = 'Ошибка получения данных';
+  }
+  console.error(message);
 }
 
 const getCommentsList = async () => {
@@ -32,19 +44,20 @@ const getCommentsList = async () => {
       renderComment(comment.comment_id, comment.text, comment.likes);
     });
   } catch (error) {
-    console.error(error);
+    showError(error);
   }
 }
 
 const addComment = async e => {
   e.preventDefault();
   const text = $('#comments-form #text').val();
+  if (text.length === 0) return;
   try {
     const addedComment = await request(`comments?text=${text}`, 'post');
     renderComment(addedComment.comment_id, addedComment.text, addedComment.likes);
     $('#comments-form').trigger('reset');
   } catch (error) {
-    console.error(error.responseJSON.message);
+    showError(error);
   }
 }
 
@@ -54,7 +67,7 @@ async function handlePatchBtnClick(btn) {
     const patchedComment = await request(`comments?comment_id=${commentId}`, 'patch');
     $(btn).find('.badge').text(patchedComment.likes);
   } catch (error) {
-    console.error(error.responseJSON.message);
+    showError(error);
   }
 }
 
@@ -64,7 +77,7 @@ async function handleDeleteBtnClick(btn) {
     const deletedComment = await request(`comments?comment_id=${commentId}`, 'delete');
     $(btn).parent().parent().remove();
   } catch (error) {
-    console.error(error.responseJSON.message);
+    showError(error);
   }
 }
 
