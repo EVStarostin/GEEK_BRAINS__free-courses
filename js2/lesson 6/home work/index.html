@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <title>Lesson_6</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+                <li data-target="#carousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img class="d-block w-100" src="img/imac.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-100" src="img/macbook_air.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-100" src="img/macbook_pro.jpg" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <section class="feedback-section mt-5 mb-5">
+            <fieldset>
+                <legend class="text-center">Форма обратной связи</legend>
+                <form id="feedback" method="POST">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="inputName">* Имя</label>
+                            <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp">
+                            <small id="nameHelp" class="form-text text-muted">
+                                Имя содержит только буквы
+                            </small>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="datepicker">Дата рождения</label>
+                            <input type="text" id="datepicker" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="inputPhone">* Телефон</label>
+                            <input type="text" class="form-control" id="inputPhone" aria-describedby="phoneHelp">
+                            <small id="phoneHelp" class="form-text text-muted">
+                                Телефон подчиняется шаблону +7(000)000-0000
+                            </small>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail">* E-mail</label>
+                            <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">
+                                E-mail выглядит как mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru
+                            </small>
+                        </div>
+                    </div>    
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Город обращения</label>
+                                <select class="form-control" id="inputCity"></select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputCityAutoComplete">Город обращения (с автокомплитом)</label>
+                                <input type="search" class="form-control" id="inputCityAutoComplete" autocomplete="off">
+                            <div class="autocomplete"><ul class="city-list"></ul></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Текст</label>
+                        <textarea class="form-control" id="text" rows="5" aria-describedby="textHelp"></textarea>
+                        <small id="textHelp" class="form-text text-muted">Текст произвольный</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </fieldset>
+        </section>
+        <div id="dialog" title="Ошибка валидации">
+            <p>Проверьте правильность заполнения полей</p>
+        </div>
+    </div>
+    <script src="validate.js"></script>
+    <script src="autocomplete.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+.autocomplete {
+    position: relative;
+}
+
+.city-list {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    background: white;
+    z-index: 1;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    background: #eee;
+    max-height: 225px;
+    overflow-y: auto;
+}
+
+.city-list li {
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    border-bottom: none;
+}
+
+.city-list li:last-child {
+    border: 1px solid #ced4da;
+}
+
+.city-list li:hover {
+    cursor: default;
+    background: lightblue;
+}
