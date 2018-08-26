@@ -13,7 +13,7 @@ function addOptions(data) {
 
 $(document).ready(function(){
     $.ajax({
-        url: "https://raw.githubusercontent.com/EVStarostin/GEEK_BRAINS__free-courses/master/js2/lesson%204/home%20work/src/cities.json"
+        url: "https://raw.githubusercontent.com/EVStarostin/GEEK_BRAINS__free-courses/master/js2/lesson%206/home%20work/json/cities.json"
     }).done(addOptions);
 });
 
