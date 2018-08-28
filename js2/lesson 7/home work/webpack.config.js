@@ -9,7 +9,7 @@ module.exports = {
         new UglifyJsPlugin({
             cache: true,
             parallel: true,
-            sourceMap: true // set to true if you want JS source maps
+            sourceMap: true
         }),
         new OptimizeCSSAssetsPlugin({})
     ]
@@ -19,7 +19,7 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
-    new HtmlWebpackPlugin({  // Also generate a test.html
+    new HtmlWebpackPlugin({
         filename: 'index.html',
         template: 'src/index.html'
     })
@@ -32,6 +32,16 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           "css-loader"
         ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+            MiniCssExtractPlugin.loader, 
+        {
+            loader: "css-loader"
+        }, {
+            loader: "less-loader"
+        }]
       },
       {
         test: /\.(png|jpg|gif)$/,

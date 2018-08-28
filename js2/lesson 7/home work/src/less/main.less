@@ -1,0 +1,109 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import '~jquery-ui/themes/base/all.css';
+
+.autocomplete {
+    position: relative;
+}
+
+.city-list {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    background: white;
+    z-index: 1;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    background: #eee;
+    max-height: 225px;
+    overflow-y: auto;
+
+    li {
+        padding: 10px 15px;
+        border: 1px solid #ced4da;
+        border-bottom: none;
+    
+        &:last-child {
+            border: 1px solid #ced4da;
+        }
+
+        &:hover {
+            cursor: default;
+            background: lightblue;
+        }
+    }
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: whitesmoke;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    min-height: 60px;
+}
+
+.cart-wrapper {
+    position: relative;
+    width: 50%;
+}
+
+.cart {
+    position: absolute;
+    width: 100%;
+
+    .title {
+        line-height: 52px;
+        cursor: pointer;
+        margin: 0;
+        padding-bottom: 8px;
+    }
+
+    .card {
+        .card-body {
+            padding: .5rem;
+        }
+    }
+
+    &.show-items {
+        .items {
+            display: block;
+        }
+
+        .show-btn {
+            transform: scale(1, -1);
+        }
+    }
+
+    .items {
+        background-color: whitesmoke;
+        display: none;
+
+        .card {
+            background-color: inherit;
+        }
+    }
+}
+
+.show-btn {
+    display: inline-block;
+    background: none;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent; 
+    border-top-color: black;  
+    border-bottom: 0;
+    margin-left: 10px;
+    padding: 0;
+    border-right-width: 15px;
+    border-left-width: 15px;
+    transition: transform .3s ease-in-out;
+    transform-origin: center;
+}
+
+.catalog-section {
+    .product {
+        padding: 20px;
+        transition: transform .3s ease-in-out;
+    }
+}
