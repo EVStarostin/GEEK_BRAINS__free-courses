@@ -1,27 +1,33 @@
+const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  devtool: 'source-map',
   optimization: {
+    minimize: true,
     minimizer: [
-        new UglifyJsPlugin({
-            cache: true,
-            parallel: true,
-            sourceMap: true
-        }),
-        new OptimizeCSSAssetsPlugin({})
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCSSAssetsPlugin({})
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
+      filename: "style.css"
     }),
     new HtmlWebpackPlugin({
-        filename: 'index.html',
-        template: 'src/index.html'
+      template: 'src/index.html'
     })
   ],
   module: {
@@ -36,11 +42,11 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-            MiniCssExtractPlugin.loader, 
+          MiniCssExtractPlugin.loader, 
         {
-            loader: "css-loader"
+          loader: "css-loader"
         }, {
-            loader: "less-loader"
+          loader: "less-loader"
         }]
       },
       {
@@ -49,7 +55,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-                name: 'img/[name].[ext]'
+              name: 'img/[name].[ext]'
             }
           }
         ]
