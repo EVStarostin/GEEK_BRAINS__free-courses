@@ -17,10 +17,13 @@ describe("Cart", function() {
     }); 
 
     describe('addProduct', function() {
+        let cartLength;
+
         it('при добавлении товара в корзину длина массива товаров должна увеличиваться', async function() {
+            cartLength = cart.cart.cart.length;
             await cart.addProduct({product: 'iPhone 8', price: 60000});
             cart.cart = await cart.getCart();
-            expect(cart.cart.cart.length).toBe(1);
+            expect(cart.cart.cart.length).toBe(cartLength+1);
         });
         it('при добавлении товара в корзину должен добавиться товар с переданными характеристиками', async function() {
             await cart.addProduct({product: 'iPhone 8', price: '60000'});
