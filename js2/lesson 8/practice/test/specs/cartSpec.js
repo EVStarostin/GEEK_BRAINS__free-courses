@@ -32,15 +32,18 @@ describe("Cart", function() {
     }); 
 
     describe('deleteProduct', function() {
+        let cartLength;
+
         beforeEach(async function() {
             await cart.addProduct({product: 'iPhone 8', price: 60000});
             cart.cart = await cart.getCart();
+            cartLength = cart.cart.cart.length;
         });
 
         it('при удалении товара из корзины длина массива товаров должна уменьшаться', async function() {
             await cart.deleteProduct(cart.cart.cart[0].product_id);
             cart.cart = await cart.getCart();
-            expect(cart.cart.cart.length).toBe(0);
+            expect(cart.cart.cart.length).toBe(cartLength-1);
         });
     }); 
         
