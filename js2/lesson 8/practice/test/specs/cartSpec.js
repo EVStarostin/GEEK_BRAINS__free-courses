@@ -1,15 +1,10 @@
 describe("Cart", function() {
-    // var player;
-    // var song;
     let cart;
   
     beforeEach(async function() {
-        // player = new Player();
-        // song = new Song();
         localStorage.removeItem('userId');
         cart = new Cart('http://89.108.65.123:8080');
         await cart.createCart();
-        // console.log(cart);
     });
 
     describe('createCart', function() {
@@ -39,8 +34,6 @@ describe("Cart", function() {
         });
     }); 
         
-    
-
     
   
     // it("should be able to play a Song", function() {
