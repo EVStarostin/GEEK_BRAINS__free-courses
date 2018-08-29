@@ -70,7 +70,7 @@ class Cart {
     // Метод удаления товара из корзины
     async deleteProduct(productId) {
         await this.http.request(`/shop?user_id=${this.userId}&product_id=${productId}`, 'delete');
-        this.render();
+        // this.render();
     }
 }
 
