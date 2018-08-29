@@ -11,6 +11,9 @@ describe("Cart", function() {
         it('при первоначальной инициализации корзина должна быть пуста', function() {
             expect(cart.cart.cart.length).toBe(0);
         });
+        it('при первоначальной инициализации корзины должен заполниться ID пользователя', function() {
+            expect(cart.cart.user_id).toBeDefined();
+        });
     }); 
 
     describe('addProduct', function() {
@@ -18,6 +21,13 @@ describe("Cart", function() {
             await cart.addProduct({product: 'iPhone 8', price: 60000});
             cart.cart = await cart.getCart();
             expect(cart.cart.cart.length).toBe(1);
+        });
+        it('при добавлении товара в корзину должен добавиться товар с переданными характеристиками', async function() {
+            await cart.addProduct({product: 'iPhone 8', price: '60000'});
+            cart.cart = await cart.getCart();
+            expect(cart.cart.cart[0].product).toBe('iPhone 8');
+            expect(cart.cart.cart[0].price).toBe('60000');
+            expect(cart.cart.cart[0].product_id).toBeDefined();
         });
     }); 
 
@@ -34,7 +44,7 @@ describe("Cart", function() {
         });
     }); 
         
-    
+
   
     // it("should be able to play a Song", function() {
     //     player.play(song);
