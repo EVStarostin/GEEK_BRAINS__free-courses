@@ -135,3 +135,59 @@ vanyaDev.setManager(kolyaMan);
 
 console.log(vanyaDev.displayInfo());
 console.log(kolyaMan.displayInfo());
+
+/* 
+4*. При помощи генератора написать функцию - анкету, которая запрашивает у
+пользователя на ввод параметры и передаёт их в генератор. В конце, когда генератор
+завершается, он должен вернуть все введённые входные параметры в виде объекта.
+Этот объект нужно вывести в консоли.
+ */
+function* getUserInfo() {
+  yield prompt('Как Вас зовут?', '');
+  yield prompt('Сколько вам лет?', '');
+}
+
+const generator = getUserInfo();
+const name = generator.next().value;
+const age = generator.next().value;
+const userInfo = {name, age}
+console.log(userInfo);
+
+/* 
+5*. Написать цикл, который создаёт массив промисов, внутри каждого промиса
+происходит обращение к ресурсу (https://jsonplaceholder.typicode.com/users/number), где
+вместо number подставляется число от 1 до 10, в итоге должно получиться 10 промисов.
+Следует дождаться выполнения загрузки всеми промисами и далее вывести массив
+загруженных данных
+ */
+const baseUrl = 'https://jsonplaceholder.typicode.com/users';
+const promisesArray = [];
+for (let i = 1; i <= 10; i++) {
+  const promise = new Promise(function(resolve, reject) {
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', `${baseUrl}/${i}`, true);
+
+    xhr.onload = function() {
+      if (this.status == 200) {
+        resolve(this.response);
+      } else {
+        var error = new Error(this.statusText);
+        error.code = this.status;
+        reject(error);
+      }
+    };
+
+    xhr.onerror = function() {
+      reject(new Error("Network Error"));
+    };
+
+    xhr.send();
+  });
+
+  promisesArray.push(promise);
+}
+
+Promise.all(promisesArray).then(results => {
+  console.log(results);
+});
