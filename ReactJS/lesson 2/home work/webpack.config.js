@@ -1,16 +1,16 @@
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PUBLIC_PATH = require('path').join(__dirname, 'build');
 
-module.exports = {
+let config = {
     entry: './app/index.js',
     output: { 
         path: PUBLIC_PATH,
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: PUBLIC_PATH,
         port: 3000
     },
-    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -22,7 +22,56 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'img/[name].[ext]'
+                        }
+                    }
+                ]
             }
         ]
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+          filename: 'style.css'
+        }),
+        new HtmlWebpackPlugin({
+            template: 'app/index.html'
+        })
+    ],
+};
+
+module.exports = (env, argv) => {
+
+    if (argv.mode === 'development') {
+        config.devtool = 'source-map';
+        config.module.rules.push(
+            {
+                test: /\.css$/,
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader' }
+                ]
+            }
+        );
     }
+
+    if (argv.mode === 'production') {
+        config.module.rules.push(
+            {
+                test: /\.css$/,
+                use: [
+                    { loader: MiniCssExtractPlugin.loader },
+                    { loader: 'css-loader' }
+                ]
+            }
+        );
+    }
+
+    return config;
 };

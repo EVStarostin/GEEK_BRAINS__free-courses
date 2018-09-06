@@ -1,4 +1,6 @@
 import CurrentDate from '../CurrentDate/CurrentDate';
+import './Developer.css';
+import avatar from './avatar.jpg';
 
 export default class Developer {
     constructor(name) {
@@ -13,11 +15,23 @@ export default class Developer {
     render() {
         const componentNode = document.createElement('div');
         componentNode.classList.add('component');
+
+        const developerNode = document.createElement('div');
+        developerNode.classList.add('developer');
+        developerNode.classList.add('clearfix');
+        componentNode.appendChild(developerNode);
+
+        const img = document.createElement('img');
+        img.classList.add('avatar');
+        img.src = avatar;
+        developerNode.appendChild(img);
+
         const nameNode = document.createElement('p');
         nameNode.innerText = this.name;
         nameNode.classList.add('name');
         nameNode.addEventListener('click', this.showDate);
-        componentNode.appendChild(nameNode);
+        developerNode.appendChild(nameNode);
+
         return componentNode;
     }
 }

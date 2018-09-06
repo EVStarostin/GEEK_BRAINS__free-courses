@@ -1,3 +1,5 @@
+import './CurrentDate.css'
+
 export default class CurrentDate {
     constructor() {
         this.date = new Date();
