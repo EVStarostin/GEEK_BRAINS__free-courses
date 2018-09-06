@@ -7,7 +7,7 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development"
   },
-  "author": "",
+  "author": "Evgenii Starostin",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.0.0",
