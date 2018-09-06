@@ -1,6 +1,6 @@
 import CurrentDate from '../CurrentDate/CurrentDate';
 import './Developer.css';
-import avatar from './avatar.jpg';
+import avatar from './img/avatar.jpg';
 
 export default class Developer {
     constructor(name) {
