@@ -14,7 +14,7 @@ $( function() {
     $('.product').draggable({
         revert: true, 
         revertDuration: 1,
-        stack: '.cart',
+        // stack: '.cart',
         scroll: false,
         start: function() {
             $(this).css("transform", "scale(.5)")
