@@ -1,4 +1,4 @@
-import Developer from './components/Developer/Developer';
+import Developer from './components/Developer';
 
 const developer = new Developer('Старостин Евгений Валерьевич');
 

@@ -1,4 +1,4 @@
-import './CurrentDate.css'
+import './style.css'
 
 export default class CurrentDate {
     constructor() {

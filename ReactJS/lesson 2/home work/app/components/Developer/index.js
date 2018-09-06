@@ -1,5 +1,5 @@
-import CurrentDate from '../CurrentDate/CurrentDate';
-import './Developer.css';
+import CurrentDate from '../CurrentDate';
+import './style.css';
 import avatar from './img/avatar.jpg';
 
 export default class Developer {
