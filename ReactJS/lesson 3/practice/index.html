@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+  <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+  <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+  <style> * { padding:0; margin:0; }html{ font:14px normal Arial, sans-serif; color:#658321; background-color:#fff; }body{ padding:60px; text-align: center; }ul{ list-style:none; display: inline-block; }ul li{ display: inline-block; padding: 10px 20px; cursor:pointer; background-color:#eee; color:#156831; transition:0.3s; }ul li:hover{ background-color:#beecea; }ul li.focused{ color:#fff; background-color:#987423; }p{ padding-top:15px; font-size:12px; } </style>
+</head>
+<body>
+
+  <div id="main"></div>
+
+  <!-- <script type="text/babel">
+    /* var Message = React.createClass({
+      render: function(){
+        return <h1>Welcome to My First Program</h1>
+      }
+    }); */
+
+    /* var Message = React.createClass {
+      render() {
+        return <h1>Hello</h1>;
+      }
+    } */
+
+    /* function Message(props) {
+      return <h1>Hell</h1>;
+    } */
+
+    // const element = <h1>Hello, world</h1>;
+
+    // ReactDOM.render(<Message/>, document.getElementById('main'));
+    // ReactDOM.render(element, document.getElementById('main'));
+
+    /* var Photo = React.createClass({
+      render: function() {
+        return (
+          <div className='photo'>
+            <img src={this.props.imageURL} />
+            <span>{this.props.caption}</span>
+          </div>
+        )
+      }
+    });
+    ReactDOM.render(<Photo imageURL='картинка 1' caption='New York!' />, document.body); */
+
+    var CommentList = React.createClass({
+      render: function() {
+        return (
+          <div className="commentList">
+            Hello, world! I am a CommentList.
+          </div>
+        );
+      }
+    });
+
+    var CommentForm = React.createClass({
+      render: function() {
+        return (
+          <div className="commentForm">
+            Hello, world! I am a CommentForm.
+          </div>
+        );
+      }
+    });
+
+    var CommentBox = React.createClass({
+      render: function() {
+        return (
+          <div className="commentBox">
+            <h1>Comments</h1>
+            <CommentList />
+            <CommentForm />
+          </div>
+        );
+      }
+    });
+
+    ReactDOM.render(
+      <CommentBox />,
+      document.getElementById('main')
+    );
+
+  </script> -->
+
+  <script type="text/babel">
+    var MenuExample = React.createClass({
+      getInitialState: function(){
+        return { focused: 0 };
+      },
+      clicked: function(index){
+        // Обработчик click будет обновлять состояние с
+        // с индексом нажатого элемента меню
+        this.setState({focused: index});
+      },
+      render: function() {
+        // Здесь мы будем читать свойство items, которое было
+        // принято в качестве атрибута при создании компонента
+        var self = this;
+        // Метод map пройдется по массиву с пунктами меню,
+        // и возвратит массив с элементами &lt;li&gt;.
+        return (
+          <div>
+            <ul>{ this.props.items.map(function(m, index){
+              var style = '';
+              if(self.state.focused == index){
+                style = 'focused';
+              }
+              // Обратите внимание на использование метода bind().
+              // Он делает index доступным в функции clicked:
+              return <li className={style} key={index} onClick={self.clicked.bind(self, index)}>{m}</li>;
+            }) }
+            </ul>
+            <p>Выбрано: {this.props.items[this.state.focused]}</p>
+          </div>
+        );
+      }
+    });
+    // Рендер компонента меню на странице с передачей массива с пунктами меню
+    ReactDOM.render(
+      <MenuExample items={ ['Главная', 'Услуги', 'О нас', 'Контакты'] } />,
+      document.getElementById("main")
+    );
+  </script>
+
+</body>
+</html>

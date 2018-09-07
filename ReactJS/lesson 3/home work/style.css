@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  background-color: #004359;
+  color: #fff;
+}
+
+.login-section {
+  margin-left: auto;
+}
+
+.login-btn {
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  color: #829399;
+}
