@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Blog</title>
 
   <!-- REACT -->
   <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
@@ -26,29 +26,82 @@
   <script type="text/babel">
 
   </script> -->
-
-  <div class="container">
+  <div class="wrapper">
     <header class="header">
-      <div class="logo-section">
-        <h1>Блог</h1>
-      </div>
-      <div class="login-section">
-        <button class="login-btn">Войти</button>
+      <div class="container">
+        <div class="logo-bar">
+          <div class="logo-section">
+            <h1 class="logo">Блог</h1>
+          </div>
+          <div class="login-section">
+            <button class="login-btn">Войти</button>
+          </div>
+        </div>
       </div>
     </header>
-
-    <main class="main-page">
-
-    </main>
-
-    <footer class="footer">
-      <ul class="footer__menu">
-        <li class="menu__items"><a href="#">О проекте</a></li>
-        <li class="menu__items"><a href="#">Пользовательское соглашение</a></li>
-        <li class="menu__items"><a href="#">Помощь</a></li>
-      </ul>
-    </footer>
+  
+    <nav class="nav">
+        <div class="container">
+        <ul class="nav-menu">
+          <li class="nav-menu__item focused">
+            <a href="#">Главная</a>
+          </li>
+          <li class="nav-menu__item">
+            <a href="#">Важное</a>
+          </li>
+          <li class="nav-menu__item">
+            <a href="#">Слово Москве</a>
+          </li>
+          <li class="nav-menu__item">
+            <a href="#">ЖЖизнь</a>
+          </li>
+          <li class="nav-menu__item">
+            <a href="#">СССР</a>
+          </li>
+          <li class="nav-menu__item">
+            <a href="#">Общество</a>
+          </li>
+          <li class="nav-menu__item">
+            <a href="#">Рубль</a>
+          </li>
+        </ul>
+      </div> 
+    </nav>
+  
+    <div class="container">
+      <main class="main-page">
+        <article class="article">
+          <header class="article__header">
+            <h3>Чем Россия может ответить на «драконовские» санкции США?</h3>
+          </header>
+          <p class="article__text">
+              И вот под очередным дурацким, надуманным и никем не доказанным предлогом США вводят очередные, но уже теперь "драконовские" санкции. Когда в санкционные списки вносили каких то чиновников, олигархов, бизнесменов и высылали дипломатов - это было не "больно" для всех остальных. Когда начали ограничивать деятельность крупных компаний - это тоже можно купировать дифференциацией рынков сбыта и минимизировать потери. Власти ждали, молчали и практически ничего не делали. Но теперь то понятно, что никто не планирует останавливаться и этот курс надолго. Зачем тешить себя иллюзиями, что не стоит перегибать палку, что все само собой рассосется. Хотим выглядеть красиво и цивилизовано? А надо ли?
+              <br><br>
+              Вот сейчас санкции включают в себя полный запрет на экспорт электронных устройств (подведя их под двойное назначение) - это уже такой приличный такой удар. А чем можем ответить мы?
+              <br><br>
+              Обычно на этом месте говорят, что мы можем либо "выстрелить себе в ногу" запретив поставки титана, урана или ракетных двигателей. Либо сделать что то совсем несущественное для США.
+              <br><br>
+              Однако и у нас есть в запасе хороший ответный ход для санкций...
+              <br><br>
+              Вот Европа уверенно отбивается от санкций США которые ей не выгодны. Они приняли так называемый "блокирующий статут" запрещает европейским компаниям подчиняться санкционным мерам, которые влекут за собой нарушение санкций США, а европейским судам - обязывать компании соблюдать эти меры. Также статут предусматривает возможность присуждения компенсации компаниям, пострадавшим от санкций США.
+          </p>
+          <footer class="article__footer">
+            <p class="article__date">07.09.2018</p>
+          </footer>
+        </article>
+      </main>
+    </div>
   </div>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="footer-menu">
+        <li class="footer-menu__item"><a href="#">О проекте</a></li>
+        <li class="footer-menu__item"><a href="#">Пользовательское соглашение</a></li>
+        <li class="footer-menu__item"><a href="#">Помощь</a></li>
+      </ul>
+    </div>
+  </footer>
 
 </body>
 </html>
