@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class MainPage extends Component {
   render() {
     return (
-      <main className="main-page">
+      <div>
         <article className="article">
           <header className="article__header">
             <h3>Чем Россия может ответить на «драконовские» санкции США?</h3>
@@ -23,7 +23,7 @@ class MainPage extends Component {
             <p className="article__date">07.09.2018</p>
           </footer>
         </article>
-      </main>
+      </div>
     );
   }
 }
