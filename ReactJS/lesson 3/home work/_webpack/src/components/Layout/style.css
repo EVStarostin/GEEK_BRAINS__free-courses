@@ -1,5 +1,9 @@
-html, body, #root, .Layout, .wrapper {
+html, body, #root, .Layout {
   height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
 }
 
 body {
