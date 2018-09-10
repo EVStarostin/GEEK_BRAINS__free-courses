@@ -12,22 +12,18 @@ class Layout extends Component {
       <div className="Layout">
         <div className="wrapper">
           <Header />
-        
           <nav className="nav">
             <div className="container">
               <Menu />
             </div> 
           </nav>
-        
           <main className="main-page">
             <div className="container">
               <MainPage />
             </div>
           </main>
         </div>
-
         <Footer />
-        
         <Modal />        
       </div>
     );
