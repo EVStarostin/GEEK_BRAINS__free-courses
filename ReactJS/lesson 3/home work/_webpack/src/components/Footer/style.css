@@ -1,8 +1,9 @@
 .footer {
   background-color: #004359;
   border-top: 3px solid #00394c;
+  border-bottom: 3px solid #004359;
   color: #fff;
-  margin-top: -42px;
+  margin-top: -45px;
 }
 
 .footer-menu {

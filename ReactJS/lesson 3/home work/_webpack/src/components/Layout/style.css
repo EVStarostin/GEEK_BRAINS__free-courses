@@ -13,5 +13,5 @@ body {
 .wrapper:after {
   content: '';
   display: block;
-  height: 42px;;
+  height: 45px;;
 }

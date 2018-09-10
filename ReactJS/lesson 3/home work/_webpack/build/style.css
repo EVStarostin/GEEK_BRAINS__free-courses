@@ -87,8 +87,9 @@
 .footer {
   background-color: #004359;
   border-top: 3px solid #00394c;
+  border-bottom: 3px solid #004359;
   color: #fff;
-  margin-top: -42px;
+  margin-top: -45px;
 }
 
 .footer-menu {
@@ -119,8 +120,12 @@
   padding: 0;
 }
 
-html, body, #root, .Layout, .wrapper {
+html, body, #root, .Layout {
   height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
 }
 
 body {
@@ -130,6 +135,6 @@ body {
 .wrapper:after {
   content: '';
   display: block;
-  height: 42px;;
+  height: 45px;;
 }
 
