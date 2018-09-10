@@ -1,0 +1,11 @@
+.login-btn {
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.login-btn:hover {
+  color: #829399;
+}

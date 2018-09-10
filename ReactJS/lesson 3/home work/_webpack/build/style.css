@@ -1,24 +1,21 @@
-html, body, #root, .Layout, .wrapper {
-  height: 100%;
+.login-btn {
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
-body {
-  font-size: 16px;
+.login-btn:hover {
+  color: #829399;
 }
-
-.wrapper:after {
-  content: '';
-  display: block;
-  height: 42px;;
+.top-bar {
+  display: flex;
 }
 
 .header {
   background-color: #004359;
   color: #fff;
-}
-
-.top-bar {
-  display: flex;
 }
 
 .logo-section {
@@ -35,17 +32,6 @@ body {
   display: flex;
 }
 
-.login-btn {
-  background: none;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-.login-btn:hover {
-  color: #829399;
-}
 
 .nav {
   box-shadow: 0 0 14px 1px rgba(100,100,100,.25);
@@ -82,6 +68,22 @@ body {
   color: #0E799D;
 }
 
+.main-page {
+  padding: 15px 0;
+}
+
+.article__header {
+  margin-bottom: 15px;
+}
+
+.article__text {
+  text-align: justify;
+}
+
+.article__date {
+  text-align: right;
+  font-style: italic;
+}
 .footer {
   background-color: #004359;
   border-top: 3px solid #00394c;
@@ -117,19 +119,17 @@ body {
   padding: 0;
 }
 
-.main-page {
-  padding: 15px 0;
+html, body, #root, .Layout, .wrapper {
+  height: 100%;
 }
 
-.article__header {
-  margin-bottom: 15px;
+body {
+  font-size: 16px;
 }
 
-.article__text {
-  text-align: justify;
+.wrapper:after {
+  content: '';
+  display: block;
+  height: 42px;;
 }
 
-.article__date {
-  text-align: right;
-  font-style: italic;
-}

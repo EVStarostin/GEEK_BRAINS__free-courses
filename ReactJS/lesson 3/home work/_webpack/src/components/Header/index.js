@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Login from '../Login';
+import './style.css';
 
 class Header extends Component {
   render() {
