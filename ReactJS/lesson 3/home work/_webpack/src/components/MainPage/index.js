@@ -11,11 +11,11 @@ class MainPage extends Component {
     let filteredArticles = [];
     if (focused === 0) {
       filteredArticles = articles.sort((a, b) => {
-        const dateParts1 = a.date.split('.').map(item => +item);
-        const dateParts2 = b.date.split('.').map(item => +item);
-        const date1 = new Date(dateParts1[2], dateParts1[1]-1, dateParts1[0]);
-        const date2 = new Date(dateParts2[2], dateParts2[1]-1, dateParts2[0]);
-        return date2 - date1;
+        const partsA = a.date.split('.').map(item => +item);
+        const partsB = b.date.split('.').map(item => +item);
+        const dateA = new Date(partsA[2], partsA[1]-1, partsA[0]);
+        const dateB = new Date(partsB[2], partsB[1]-1, partsB[0]);
+        return dateB - dateA;
       })
     } else {
       filteredArticles = articles.filter(item => item.categoryId === focused);
