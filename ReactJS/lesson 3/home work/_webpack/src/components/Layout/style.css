@@ -1,13 +1,9 @@
-html, body, #root, .Layout {
+.Layout {
   height: 100%;
 }
 
 .wrapper {
   min-height: 100%;
-}
-
-body {
-  font-size: 16px;
 }
 
 .wrapper:after {

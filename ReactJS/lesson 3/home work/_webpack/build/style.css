@@ -120,7 +120,7 @@
   padding: 0;
 }
 
-html, body, #root, .Layout {
+.Layout {
   height: 100%;
 }
 
@@ -128,13 +128,17 @@ html, body, #root, .Layout {
   min-height: 100%;
 }
 
-body {
-  font-size: 16px;
-}
-
 .wrapper:after {
   content: '';
   display: block;
   height: 45px;;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
 }
 
