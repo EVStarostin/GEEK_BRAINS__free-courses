@@ -2,7 +2,7 @@ import './Menu.css';
 
 import React, { Component } from 'react';
 
-class Menu extends Component {
+export default class Menu extends Component {
   render() {
     const { handleClick, items, focused } = this.props;
     return (
@@ -30,5 +30,3 @@ class Menu extends Component {
     );
   }
 }
-
-export default Menu;

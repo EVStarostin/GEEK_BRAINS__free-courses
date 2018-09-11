@@ -3,7 +3,7 @@ import './Login.css';
 import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 
-class Login extends Component {
+export default class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -58,5 +58,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
 

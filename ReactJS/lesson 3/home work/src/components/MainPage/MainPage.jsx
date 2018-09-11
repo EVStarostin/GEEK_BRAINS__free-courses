@@ -2,7 +2,7 @@ import './MainPage.css';
 
 import React, { Component } from 'react';
 
-class MainPage extends Component {
+export default class MainPage extends Component {
   render() {
     const { articles, focused } = this.props;
     let filteredArticles = [];
@@ -40,4 +40,3 @@ class MainPage extends Component {
   }
 }
 
-export default MainPage;
