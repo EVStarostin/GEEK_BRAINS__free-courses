@@ -8,6 +8,7 @@ class Login extends Component {
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {
       show: false
@@ -22,6 +23,11 @@ class Login extends Component {
     this.setState({ show: true });
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState({ show: false });
+  }
+
   render() {
     return (
       <div>
@@ -31,7 +37,7 @@ class Login extends Component {
             <Modal.Title>Войти</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form className="login-form">
+            <form className="login-form" onSubmit={this.handleSubmit}>
               <div className="input-group">
                 <span className="input-group-addon" id="login-input">
                   <span className="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -44,7 +50,7 @@ class Login extends Component {
                 </span>
                 <input type="password" className="form-control" placeholder="Пароль" aria-describedby="password-input" />
               </div>
-              <button type="button" className="btn btn-primary float-right" onClick={this.handleClose}>Войти</button>
+              <button type="submit" className="btn btn-primary float-right">Войти</button>
             </form>
           </Modal.Body>
         </Modal>
