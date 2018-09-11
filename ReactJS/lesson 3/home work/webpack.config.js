@@ -48,25 +48,23 @@ let config = {
 
 module.exports = (env, argv) => {
 
-    if (argv.mode === 'development') {
-        config.devtool = 'source-map';
-        config.module.rules.push(
-            {
-                test: /\.css$/,
-                use: [
-                    { loader: 'style-loader' },
-                    { loader: 'css-loader' }
-                ]
-            }
-        );
-    }
-
     if (argv.mode === 'production') {
         config.module.rules.push(
             {
                 test: /\.css$/,
                 use: [
                     { loader: MiniCssExtractPlugin.loader },
+                    { loader: 'css-loader' }
+                ]
+            }
+        );
+    } else {
+        config.devtool = 'source-map';
+        config.module.rules.push(
+            {
+                test: /\.css$/,
+                use: [
+                    { loader: 'style-loader' },
                     { loader: 'css-loader' }
                 ]
             }
