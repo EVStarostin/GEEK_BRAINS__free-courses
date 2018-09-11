@@ -53,13 +53,13 @@ module.exports = (env, argv) => {
             {
                 test: /\.css$/,
                 use: [
-                    { loader: MiniCssExtractPlugin.loader },
+                    MiniCssExtractPlugin.loader,
                     { loader: 'css-loader' }
                 ]
             }
         );
     } else {
-        config.devtool = 'source-map';
+        config.devtool = 'cheap-module-source-map';
         config.module.rules.push(
             {
                 test: /\.css$/,
