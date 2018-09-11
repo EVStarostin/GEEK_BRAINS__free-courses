@@ -11,8 +11,10 @@ import articles from '../../../mock/articles';
 class Layout extends Component {
   constructor(props) {
     super(props);
-    this.state = {focused: 0};
+
     this.handleClick = this.handleClick.bind(this);
+    
+    this.state = {focused: 0};
   }
 
   handleClick(index, e){

@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import './style.css';
 
 class MainPage extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { articles, focused } = this.props;
     let filteredArticles = [];

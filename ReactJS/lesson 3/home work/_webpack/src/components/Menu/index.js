@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import './style.css';
 
 class Menu extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { handleClick, items, focused } = this.props;
     return (

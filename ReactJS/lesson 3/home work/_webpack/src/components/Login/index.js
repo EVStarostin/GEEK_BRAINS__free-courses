@@ -10,9 +10,7 @@ class Login extends Component {
     this.handleClose = this.handleClose.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
-    this.state = {
-      show: false
-    };
+    this.state = {show: false};
   }
 
   handleClose() {
