@@ -9,6 +9,21 @@
 .login-btn:hover {
   color: #829399;
 }
+
+.login-form .input-group {
+  margin-bottom: 20px;
+}
+
+.login-form .float-right {
+  float: right;
+}
+
+.login-form:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
 .top-bar {
   display: flex;
 }
@@ -30,6 +45,7 @@
 .login-section {
   margin-left: auto;
   display: flex;
+  align-items: center;
 }
 
 
@@ -61,6 +77,10 @@
 
 .nav-menu__item a:hover {
   color: #0E799D;
+  text-decoration: none;
+}
+
+.nav-menu__item a:focus {
   text-decoration: none;
 }
 

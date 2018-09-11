@@ -29,6 +29,10 @@
   text-decoration: none;
 }
 
+.nav-menu__item a:focus {
+  text-decoration: none;
+}
+
 .nav-menu__item.focused a {
   color: #0E799D;
 }

@@ -3,7 +3,6 @@ import Header from '../Header';
 import Menu from '../Menu';
 import MainPage from '../MainPage';
 import Footer from '../Footer';
-import Modal from '../Modal';
 import './style.css';
 
 import categories from '../../../mock/categories';
@@ -32,7 +31,6 @@ class Layout extends Component {
           <MainPage articles={articles} focused={focused} />
         </div>
         <Footer />
-        <Modal />
       </div>
     );
   }
