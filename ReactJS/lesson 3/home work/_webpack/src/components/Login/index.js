@@ -30,7 +30,7 @@ class Login extends Component {
     return (
       <div>
         <button className="login-btn" onClick={this.handleShow}>Войти</button>
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal bsSize="small" show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Войти</Modal.Title>
           </Modal.Header>
