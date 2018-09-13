@@ -32,7 +32,7 @@ class Menu extends Component {
   }
 }
 
-MainPage.propTypes = {
+Menu.propTypes = {
   handleClick: PropTypes.func,
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
@@ -41,7 +41,7 @@ MainPage.propTypes = {
   focused: PropTypes.number
 }
 
-MainPage.defaultProps = {
+Menu.defaultProps = {
   items: [],
   focused: 0
 }
