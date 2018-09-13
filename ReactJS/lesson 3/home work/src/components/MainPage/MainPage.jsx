@@ -1,8 +1,9 @@
 import './MainPage.css';
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export default class MainPage extends Component {
+class MainPage extends Component {
   render() {
     const { articles, focused } = this.props;
     let filteredArticles = [];
@@ -40,3 +41,20 @@ export default class MainPage extends Component {
   }
 }
 
+MainPage.propTypes = {
+  articles: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    date: PropTypes.string,
+    categoryId: PropTypes.number,
+    paragraphs: PropTypes.arrayOf(PropTypes.string)
+  })),
+  focused: PropTypes.number
+}
+
+MainPage.defaultProps = {
+  articles: [],
+  focused: 0
+}
+
+export default MainPage;

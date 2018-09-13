@@ -9,7 +9,7 @@ import Footer from 'Components/Footer';
 import categories from 'Mocks/categories.json';
 import articles from 'Mocks/articles.json';
 
-export default class Layout extends Component {
+class Layout extends Component {
   constructor(props) {
     super(props);
 
@@ -38,3 +38,5 @@ export default class Layout extends Component {
     );
   }
 }
+
+export default Layout;

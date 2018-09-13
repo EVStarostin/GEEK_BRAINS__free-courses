@@ -1,8 +1,9 @@
 import './Menu.css';
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export default class Menu extends Component {
+class Menu extends Component {
   render() {
     const { handleClick, items, focused } = this.props;
     return (
@@ -30,3 +31,19 @@ export default class Menu extends Component {
     );
   }
 }
+
+MainPage.propTypes = {
+  handleClick: PropTypes.func,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string
+  })),
+  focused: PropTypes.number
+}
+
+MainPage.defaultProps = {
+  items: [],
+  focused: 0
+}
+
+export default Menu;

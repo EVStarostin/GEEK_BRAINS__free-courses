@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 import Login from 'Components/Login';
 
-export default class Header extends Component {
+class Header extends Component {
   render() {
     return (
       <header className="header">
@@ -23,3 +23,4 @@ export default class Header extends Component {
   }
 }
 
+export default Header;
