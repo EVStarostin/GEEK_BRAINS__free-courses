@@ -1,10 +1,9 @@
 import './Login.css';
 
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent, Fragment } from 'react';
 import { Modal } from 'react-bootstrap';
 
-export default class Login extends Component {
+export default class Login extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -12,7 +11,7 @@ export default class Login extends Component {
       show: false,
       isLoggedIn: false,
       login: '',
-      password: ''
+      password: '',
     };
   }
 
@@ -32,7 +31,8 @@ export default class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.login !== '' && this.state.password !== '') {
+    const { login, password } = this.state;
+    if (login !== '' && password !== '') {
       this.setState({ show: false, isLoggedIn: true });
     } else {
       alert('Введите логин и пароль');
@@ -44,19 +44,24 @@ export default class Login extends Component {
   }
 
   render() {
-    const { show, login, password, isLoggedIn } = this.state;
+    const {
+      show,
+      login,
+      password,
+      isLoggedIn,
+    } = this.state;
 
     return (
       <div>
         {isLoggedIn ? (
           <Fragment>
             <span>{login}</span>
-            <button className="logout-btn" onClick={this.logOut}>
-              <span className="glyphicon glyphicon glyphicon-remove" aria-hidden="true" title="Выйти"></span>
+            <button type="button" className="logout-btn" onClick={this.logOut}>
+              <span className="glyphicon glyphicon glyphicon-remove" aria-hidden="true" title="Выйти" />
             </button>
           </Fragment>
         ) : (
-          <button className="login-btn" onClick={this.handleShow}>Войти</button>
+          <button type="button" className="login-btn" onClick={this.handleShow}>Войти</button>
         )}
         <Modal bsSize="small" show={show} onHide={this.handleClose}>
           <Modal.Header closeButton>
@@ -66,9 +71,9 @@ export default class Login extends Component {
             <form className="login-form" onSubmit={this.handleSubmit}>
               <div className="input-group">
                 <span className="input-group-addon" id="login-input">
-                  <span className="glyphicon glyphicon-user" aria-hidden="true"></span>
+                  <span className="glyphicon glyphicon-user" aria-hidden="true" />
                 </span>
-                <input 
+                <input
                   type="text"
                   className="form-control"
                   placeholder="Имя пользователя"
@@ -80,9 +85,9 @@ export default class Login extends Component {
               </div>
               <div className="input-group">
                 <span className="input-group-addon" id="password-input">
-                  <span className="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                  <span className="glyphicon glyphicon-lock" aria-hidden="true" />
                 </span>
-                <input 
+                <input
                   type="password"
                   className="form-control"
                   placeholder="Пароль"
@@ -100,4 +105,3 @@ export default class Login extends Component {
     );
   }
 }
-

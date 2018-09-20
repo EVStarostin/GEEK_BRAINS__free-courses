@@ -1,47 +1,49 @@
 import './Menu.css';
 
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Menu extends Component {
-  static propTypes = {
-    handleClick: PropTypes.func,
-    items: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.number,
-      name: PropTypes.string
-    })),
-    focused: PropTypes.number
-  }
+function Menu(props) {
+  const { handleClick, items, focused } = props;
 
-  static defaultProps = {
-    items: [],
-    focused: 0
-  }
-
-  render() {
-    const { handleClick, items, focused } = this.props;
-    return (
-      <nav className="nav">
-        <div className="container">
-          <ul className="nav-menu">
-            {
-              items.map((item, index) => {
-                let style = 'nav-menu__item';
-                if (focused === index) {
-                  style = 'nav-menu__item focused';
-                }
-                return (
-                  <li className={style} key={index}>
-                    <a name={item.id} onClick={handleClick}>
-                      {item.name}
-                    </a>
-                  </li>
-                )
-              })
-            }
-          </ul>
-        </div>
-      </nav>
-    );
-  }
+  return (
+    <nav className="nav">
+      <div className="container">
+        <ul className="nav-menu">
+          {
+            items.map((item, index) => {
+              let style = 'nav-menu__item';
+              if (focused === index) {
+                style = 'nav-menu__item focused';
+              }
+              return (
+                <li className={style} key={index}>
+                  <a href="menu-item" name={item.id} onClick={handleClick}>
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </nav>
+  );
 }
+
+Menu.propTypes = {
+  handleClick: PropTypes.func,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+  })),
+  focused: PropTypes.number,
+};
+
+Menu.defaultProps = {
+  handleClick: null,
+  items: [],
+  focused: 0,
+};
+
+export default Menu;

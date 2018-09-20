@@ -1,46 +1,56 @@
 import './Layout.css';
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import Header from 'Components/Header';
 import Menu from 'Components/Menu';
 import MainPage from 'Components/MainPage';
 import Footer from 'Components/Footer';
-import categories from 'Mocks/categories.json';
-import articles from 'Mocks/articles.json';
 
-export default class Layout extends Component {
+export default class Layout extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
-    
-    this.state = {focused: 0};
-  }
-
-  showAlert = () => {
-    alert('Добро пожаловать!');
+    this.state = {
+      focused: 0,
+      categories: [],
+      posts: [],
+    };
   }
 
   componentDidMount = () => {
-    setTimeout(this.showAlert, 0);
+    fetch('api/categories')
+      .then(response => response.json())
+      .then(categories => (
+        this.setState({
+          categories,
+        })
+      ));
+
+    fetch('api/posts')
+      .then(response => response.json())
+      .then(posts => (
+        this.setState({
+          posts,
+        })
+      ));
   }
 
   handleClick = (e) => {
-    const index = +e.target.name;
+    const index = +e.target.dataset('id');
     e.preventDefault();
-    this.setState({focused: index});
+    this.setState({ focused: index });
   }
 
   render() {
-    const { focused } = this.state;
-    const menuItems = [{id: 0, name: 'Главная'}].concat(categories);
+    const { focused, categories, posts } = this.state;
+    const menuItems = [{ id: 0, name: 'Главная' }].concat(categories);
     return (
       <div className="Layout">
         <div className="wrapper">
           <Header />
           <Menu items={menuItems} handleClick={this.handleClick} focused={focused} />
-          <MainPage articles={articles} focused={focused} />
+          <MainPage posts={posts} focused={focused} />
         </div>
         <Footer />
       </div>
