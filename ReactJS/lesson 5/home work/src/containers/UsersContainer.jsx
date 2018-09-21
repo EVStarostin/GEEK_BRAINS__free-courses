@@ -1,6 +1,10 @@
 import React, { PureComponent, Fragment } from 'react';
 
-export default class PostsContainer extends PureComponent {
+import Errors from 'Components/Errors';
+import Loading from 'Components/Loading';
+import UsersList from 'Components/UsersList';
+
+export default class UsersContainer extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -20,21 +24,6 @@ export default class PostsContainer extends PureComponent {
       )));
   }
 
-  handleOpenPostClick = (e) => {
-    e.preventDefault();
-
-    const id = +e.target.dataset.id;
-    const { postsList } = this.state;
-    const post = postsList.find(item => item.id === id);
-    console.log('post', post);
-    this.setState({ post });
-  }
-
-  handleGoBackClick = (e) => {
-    e.preventDefault();
-    this.setState({ post: null });
-  }
-
   render() {
     const {
       users, fetching, errors,
@@ -52,11 +41,7 @@ export default class PostsContainer extends PureComponent {
           <Errors errors={errors} />
         )}
 
-        {post ? (
-          <SinglePost post={post} handleClick={this.handleGoBackClick} />
-        ) : (
-          <PostsList postsList={postsList} handleClick={this.handleOpenPostClick} />
-        )}
+        <UsersList users={users} />
       </Fragment>
     );
   }

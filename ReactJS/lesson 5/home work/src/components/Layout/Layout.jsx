@@ -8,6 +8,7 @@ import MainPage from 'Components/MainPage';
 import Footer from 'Components/Footer';
 import PostsContainer from 'Containers/PostsContainer';
 import CommentsContainer from 'Containers/CommentsContainer';
+import UsersContainer from 'Containers/UsersContainer';
 
 export default class Layout extends PureComponent {
   constructor(props) {
@@ -43,7 +44,7 @@ export default class Layout extends PureComponent {
               {focused === 1 && <MainPage />}
               {focused === 2 && <PostsContainer />}
               {focused === 3 && <CommentsContainer />}
-              {focused === 4 && <div>Пользователи</div>}
+              {focused === 4 && <UsersContainer />}
             </main>
           </div>
         </div>
