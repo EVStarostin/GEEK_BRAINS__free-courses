@@ -9,7 +9,7 @@ function User(props) {
   return (
     <Fragment>
       <h3><span className="label label-default">{user.name}</span></h3>
-      
+
       <div className="panel panel-default">
         <div className="panel-heading">Блоги</div>
         <div className="panel-body">

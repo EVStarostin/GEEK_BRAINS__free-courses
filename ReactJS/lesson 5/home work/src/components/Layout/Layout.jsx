@@ -48,7 +48,7 @@ export default class Layout extends PureComponent {
             </main>
           </div>
         </div>
-        
+
         <Footer />
       </div>
     );

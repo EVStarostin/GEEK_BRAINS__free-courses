@@ -99,7 +99,7 @@ export default class Login extends PureComponent {
                   onChange={this.handleChange}
                 />
               </div>
-              
+
               <button type="submit" className="btn btn-primary float-right">Войти</button>
             </form>
           </Modal.Body>
