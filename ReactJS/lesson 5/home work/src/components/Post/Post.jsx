@@ -1,9 +1,9 @@
-import './SinglePost.css';
+import './Post.css';
 
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function SinglePost(props) {
+function Post(props) {
   const { post, handleClick } = props;
 
   return (
@@ -28,7 +28,7 @@ function SinglePost(props) {
   );
 }
 
-SinglePost.propTypes = {
+Post.propTypes = {
   post: PropTypes.shape({
     id: PropTypes.number,
     title: PropTypes.string,
@@ -38,9 +38,9 @@ SinglePost.propTypes = {
   handleClick: PropTypes.func,
 };
 
-SinglePost.defaultProps = {
+Post.defaultProps = {
   post: null,
   handleClick: null,
 };
 
-export default SinglePost;
+export default Post;

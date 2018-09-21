@@ -3,7 +3,7 @@ import React, { PureComponent, Fragment } from 'react';
 import Errors from 'Components/Errors';
 import Loading from 'Components/Loading';
 import PostsList from 'Components/PostsList';
-import SinglePost from 'Components/SinglePost';
+import Post from 'Components/Post';
 
 export default class PostsContainer extends PureComponent {
   constructor(props) {
@@ -57,7 +57,7 @@ export default class PostsContainer extends PureComponent {
         )}
 
         {clickedPost ? (
-          <SinglePost post={clickedPost} handleClick={this.handleGoBackClick} />
+          <Post post={clickedPost} handleClick={this.handleGoBackClick} />
         ) : (
           <PostsList posts={posts} handleClick={this.handleOpenPostClick} />
         )}
