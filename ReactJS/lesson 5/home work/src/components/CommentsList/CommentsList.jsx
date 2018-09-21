@@ -2,11 +2,11 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 function CommentsList(props) {
-  const { commentsList } = props;
+  const { comments } = props;
 
   return (
     <Fragment>
-      {commentsList.map((comment, index) => (
+      {comments.map((comment, index) => (
         <blockquote key={index}>
           <p><q>{comment.text}</q></p>
           <p><cite><a href="#">{comment.post.title}</a></cite></p>
@@ -17,7 +17,7 @@ function CommentsList(props) {
 }
 
 CommentsList.propTypes = {
-  commentsList: PropTypes.arrayOf(PropTypes.shape({
+  comments: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     postId: PropTypes.number,
     userid: PropTypes.number,
@@ -26,7 +26,7 @@ CommentsList.propTypes = {
 };
 
 CommentsList.defaultProps = {
-  commentsList: [],
+  comments: [],
 };
 
 export default CommentsList;

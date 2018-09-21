@@ -8,7 +8,7 @@ export default class CommentsContainer extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = { commentsList: [], fetching: false, errors: [] };
+    this.state = { comments: [], fetching: false, errors: [] };
   }
 
   componentDidMount = () => {
@@ -16,14 +16,14 @@ export default class CommentsContainer extends PureComponent {
 
     fetch('api/comments?_expand=post')
       .then(response => response.json())
-      .then(commentsList => this.setState({ commentsList, fetching: false }))
+      .then(comments => this.setState({ comments, fetching: false }))
       .catch(error => this.setState(({ errors }) => (
         { errors: errors.concat(error), fetching: false }
       )));
   }
 
   render() {
-    const { commentsList, fetching, errors } = this.state;
+    const { comments, fetching, errors } = this.state;
 
     if (fetching) {
       return (
@@ -37,7 +37,7 @@ export default class CommentsContainer extends PureComponent {
           <Errors errors={errors} />
         )}
 
-        <CommentsList commentsList={commentsList} />
+        <CommentsList comments={comments} />
       </Fragment>
     );
   }
