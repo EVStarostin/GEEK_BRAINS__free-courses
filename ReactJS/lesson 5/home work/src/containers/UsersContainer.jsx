@@ -1,25 +1,20 @@
 import React, { PureComponent, Fragment } from 'react';
 
-import Errors from 'Components/Errors';
-import Loading from 'Components/Loading';
-import PostsList from 'Components/PostsList';
-import SinglePost from 'Components/SinglePost';
-
 export default class PostsContainer extends PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      posts: [], fetching: false, errors: [], clickedPost: null,
+      users: [], fetching: false, errors: [],
     };
   }
 
   componentDidMount = () => {
     this.setState({ fetching: true, errors: [] });
 
-    fetch('api/posts?_expand=user')
+    fetch('api/users')
       .then(response => response.json())
-      .then(posts => this.setState({ posts, fetching: false }))
+      .then(users => this.setState({ users, fetching: false }))
       .catch(error => this.setState(({ errors }) => (
         { errors: errors.concat(error), fetching: false }
       )));
@@ -29,19 +24,20 @@ export default class PostsContainer extends PureComponent {
     e.preventDefault();
 
     const id = +e.target.dataset.id;
-    const { posts } = this.state;
-    const clickedPost = posts.find(item => item.id === id);
-    this.setState({ clickedPost });
+    const { postsList } = this.state;
+    const post = postsList.find(item => item.id === id);
+    console.log('post', post);
+    this.setState({ post });
   }
 
   handleGoBackClick = (e) => {
     e.preventDefault();
-    this.setState({ clickedPost: null });
+    this.setState({ post: null });
   }
 
   render() {
     const {
-      posts, fetching, errors, clickedPost,
+      users, fetching, errors,
     } = this.state;
 
     if (fetching) {
@@ -56,10 +52,10 @@ export default class PostsContainer extends PureComponent {
           <Errors errors={errors} />
         )}
 
-        {clickedPost ? (
-          <SinglePost post={clickedPost} handleClick={this.handleGoBackClick} />
+        {post ? (
+          <SinglePost post={post} handleClick={this.handleGoBackClick} />
         ) : (
-          <PostsList posts={posts} handleClick={this.handleOpenPostClick} />
+          <PostsList postsList={postsList} handleClick={this.handleOpenPostClick} />
         )}
       </Fragment>
     );
