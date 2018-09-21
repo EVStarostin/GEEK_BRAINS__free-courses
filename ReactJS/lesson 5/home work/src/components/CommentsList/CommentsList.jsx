@@ -6,8 +6,8 @@ function CommentsList(props) {
 
   return (
     <Fragment>
-      {comments.map((comment, index) => (
-        <blockquote key={index}>
+      {comments.map(comment => (
+        <blockquote key={comment.id}>
           <p><q>{comment.text}</q></p>
           <p><cite><a href="#">{comment.post.title}</a></cite></p>
         </blockquote>

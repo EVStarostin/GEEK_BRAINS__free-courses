@@ -25,12 +25,12 @@ export default class PostsContainer extends PureComponent {
       )));
   }
 
-  handleOpenPostClick = (e) => {
+  handleShowPostClick = (e) => {
     e.preventDefault();
 
     const id = +e.target.dataset.id;
     const { posts } = this.state;
-    const clickedPost = posts.find(item => item.id === id);
+    const clickedPost = posts.find(post => post.id === id);
     this.setState({ clickedPost });
   }
 
@@ -59,7 +59,7 @@ export default class PostsContainer extends PureComponent {
         {clickedPost ? (
           <Post post={clickedPost} handleClick={this.handleGoBackClick} />
         ) : (
-          <PostsList posts={posts} handleClick={this.handleOpenPostClick} />
+          <PostsList posts={posts} handleClick={this.handleShowPostClick} />
         )}
       </Fragment>
     );

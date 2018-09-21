@@ -14,7 +14,7 @@ function NavMenu(props) {
               style = 'active';
             }
             return (
-              <li role="presentation" className={style} key={index}>
+              <li role="presentation" className={style} key={items.id}>
                 <a href="#" data-id={item.id} onClick={handleClick}>
                   {item.name}
                 </a>

@@ -1,3 +1,5 @@
+import './PostsList.css';
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -29,7 +31,7 @@ PostsList.propTypes = {
 
 PostsList.defaultProps = {
   post: null,
-  handleClick: PropTypes.func,
+  handleClick: null,
 };
 
 export default PostsList;

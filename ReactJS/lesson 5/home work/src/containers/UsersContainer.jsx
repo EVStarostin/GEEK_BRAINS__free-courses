@@ -3,20 +3,21 @@ import React, { PureComponent, Fragment } from 'react';
 import Errors from 'Components/Errors';
 import Loading from 'Components/Loading';
 import UsersList from 'Components/UsersList';
+import User from 'Components/User';
 
 export default class UsersContainer extends PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      users: [], fetching: false, errors: [],
+      users: [], clickedUser: null, fetching: false, errors: [],
     };
   }
 
   componentDidMount = () => {
     this.setState({ fetching: true, errors: [] });
 
-    fetch('api/users')
+    fetch('api/users?_embed=posts&_embed=comments')
       .then(response => response.json())
       .then(users => this.setState({ users, fetching: false }))
       .catch(error => this.setState(({ errors }) => (
@@ -24,9 +25,22 @@ export default class UsersContainer extends PureComponent {
       )));
   }
 
+  handleShowUserClick = (e) => {
+    e.preventDefault();
+    const id = +e.target.dataset.id;
+    const { users } = this.state;
+    const clickedUser = users.find(user => user.id === id);
+    this.setState({ clickedUser });
+  }
+
+  handleGoBackClick = (e) => {
+    e.preventDefault();
+    this.setState({ clickedUser: null });
+  }
+
   render() {
     const {
-      users, fetching, errors,
+      users, clickedUser, fetching, errors,
     } = this.state;
 
     if (fetching) {
@@ -41,7 +55,11 @@ export default class UsersContainer extends PureComponent {
           <Errors errors={errors} />
         )}
 
-        <UsersList users={users} />
+        {clickedUser ? (
+          <User user={clickedUser} handleClick={this.handleGoBackClick} />
+        ) : (
+          <UsersList users={users} handleClick={this.handleShowUserClick} />
+        )}
       </Fragment>
     );
   }
