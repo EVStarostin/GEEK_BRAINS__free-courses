@@ -3,8 +3,9 @@ import './Layout.css';
 import React, { PureComponent } from 'react';
 
 import Header from 'Components/Header';
-import Menu from 'Components/Menu';
+import NavMenu from 'Components/NavMenu';
 import MainPage from 'Components/MainPage';
+import Posts from 'Components/Posts';
 import Footer from 'Components/Footer';
 
 export default class Layout extends PureComponent {
@@ -12,45 +13,38 @@ export default class Layout extends PureComponent {
     super(props);
 
     this.state = {
-      focused: 0,
-      categories: [],
-      posts: [],
+      focused: 1,
     };
   }
 
-  componentDidMount = () => {
-    fetch('api/categories')
-      .then(response => response.json())
-      .then(categories => (
-        this.setState({
-          categories,
-        })
-      ));
-
-    fetch('api/posts')
-      .then(response => response.json())
-      .then(posts => (
-        this.setState({
-          posts,
-        })
-      ));
-  }
-
-  handleClick = (e) => {
-    const index = +e.target.dataset('id');
+  handleNavMenuClick = (e) => {
+    const focused = +e.target.dataset.id;
     e.preventDefault();
-    this.setState({ focused: index });
+    this.setState({ focused });
   }
 
   render() {
-    const { focused, categories, posts } = this.state;
-    const menuItems = [{ id: 0, name: 'Главная' }].concat(categories);
+    const { focused } = this.state;
+    const menuItems = [
+      { id: 1, name: 'Главная' },
+      { id: 2, name: 'Блог' },
+      { id: 3, name: 'Комментарии' },
+      { id: 4, name: 'Пользователи' },
+    ];
+
     return (
       <div className="Layout">
         <div className="wrapper">
           <Header />
-          <Menu items={menuItems} handleClick={this.handleClick} focused={focused} />
-          <MainPage posts={posts} focused={focused} />
+          <div className="container">
+            <NavMenu items={menuItems} handleClick={this.handleNavMenuClick} focused={focused} />
+            <main className="main-page">
+              {focused === 1 && <MainPage />}
+              {focused === 2 && <Posts />}
+              {focused === 3 && <div>Комментарии</div>}
+              {focused === 4 && <div>Пользователи</div>}
+            </main>
+          </div>
         </div>
         <Footer />
       </div>

@@ -1,58 +1,22 @@
 import './MainPage.css';
 
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
 
-export default class MainPage extends PureComponent {
-  static propTypes = {
-    posts: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      date: PropTypes.string,
-      categoryId: PropTypes.number,
-      paragraphs: PropTypes.arrayOf(PropTypes.string),
-    })),
-    focused: PropTypes.number,
-  }
-
-  static defaultProps = {
-    posts: [],
-    focused: 0,
-  }
-
-  render() {
-    const { posts, focused } = this.props;
-    let filteredPosts = [];
-    if (focused === 0) {
-      filteredPosts = posts.sort((a, b) => {
-        const partsA = a.date.split('.').map(item => +item);
-        const partsB = b.date.split('.').map(item => +item);
-        const dateA = new Date(partsA[2], partsA[1] - 1, partsA[0]);
-        const dateB = new Date(partsB[2], partsB[1] - 1, partsB[0]);
-        return dateB - dateA;
-      });
-    } else {
-      filteredPosts = posts.filter(item => item.categoryId === focused);
-    }
-
-    return (
-      <main className="main-page">
-        <div className="container">
-          {filteredPosts.map(article => (
-            <article key={article.id} className="article">
-              <header className="article__header">
-                <h3>{article.title}</h3>
-              </header>
-              {article.paragraphs.map((paragraph, index) => (
-                <p key={index} className="article__paragraph">{paragraph}</p>
-              ))}
-              <footer className="article__footer">
-                <p className="article__date">{article.date}</p>
-              </footer>
-            </article>
-          ))}
-        </div>
-      </main>
-    );
-  }
+export default function MainPage() {
+  return (
+    <Fragment>
+      <h3>Главная</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At ipsa, aut veritatis cumque quo
+        magnam eum quos nostrum harum neque inventore, praesentium pariatur velit commodi provident
+        aliquam. Quis ullam ad, enim eaque assumenda debitis. Nam saepe suscipit tempore tempora
+        aliquam odit, consequuntur iste animi debitis ipsum deserunt quasi laudantium earum
+        pariatur aperiam maiores natus fugiat ducimus dolores cupiditate quis cum nemo explicabo
+        totam? Maxime consequatur quaerat placeat porro veritatis eius recusandae dolorem provident
+        harum veniam enim fugiat delectus, corrupti esse repudiandae ullam animi nesciunt ut!
+        Ducimus mollitia adipisci totam illo ab quaerat dolorem nulla numquam sit. Aliquid natus
+        officia magni?
+      </p>
+    </Fragment>
+  );
 }
