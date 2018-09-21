@@ -2,6 +2,7 @@ import React, { PureComponent, Fragment } from 'react';
 
 import Errors from 'Components/Errors';
 import Loading from 'Components/Loading';
+import CommentsList from 'Components/CommentsList';
 
 export default class CommentsContainer extends PureComponent {
   constructor(props) {
@@ -36,12 +37,7 @@ export default class CommentsContainer extends PureComponent {
           <Errors errors={errors} />
         )}
 
-        {commentsList.map((comment, index) => (
-          <blockquote key={index}>
-            <p><q>{comment.text}</q></p>
-            <p><cite><a href="#">{comment.post.title}</a></cite></p>
-          </blockquote>
-        ))}
+        <CommentsList commentsList={commentsList} />
       </Fragment>
     );
   }
