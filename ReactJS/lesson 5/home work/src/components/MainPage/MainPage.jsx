@@ -1,5 +1,3 @@
-import './MainPage.css';
-
 import React, { Fragment } from 'react';
 
 export default function MainPage() {

@@ -5,8 +5,9 @@ import React, { PureComponent } from 'react';
 import Header from 'Components/Header';
 import NavMenu from 'Components/NavMenu';
 import MainPage from 'Components/MainPage';
-import Posts from 'Components/Posts';
 import Footer from 'Components/Footer';
+import PostsContainer from 'Containers/PostsContainer';
+import CommentsContainer from 'Containers/CommentsContainer';
 
 export default class Layout extends PureComponent {
   constructor(props) {
@@ -40,8 +41,8 @@ export default class Layout extends PureComponent {
             <NavMenu items={menuItems} handleClick={this.handleNavMenuClick} focused={focused} />
             <main className="main-page">
               {focused === 1 && <MainPage />}
-              {focused === 2 && <Posts />}
-              {focused === 3 && <div>Комментарии</div>}
+              {focused === 2 && <PostsContainer />}
+              {focused === 3 && <CommentsContainer />}
               {focused === 4 && <div>Пользователи</div>}
             </main>
           </div>
