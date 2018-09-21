@@ -14,14 +14,12 @@ export default class Layout extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {
-      focused: 1,
-    };
+    this.state = { focused: 1 };
   }
 
   handleNavMenuClick = (e) => {
     e.preventDefault();
-    
+
     const focused = +e.target.dataset.id;
     this.setState({ focused });
   }
