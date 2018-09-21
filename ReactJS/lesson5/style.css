@@ -1,0 +1,134 @@
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+}
+
+.Layout {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+.wrapper:after {
+  content: '';
+  display: block;
+  height: 41px;;
+}
+
+.main {
+  padding: 10px 0 15px;
+}
+
+.top-bar {
+  display: flex;
+}
+
+.header {
+  background-color: #004359;
+  color: #fff;
+}
+
+.logo-section {
+  text-transform: uppercase;
+}
+
+.logo-section .logo {
+  margin: 0;
+  padding: 4px 0 8px;
+}
+
+.login-section {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+
+.login-btn, .logout-btn {
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.login-btn:hover, .logout-btn:hover {
+  color: #829399;
+}
+
+.login-form .input-group {
+  margin-bottom: 20px;
+}
+
+.login-form .float-right {
+  float: right;
+}
+
+.login-form:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.footer {
+  background-color: #004359;
+  border-top: 3px solid #00394c;
+  color: #fff;
+  margin-top: -41px;
+}
+
+.footer-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.footer-menu__item a {
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: .8em;
+}
+
+.footer-menu__item a:hover {
+  color: #00a3d9;
+  text-decoration: none;
+}
+
+.footer-menu__item {
+  padding: 0 10px;
+}
+
+.footer-menu__item:first-child {
+  padding: 0;
+}
+
+.article {
+  margin-bottom: 20px;
+}
+.article__header {
+  margin-bottom: 15px;
+}
+
+.article__paragraph {
+  text-align: justify;
+}
+
+.article__author {
+  text-align: right;
+  font-style: italic;
+}
+
+.userlist__user:hover,
+.userlist__user:focus {
+  text-decoration: none;
+}
+
+
