@@ -20,8 +20,9 @@ export default class Layout extends PureComponent {
   }
 
   handleNavMenuClick = (e) => {
-    const focused = +e.target.dataset.id;
     e.preventDefault();
+    
+    const focused = +e.target.dataset.id;
     this.setState({ focused });
   }
 
