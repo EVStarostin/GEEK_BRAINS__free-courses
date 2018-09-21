@@ -40,7 +40,7 @@ export default class Layout extends PureComponent {
           <Header />
           <div className="container">
             <NavMenu items={menuItems} handleClick={this.handleNavMenuClick} focused={focused} />
-            <main className="main-page">
+            <main className="main">
               {focused === 1 && <MainPage />}
               {focused === 2 && <PostsContainer />}
               {focused === 3 && <CommentsContainer />}
