@@ -9,14 +9,14 @@ function User(props) {
   return (
     <Fragment>
       <h3><span className="label label-default">{user.name}</span></h3>
-
+      
       <div className="panel panel-default">
         <div className="panel-heading">Блоги</div>
         <div className="panel-body">
           {user.posts.map(post => (
             <article key={post.id} className="article">
               <header className="article__header">
-                <h4><a href="#">{post.title}</a></h4>
+                <h4>{post.title}</h4>
               </header>
               <p className="article__paragraph">{post.paragraphs[0]}</p>
             </article>

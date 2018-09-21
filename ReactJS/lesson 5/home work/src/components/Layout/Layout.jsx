@@ -19,7 +19,6 @@ export default class Layout extends PureComponent {
 
   handleNavMenuClick = (e) => {
     e.preventDefault();
-
     const focused = +e.target.dataset.id;
     this.setState({ focused });
   }
@@ -37,8 +36,10 @@ export default class Layout extends PureComponent {
       <div className="Layout">
         <div className="wrapper">
           <Header />
+
           <div className="container">
             <NavMenu items={menuItems} handleClick={this.handleNavMenuClick} focused={focused} />
+
             <main className="main">
               {focused === 1 && <MainPage />}
               {focused === 2 && <PostsContainer />}
@@ -47,6 +48,7 @@ export default class Layout extends PureComponent {
             </main>
           </div>
         </div>
+        
         <Footer />
       </div>
     );

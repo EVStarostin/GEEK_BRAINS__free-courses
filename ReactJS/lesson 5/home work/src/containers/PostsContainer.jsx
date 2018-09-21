@@ -27,7 +27,6 @@ export default class PostsContainer extends PureComponent {
 
   handleShowPostClick = (e) => {
     e.preventDefault();
-
     const id = +e.target.dataset.id;
     const { posts } = this.state;
     const clickedPost = posts.find(post => post.id === id);

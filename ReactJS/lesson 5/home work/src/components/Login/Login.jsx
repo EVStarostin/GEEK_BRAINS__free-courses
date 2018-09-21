@@ -63,6 +63,7 @@ export default class Login extends PureComponent {
         ) : (
           <button type="button" className="login-btn" onClick={this.handleShow}>Войти</button>
         )}
+
         <Modal bsSize="small" show={show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Войти</Modal.Title>
@@ -83,6 +84,7 @@ export default class Login extends PureComponent {
                   onChange={this.handleChange}
                 />
               </div>
+
               <div className="input-group">
                 <span className="input-group-addon" id="password-input">
                   <span className="glyphicon glyphicon-lock" aria-hidden="true" />
@@ -97,6 +99,7 @@ export default class Login extends PureComponent {
                   onChange={this.handleChange}
                 />
               </div>
+              
               <button type="submit" className="btn btn-primary float-right">Войти</button>
             </form>
           </Modal.Body>

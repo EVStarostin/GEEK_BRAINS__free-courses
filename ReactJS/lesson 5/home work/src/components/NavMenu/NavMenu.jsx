@@ -7,21 +7,13 @@ function NavMenu(props) {
   return (
     <nav className="nav">
       <ul className="nav nav-tabs">
-        {
-          items.map((item, index) => {
-            let style = '';
-            if (focused === index + 1) {
-              style = 'active';
-            }
-            return (
-              <li role="presentation" className={style} key={items.id}>
-                <a href="#" data-id={item.id} onClick={handleClick}>
-                  {item.name}
-                </a>
-              </li>
-            );
-          })
-        }
+        {items.map((item, index) => (
+          <li className={(focused === index + 1) ? 'active' : ''} key={item.id}>
+            <a href="#" data-id={item.id} onClick={handleClick}>
+              {item.name}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );

@@ -27,6 +27,7 @@ export default class UsersContainer extends PureComponent {
 
   handleShowUserClick = (e) => {
     e.preventDefault();
+
     const id = +e.target.dataset.id;
     const { users } = this.state;
     const clickedUser = users.find(user => user.id === id);
@@ -35,6 +36,7 @@ export default class UsersContainer extends PureComponent {
 
   handleGoBackClick = (e) => {
     e.preventDefault();
+
     this.setState({ clickedUser: null });
   }
 
