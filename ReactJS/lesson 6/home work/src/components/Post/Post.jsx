@@ -18,7 +18,9 @@ function Post(props) {
       ))}
 
       <footer className="article__footer">
-        <p className="article__author">{post.user.name}</p>
+        <p className="article__author">
+          <Link to={`/users/${post.user.id}`}>{post.user.name}</Link>
+        </p>
       </footer>
 
       <Link to="/posts">

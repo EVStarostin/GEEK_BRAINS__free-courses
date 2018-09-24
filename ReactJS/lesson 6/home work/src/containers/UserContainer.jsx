@@ -1,29 +1,45 @@
 import React, { PureComponent, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 import Errors from 'Components/Errors';
 import Loading from 'Components/Loading';
-import UsersList from 'Components/UsersList';
+import User from 'Components/User';
 
 export default class UsersListContainer extends PureComponent {
+  static propTypes = {
+    match: PropTypes.arrayOf(PropTypes.shape({
+      params: PropTypes.shape({
+        userId: PropTypes.string,
+      }),
+    })),
+  };
+
+  static defaultProps = {
+    match: {
+      params: { userId: '' },
+    },
+  };
+
   constructor(props) {
     super(props);
 
-    this.state = { users: [], fetching: false, errors: [] };
+    this.state = { user: null, fetching: true, errors: [] };
   }
 
   componentDidMount = () => {
-    this.setState({ fetching: true, errors: [] });
-
-    fetch('api/users?_embed=posts&_embed=comments')
+    const { match } = this.props;
+    fetch(`api/users/${match.params.userId}?_embed=posts&_embed=comments`)
       .then(response => response.json())
-      .then(users => this.setState({ users, fetching: false }))
+      .then(user => this.setState({ user, fetching: false }))
       .catch(error => this.setState(({ errors }) => (
         { errors: errors.concat(error), fetching: false }
       )));
   }
 
   render() {
-    const { users, fetching, errors } = this.state;
+    const {
+      user, fetching, errors,
+    } = this.state;
 
     if (fetching) {
       return (
@@ -37,7 +53,7 @@ export default class UsersListContainer extends PureComponent {
           <Errors errors={errors} />
         )}
 
-        <UsersList users={users} />
+        <User user={user} />
       </Fragment>
     );
   }
