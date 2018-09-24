@@ -1,0 +1,17 @@
+.Layout {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+.wrapper:after {
+  content: '';
+  display: block;
+  height: 41px;;
+}
+
+.main {
+  padding: 10px 0 15px;
+}
