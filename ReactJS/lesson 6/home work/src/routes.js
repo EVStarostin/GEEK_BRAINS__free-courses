@@ -4,6 +4,7 @@ import Post from 'Containers/PostContainer';
 import CommentsList from 'Containers/CommentsListContainer';
 import UsersList from 'Containers/UsersListContainer';
 import User from 'Containers/UserContainer';
+import PageNotFound from 'Components/PageNotFound';
 
 export default [
   {
@@ -35,5 +36,8 @@ export default [
     path: '/users/:userId',
     component: User,
     exact: true,
+  },
+  {
+    component: PageNotFound,
   },
 ];
