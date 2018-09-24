@@ -2,45 +2,47 @@ import React, { PureComponent, Fragment } from 'react';
 
 import Errors from 'Components/Errors';
 import Loading from 'Components/Loading';
-import PostsList from 'Components/PostsList';
-import Post from 'Components/Post';
+import UsersList from 'Components/UsersList';
+import User from 'Components/User';
 
-export default class PostsContainer extends PureComponent {
+export default class UsersListContainer extends PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      posts: [], fetching: false, errors: [], clickedPost: null,
+      users: [], clickedUser: null, fetching: false, errors: [],
     };
   }
 
   componentDidMount = () => {
     this.setState({ fetching: true, errors: [] });
 
-    fetch('api/posts?_expand=user')
+    fetch('api/users?_embed=posts&_embed=comments')
       .then(response => response.json())
-      .then(posts => this.setState({ posts, fetching: false }))
+      .then(users => this.setState({ users, fetching: false }))
       .catch(error => this.setState(({ errors }) => (
         { errors: errors.concat(error), fetching: false }
       )));
   }
 
-  handleShowPostClick = (e) => {
+  handleShowUserClick = (e) => {
     e.preventDefault();
+
     const id = +e.target.dataset.id;
-    const { posts } = this.state;
-    const clickedPost = posts.find(post => post.id === id);
-    this.setState({ clickedPost });
+    const { users } = this.state;
+    const clickedUser = users.find(user => user.id === id);
+    this.setState({ clickedUser });
   }
 
   handleGoBackClick = (e) => {
     e.preventDefault();
-    this.setState({ clickedPost: null });
+
+    this.setState({ clickedUser: null });
   }
 
   render() {
     const {
-      posts, fetching, errors, clickedPost,
+      users, clickedUser, fetching, errors,
     } = this.state;
 
     if (fetching) {
@@ -55,10 +57,10 @@ export default class PostsContainer extends PureComponent {
           <Errors errors={errors} />
         )}
 
-        {clickedPost ? (
-          <Post post={clickedPost} handleClick={this.handleGoBackClick} />
+        {clickedUser ? (
+          <User user={clickedUser} handleClick={this.handleGoBackClick} />
         ) : (
-          <PostsList posts={posts} handleClick={this.handleShowPostClick} />
+          <UsersList users={users} handleClick={this.handleShowUserClick} />
         )}
       </Fragment>
     );
