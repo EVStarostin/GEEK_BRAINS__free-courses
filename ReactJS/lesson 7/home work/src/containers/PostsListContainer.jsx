@@ -1,31 +1,35 @@
 import React, { PureComponent, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import Errors from 'Components/Errors';
 import Loading from 'Components/Loading';
 import PostsList from 'Components/PostsList';
-import { incrementPosts } from 'Actions';
+import { IPost, IError } from 'Models';
+import { fetchPosts } from 'Actions';
 
-export default class PostsListContainer extends PureComponent {
-  constructor(props) {
-    super(props);
+class PostsListContainer extends PureComponent {
+  static propTypes = {
+    posts: PropTypes.arrayOf(IPost),
+    fetching: PropTypes.bool,
+    errors: PropTypes.arrayOf(IError),
+    dispatch: PropTypes.func,
+  };
 
-    this.state = { posts: [], fetching: false, errors: [] };
-  }
+  static defaultProps = {
+    posts: [],
+    fetching: false,
+    errors: [],
+    dispatch: null,
+  };
 
   componentDidMount = () => {
-    this.setState({ fetching: true, errors: [] });
-    incrementPosts();
-
-    fetch('api/posts')
-      .then(response => response.json())
-      .then(posts => this.setState({ posts, fetching: false }))
-      .catch(error => this.setState(({ errors }) => (
-        { errors: errors.concat(error), fetching: false }
-      )));
+    const { dispatch } = this.props;
+    dispatch(fetchPosts());
   }
 
   render() {
-    const { posts, fetching, errors } = this.state;
+    const { posts, fetching, errors } = this.props;
 
     if (fetching) {
       return (
@@ -44,3 +48,9 @@ export default class PostsListContainer extends PureComponent {
     );
   }
 }
+
+function mapStateToProps({ posts }}) {
+  return { ...posts };
+}
+
+export default connect(mapStateToProps)(PostsListContainer);
