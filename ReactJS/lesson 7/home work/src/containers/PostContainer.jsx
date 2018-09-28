@@ -11,20 +11,18 @@ export default class PostsContainer extends PureComponent {
       params: PropTypes.shape({
         postId: PropTypes.string,
       }),
-    }),
+    });
   };
 
   static defaultProps = {
     match: {
       params: { postId: '' },
     },
+    post: null,
+    fetching: false,
+    errors: [],
+    dispatch: null,
   };
-
-  constructor(props) {
-    super(props);
-
-    this.state = { post: null, fetching: true, errors: [] };
-  }
 
   componentDidMount = () => {
     const { match } = this.props;
@@ -37,7 +35,7 @@ export default class PostsContainer extends PureComponent {
   }
 
   render() {
-    const { post, fetching, errors } = this.state;
+    const { post, fetching, errors } = this.props;
 
     if (fetching) {
       return (
@@ -56,3 +54,9 @@ export default class PostsContainer extends PureComponent {
     );
   }
 }
+
+function mapStateToProps({ posts }) {
+  return { ...posts };
+}
+
+export default connect(mapStateToProps)(PostsContainer);
