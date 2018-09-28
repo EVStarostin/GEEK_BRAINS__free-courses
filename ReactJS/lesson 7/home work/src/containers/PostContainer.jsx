@@ -11,7 +11,7 @@ export default class PostsContainer extends PureComponent {
       params: PropTypes.shape({
         postId: PropTypes.string,
       }),
-    });
+    }),
   };
 
   static defaultProps = {
@@ -54,9 +54,3 @@ export default class PostsContainer extends PureComponent {
     );
   }
 }
-
-function mapStateToProps({ posts }) {
-  return { ...posts };
-}
-
-export default connect(mapStateToProps)(PostsContainer);

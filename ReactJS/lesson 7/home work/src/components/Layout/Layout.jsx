@@ -7,7 +7,7 @@ import Header from 'Components/Header';
 import NavMenu from 'Components/NavMenu';
 import Footer from 'Components/Footer';
 
-import routes from 'Routes';
+import routes from '../../routes';
 
 export default function Layout() {
   const menuItems = [

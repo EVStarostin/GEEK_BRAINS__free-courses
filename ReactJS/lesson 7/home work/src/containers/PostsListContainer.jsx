@@ -1,6 +1,4 @@
 import React, { PureComponent, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import Errors from 'Components/Errors';
 import Loading from 'Components/Loading';
@@ -25,7 +23,7 @@ export default class PostsListContainer extends PureComponent {
   }
 
   render() {
-    const { posts, fetching, errors } = this.props;
+    const { posts, fetching, errors } = this.state;
 
     if (fetching) {
       return (
@@ -45,8 +43,3 @@ export default class PostsListContainer extends PureComponent {
   }
 }
 
-function mapStateToProps({ posts }}) {
-  return { ...posts };
-}
-
-export default connect(mapStateToProps)(PostsListContainer);
