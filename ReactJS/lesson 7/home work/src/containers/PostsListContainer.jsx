@@ -3,7 +3,6 @@ import React, { PureComponent, Fragment } from 'react';
 import Errors from 'Components/Errors';
 import Loading from 'Components/Loading';
 import PostsList from 'Components/PostsList';
-import { incrementPosts } from 'Actions';
 
 export default class PostsListContainer extends PureComponent {
   constructor(props) {
@@ -14,7 +13,6 @@ export default class PostsListContainer extends PureComponent {
 
   componentDidMount = () => {
     this.setState({ fetching: true, errors: [] });
-    incrementPosts();
 
     fetch('api/posts')
       .then(response => response.json())
