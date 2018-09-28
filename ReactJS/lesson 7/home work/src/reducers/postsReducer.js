@@ -1,31 +1,52 @@
-import { REQUEST_POSTS_LIST, RECEIVE_POSTS_LIST_SUCCESS, RECEIVE_POSTS_LIST_FAIL } from 'Constants';
+import { handleActions } from 'redux-actions';
+
+import {
+  loadPostsListRequest,
+  loadPostsListFailure,
+  loadPostsListSuccess,
+  loadPostRequest,
+  loadPostFailure,
+  loadPostSuccess,
+} from 'Actions/postsActions';
 
 const initialState = {
-  posts: [],
+  postsList: [],
+  post: null,
   fetching: false,
   errors: [],
 };
 
-export default function posts(state = initialState, action) {
-  switch (action.type) {
-    case REQUEST_POSTS_LIST:
-      return {
-        ...state,
-        fetching: true,
-      };
-    case RECEIVE_POSTS_LIST_SUCCESS:
-      return {
-        ...state,
-        posts: action.posts,
-        fetching: false,
-      };
-    case RECEIVE_POSTS_LIST_FAIL:
-      return {
-        ...state,
-        errors: state.errors.concat(action.error),
-        fetching: false,
-      };
-    default:
-      return state;
-  }
-}
+export default handleActions({
+  [loadPostsListRequest]: state => ({
+    ...state,
+    postsList: [],
+    errors: [],
+    fetching: true,
+  }),
+  [loadPostsListFailure]: (state, action) => ({
+    ...state,
+    errors: state.errors.concat([action.payload]),
+    fetching: false,
+  }),
+  [loadPostsListSuccess]: (state, action) => ({
+    ...state,
+    postsList: action.payload,
+    fetching: false,
+  }),
+  [loadPostRequest]: state => ({
+    ...state,
+    post: null,
+    errors: [],
+    fetching: true,
+  }),
+  [loadPostFailure]: (state, action) => ({
+    ...state,
+    errors: state.errors.concat([action.payload]),
+    fetching: false,
+  }),
+  [loadPostSuccess]: (state, action) => ({
+    ...state,
+    post: action.payload,
+    fetching: false,
+  }),
+}, initialState);

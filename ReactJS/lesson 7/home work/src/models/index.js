@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 export const IPost = PropTypes.shape({
-  id: PropTypes.string,
+  id: PropTypes.number,
   title: PropTypes.string,
   userId: PropTypes.number,
   paragraphs: PropTypes.arrayOf(PropTypes.string),
