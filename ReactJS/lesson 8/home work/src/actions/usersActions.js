@@ -10,7 +10,7 @@ export const loadUserSuccess = createAction('LOAD_USER_SUCCESS');
 
 export const fetchUsersList = () => (dispatch) => {
   dispatch(loadUsersListRequest());
-  fetch('api/users?_embed=posts&_embed=comments')
+  fetch('api/users')
     .then(response => response.json())
     .then(json => dispatch(loadUsersListSuccess(json)))
     .catch(err => dispatch(loadUsersListFailure(err)));
@@ -18,7 +18,7 @@ export const fetchUsersList = () => (dispatch) => {
 
 export const fetchUser = userId => (dispatch) => {
   dispatch(loadUserRequest());
-  fetch(`api/users/${userId}?_embed=posts&_embed=comments`)
+  fetch(`api/users/${userId}`)
     .then(response => response.json())
     .then(json => dispatch(loadUserSuccess(json)))
     .catch(err => dispatch(loadUserFailure(err)));

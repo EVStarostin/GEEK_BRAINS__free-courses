@@ -25,8 +25,10 @@ app.get('/api/users', async (req, res) => {
 
 app.get('/api/users/:id', async (req, res) => {
   const user = await User.findById(req.params.id);
+  const posts = await Post.find({ user: req.params.id });
+  const comments = await Comment.find({ user: req.params.id });
 
-  res.json(user);
+  res.json({name: user.name, posts, comments});
 });
 
 app.post('/api/users', async (req, res) => {
@@ -55,14 +57,8 @@ app.post('/api/posts', async (req, res) => {
 });
 
 app.get('/api/comments', async (req, res) => {
-  const comments = await Comment.find();
+  const comments = await Comment.find().populate('post');
   res.json(comments);
-});
-
-app.get('/api/comments/:id', async (req, res) => {
-  const comment = await Comment.findById(req.params.id);
-
-  res.json(comment);
 });
 
 app.post('/api/comments', async (req, res) => {
