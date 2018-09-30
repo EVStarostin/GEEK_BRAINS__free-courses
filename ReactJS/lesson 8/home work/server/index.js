@@ -42,7 +42,7 @@ app.get('/api/posts', async (req, res) => {
 });
 
 app.get('/api/posts/:id', async (req, res) => {
-  const post = await Post.findById(req.params.id);
+  const post = await Post.findById(req.params.id).populate('user');
 
   res.json(post);
 });
