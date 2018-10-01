@@ -14,12 +14,14 @@ export default class UsersList extends PureComponent {
     users: PropTypes.arrayOf(IUser),
     addUser: PropTypes.func,
     deleteUser: PropTypes.func,
+    updateUser: PropTypes.func,
   };
 
   static defaultProps = {
     users: [],
     addUser: null,
     deleteUser: null,
+    updateUser: null,
   };
 
   constructor(props) {
@@ -27,7 +29,8 @@ export default class UsersList extends PureComponent {
 
     this.state = {
       showModal: false,
-      login: '',
+      userId: '',
+      userName: '',
     };
   }
 
@@ -36,7 +39,7 @@ export default class UsersList extends PureComponent {
   }
 
   handleClose = () => {
-    this.setState({ showModal: false });
+    this.setState({ showModal: false, userId: '', userName: '' });
   }
 
   handleChange = (event) => {
@@ -47,20 +50,29 @@ export default class UsersList extends PureComponent {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { login } = this.state;
-    const { addUser } = this.props;
+    const { userId, userName } = this.state;
+    const { addUser, updateUser } = this.props;
 
-    if (login === '') {
+    if (userName === '') {
       alert('Введите имя пользователя');
       return;
     }
-    addUser(login);
+    if (userId) {
+      updateUser(userId, userName);
+    } else {
+      addUser(userName);
+    }
+
     this.setState({ showModal: false });
+  }
+
+  handleUpdate = (user) => {
+    this.setState({ showModal: true, userId: user._id, userName: user.name });
   }
 
   render() {
     const { users, deleteUser } = this.props;
-    const { showModal, login } = this.state;
+    const { showModal, userName } = this.state;
 
     return (
       <Fragment>
@@ -82,7 +94,7 @@ export default class UsersList extends PureComponent {
                 pullRight
                 id="dropdown-no-caret"
               >
-                <MenuItem eventKey="1">Редактировать</MenuItem>
+                <MenuItem eventKey={user} onSelect={this.handleUpdate}>Редактировать</MenuItem>
                 <MenuItem divider />
                 <MenuItem eventKey={user._id} onSelect={deleteUser}>Удалить</MenuItem>
               </DropdownButton>
@@ -94,18 +106,18 @@ export default class UsersList extends PureComponent {
             <Modal.Title>Добавить пользователя</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form className="login-form" onSubmit={this.handleSubmit}>
+            <form className="user-form" onSubmit={this.handleSubmit}>
               <div className="input-group">
-                <span className="input-group-addon" id="login-input">
+                <span className="input-group-addon" id="user-input">
                   <span className="glyphicon glyphicon-user" aria-hidden="true" />
                 </span>
                 <input
                   type="text"
                   className="form-control"
                   placeholder="Имя пользователя"
-                  aria-describedby="login-input"
-                  name="login"
-                  value={login}
+                  aria-describedby="user-name"
+                  name="userName"
+                  value={userName}
                   onChange={this.handleChange}
                 />
               </div>

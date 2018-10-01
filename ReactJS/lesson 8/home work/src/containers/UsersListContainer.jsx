@@ -5,7 +5,9 @@ import { connect } from 'react-redux';
 import Errors from 'Components/Errors';
 import Loading from 'Components/Loading';
 import UsersList from 'Components/UsersList';
-import { fetchUsersList, addUser, deleteUser } from 'Actions/usersActions';
+import {
+  fetchUsersList, addUser, deleteUser, updateUser,
+} from 'Actions/usersActions';
 import { IUser, IError } from 'Models';
 
 class UsersListContainer extends PureComponent {
@@ -16,6 +18,7 @@ class UsersListContainer extends PureComponent {
     getUsersList: PropTypes.func,
     handleAddUser: PropTypes.func,
     handleDeleteUser: PropTypes.func,
+    handleUpdateUser: PropTypes.func,
   };
 
   static defaultProps = {
@@ -25,6 +28,7 @@ class UsersListContainer extends PureComponent {
     getUsersList: null,
     handleAddUser: null,
     handleDeleteUser: null,
+    handleUpdateUser: null,
   };
 
   componentDidMount = () => {
@@ -34,7 +38,7 @@ class UsersListContainer extends PureComponent {
 
   render() {
     const {
-      usersList, fetching, errors, handleAddUser, handleDeleteUser,
+      usersList, fetching, errors, handleAddUser, handleDeleteUser, handleUpdateUser,
     } = this.props;
 
     if (fetching) {
@@ -49,7 +53,12 @@ class UsersListContainer extends PureComponent {
           <Errors errors={errors} />
         )}
 
-        <UsersList users={usersList} addUser={handleAddUser} deleteUser={handleDeleteUser} />
+        <UsersList
+          users={usersList}
+          addUser={handleAddUser}
+          deleteUser={handleDeleteUser}
+          updateUser={handleUpdateUser}
+        />
       </Fragment>
     );
   }
@@ -68,6 +77,7 @@ function mapDispatchToProps(dispatch) {
     getUsersList: () => dispatch(fetchUsersList()),
     handleAddUser: userName => dispatch(addUser(userName)),
     handleDeleteUser: userId => dispatch(deleteUser(userId)),
+    handleUpdateUser: (userId, userName) => dispatch(updateUser(userId, userName)),
   };
 }
 

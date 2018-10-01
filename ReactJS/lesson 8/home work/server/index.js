@@ -45,6 +45,12 @@ app.delete('/api/users/:id', async (req, res) => {
   res.json(user);
 });
 
+app.put('/api/users/:id', async (req, res) => {
+  let user = await User.findByIdAndUpdate(req.params.id, req.body);
+
+  res.json(user);
+});
+
 app.get('/api/posts', async (req, res) => {
   const posts = await Post.find();
 
