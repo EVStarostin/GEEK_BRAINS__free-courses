@@ -8,6 +8,10 @@ export const loadUserRequest = createAction('LOAD_USER_REQUEST');
 export const loadUserFailure = createAction('LOAD_USER_FAILURE');
 export const loadUserSuccess = createAction('LOAD_USER_SUCCESS');
 
+export const addUserRequest = createAction('ADD_USER_REQUEST');
+export const addUserFailure = createAction('ADD_USER_FAILURE');
+export const addUserSuccess = createAction('ADD_USER_SUCCESS');
+
 export const fetchUsersList = () => (dispatch) => {
   dispatch(loadUsersListRequest());
   fetch('api/users')
@@ -22,4 +26,15 @@ export const fetchUser = userId => (dispatch) => {
     .then(response => response.json())
     .then(json => dispatch(loadUserSuccess(json)))
     .catch(err => dispatch(loadUserFailure(err)));
+};
+
+export const addUser = userName => (dispatch) => {
+  dispatch(addUserRequest());
+  fetch('api/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: userName }),
+  }).then(response => response.json())
+    .then(json => dispatch(addUserSuccess(json)))
+    .catch(err => dispatch(addUserFailure(err)));
 };

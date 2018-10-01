@@ -7,6 +7,9 @@ import {
   loadUserRequest,
   loadUserFailure,
   loadUserSuccess,
+  addUserRequest,
+  addUserFailure,
+  addUserSuccess,
 } from 'Actions/usersActions';
 
 const initialState = {
@@ -47,6 +50,19 @@ export default handleActions({
   [loadUserSuccess]: (state, action) => ({
     ...state,
     user: action.payload,
+    fetching: false,
+  }),
+  [addUserRequest]: state => ({
+    ...state,
+    fetching: true,
+  }),
+  [addUserFailure]: state => ({
+    ...state,
+    fetching: false,
+  }),
+  [addUserSuccess]: (state, action) => ({
+    ...state,
+    usersList: state.usersList.concat([action.payload]),
     fetching: false,
   }),
 }, initialState);
