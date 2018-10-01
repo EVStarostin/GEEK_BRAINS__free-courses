@@ -12,6 +12,10 @@ export const addUserRequest = createAction('ADD_USER_REQUEST');
 export const addUserFailure = createAction('ADD_USER_FAILURE');
 export const addUserSuccess = createAction('ADD_USER_SUCCESS');
 
+export const deleteUserRequest = createAction('DELETE_USER_REQUEST');
+export const deleteUserFailure = createAction('DELETE_USER_FAILURE');
+export const deleteUserSuccess = createAction('DELETE_USER_SUCCESS');
+
 export const fetchUsersList = () => (dispatch) => {
   dispatch(loadUsersListRequest());
   fetch('api/users')
@@ -37,4 +41,14 @@ export const addUser = userName => (dispatch) => {
   }).then(response => response.json())
     .then(json => dispatch(addUserSuccess(json)))
     .catch(err => dispatch(addUserFailure(err)));
+};
+
+export const deleteUser = userId => (dispatch) => {
+  console.log(userId);
+  dispatch(deleteUserRequest());
+  fetch(`api/users/${userId}`, {
+    method: 'DELETE',
+  }).then(response => response.json())
+    .then(json => dispatch(deleteUserSuccess(json)))
+    .catch(err => dispatch(deleteUserFailure(err)));
 };

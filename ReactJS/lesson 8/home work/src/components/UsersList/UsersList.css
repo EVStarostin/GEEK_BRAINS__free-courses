@@ -2,3 +2,12 @@
 .userlist__user:focus {
   text-decoration: none;
 }
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown-toggle {
+  padding: 0 5px;
+}

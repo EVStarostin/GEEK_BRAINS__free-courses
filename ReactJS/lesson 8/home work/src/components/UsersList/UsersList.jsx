@@ -3,7 +3,9 @@ import './UsersList.css';
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Modal } from 'react-bootstrap';
+import {
+  Modal, DropdownButton, MenuItem,
+} from 'react-bootstrap';
 
 import { IUser } from 'Models';
 
@@ -11,11 +13,13 @@ export default class UsersList extends PureComponent {
   static propTypes = {
     users: PropTypes.arrayOf(IUser),
     addUser: PropTypes.func,
+    deleteUser: PropTypes.func,
   };
 
   static defaultProps = {
     users: [],
     addUser: null,
+    deleteUser: null,
   };
 
   constructor(props) {
@@ -55,7 +59,7 @@ export default class UsersList extends PureComponent {
   }
 
   render() {
-    const { users } = this.props;
+    const { users, deleteUser } = this.props;
     const { showModal, login } = this.state;
 
     return (
@@ -71,6 +75,17 @@ export default class UsersList extends PureComponent {
                 {' '}
                 {user.name}
               </Link>
+              <DropdownButton
+                bsStyle="default"
+                title="&#8226;&#8226;&#8226;"
+                noCaret
+                pullRight
+                id="dropdown-no-caret"
+              >
+                <MenuItem eventKey="1">Редактировать</MenuItem>
+                <MenuItem divider />
+                <MenuItem eventKey={user._id} onSelect={deleteUser}>Удалить</MenuItem>
+              </DropdownButton>
             </li>
           ))}
         </ul>

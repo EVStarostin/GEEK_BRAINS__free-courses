@@ -10,6 +10,9 @@ import {
   addUserRequest,
   addUserFailure,
   addUserSuccess,
+  deleteUserRequest,
+  deleteUserFailure,
+  deleteUserSuccess,
 } from 'Actions/usersActions';
 
 const initialState = {
@@ -54,15 +57,32 @@ export default handleActions({
   }),
   [addUserRequest]: state => ({
     ...state,
+    errors: [],
     fetching: true,
   }),
-  [addUserFailure]: state => ({
+  [addUserFailure]: (state, action) => ({
     ...state,
+    errors: state.errors.concat([action.payload]),
     fetching: false,
   }),
   [addUserSuccess]: (state, action) => ({
     ...state,
     usersList: state.usersList.concat([action.payload]),
+    fetching: false,
+  }),
+  [deleteUserRequest]: state => ({
+    ...state,
+    errors: [],
+    fetching: true,
+  }),
+  [deleteUserFailure]: (state, action) => ({
+    ...state,
+    errors: state.errors.concat([action.payload]),
+    fetching: false,
+  }),
+  [deleteUserSuccess]: (state, action) => ({
+    ...state,
+    usersList: state.usersList.filter(user => user._id !== action.payload._id),
     fetching: false,
   }),
 }, initialState);
