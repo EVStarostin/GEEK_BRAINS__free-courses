@@ -70,6 +70,18 @@ app.post('/api/posts', async (req, res) => {
   res.json(post);
 });
 
+app.delete('/api/posts/:id', async (req, res) => {
+  let post = await Post.findByIdAndDelete(req.params.id);
+
+  res.json(post);
+});
+
+app.put('/api/posts/:id', async (req, res) => {
+  let post = await Post.findByIdAndUpdate(req.params.id, req.body);
+
+  res.json(post);
+});
+
 app.get('/api/comments', async (req, res) => {
   const comments = await Comment.find().populate('post');
   
@@ -79,6 +91,18 @@ app.get('/api/comments', async (req, res) => {
 app.post('/api/comments', async (req, res) => {
   let comment = new Comment(req.body);
   comment = await comment.save();
+
+  res.json(comment);
+});
+
+app.delete('/api/comments/:id', async (req, res) => {
+  let comment = await Comment.findByIdAndDelete(req.params.id);
+
+  res.json(comment);
+});
+
+app.put('/api/comments/:id', async (req, res) => {
+  let comment = await Comment.findByIdAndUpdate(req.params.id, req.body);
 
   res.json(comment);
 });
