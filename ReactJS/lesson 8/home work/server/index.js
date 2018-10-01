@@ -20,6 +20,7 @@ const { User, Post, Comment } = require('./models');
 
 app.get('/api/users', async (req, res) => {
   const users = await User.find();
+
   res.json(users);
 });
 
@@ -46,6 +47,7 @@ app.delete('/api/users/:id', async (req, res) => {
 
 app.get('/api/posts', async (req, res) => {
   const posts = await Post.find();
+
   res.json(posts);
 });
 
@@ -64,6 +66,7 @@ app.post('/api/posts', async (req, res) => {
 
 app.get('/api/comments', async (req, res) => {
   const comments = await Comment.find().populate('post');
+  
   res.json(comments);
 });
 

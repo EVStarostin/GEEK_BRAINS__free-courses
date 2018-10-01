@@ -64,7 +64,7 @@ export default class UsersList extends PureComponent {
 
     return (
       <Fragment>
-        <button type="button" className="btn btn-primary" onClick={this.handleAddUserClick}>
+        <button type="button" className="btn btn-primary delete-user-btn" onClick={this.handleAddUserClick}>
           Добавить пользователя
         </button>
         <ul className="list-group">
